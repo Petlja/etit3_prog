@@ -43,4 +43,5 @@
 :maxdepth: 1
 
 01_uvod
+02_klasa_i_objekat
 ```

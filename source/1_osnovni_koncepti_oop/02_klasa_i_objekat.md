@@ -92,17 +92,17 @@ printf("Obim trougla t1 je: %lf", obim(t1.a, t1.b, t1.c));
 
 Применом парадигме објектно-оријентисаног програмирања, овакви проблеми
 нестају. Логично је да се све ствари везане за троугао налазе на једном месту,
-у једном шаблону, односно у једној класи. За пример изнад, класу `trougao`
+у једном шаблону, односно у једној класи. За пример изнад, класу `Trougao`
 можеш дефинисати на следећи начин...
 
 ```cs
-class trougao
+class Trougao
 {
     private double a;
     private double b;
     private double c;
     
-    public trougao(double a, double b, double c)
+    public Trougao(double a, double b, double c)
     {
         this.a = a;
         this.b = b;
@@ -116,11 +116,11 @@ class trougao
 }
 ```
 
-...па потом, у главном програму, инстанцирати један објекат класе `trougao`,
+...па потом, у главном програму, инстанцирати један објекат класе `Trougao`,
 позвати његову методу за израчунавање обима и исписати резултат:
 
 ```cs
-trougao t1 = new trougao(3.0, 4.0, 5.0);
+Trougao t1 = new Trougao(3.0, 4.0, 5.0);
 Console.WriteLine("Обим троугла t1 је: " + t1.Obim());
 ```
 

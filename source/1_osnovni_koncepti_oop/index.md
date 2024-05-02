@@ -46,4 +46,5 @@
 02_klasa_i_objekat
 03_clanovi_klase
 04_enkapsulacija
+05_nasledjivanje
 ```

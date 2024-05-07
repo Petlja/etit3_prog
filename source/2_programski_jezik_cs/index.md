@@ -46,4 +46,5 @@
 :maxdepth: 1
 
 01_uvod
+ugradjeni_tipovi
 ```

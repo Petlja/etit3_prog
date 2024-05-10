@@ -5,6 +5,6 @@
 ```{toctree}
 :maxdepth: 1
 
-01_sadrzaj
 unicode_karakteri
+prioritet_operatora
 ```

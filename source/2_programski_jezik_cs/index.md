@@ -1,4 +1,4 @@
-# Програмски језик *C#*
+# Програмски језик C Sharp
 
 ## НИЈЕ ЗА ОБЈАВЉИВАЊЕ - ПЛАН НАСТАВЕ И УЧЕЊА
 
@@ -48,4 +48,5 @@
 01_uvod
 ugradjeni_tipovi
 konverzije_tipova
+operatori_izrazi
 ```

@@ -54,4 +54,5 @@ razgranata
 ciklicna
 nizovi
 liste
+nabrojivi
 ```

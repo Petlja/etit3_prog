@@ -48,5 +48,10 @@
 01_uvod
 ugradjeni_tipovi
 konverzije_tipova
+deklaracija_podataka
 operatori_izrazi
+razgranata
+ciklicna
+nizovi
+liste
 ```

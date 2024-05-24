@@ -55,4 +55,7 @@ ciklicna
 nizovi
 liste
 nabrojivi
+static
+fajlovi_direktorijumi
+file_directory
 ```

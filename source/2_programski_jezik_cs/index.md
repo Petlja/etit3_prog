@@ -56,6 +56,7 @@ nizovi
 liste
 nabrojivi
 static
+preopterecenje_metoda
 fajlovi_direktorijumi
 file_directory
 ```

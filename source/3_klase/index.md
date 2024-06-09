@@ -48,5 +48,5 @@
 ```{toctree}
 :maxdepth: 1
 
-01_uvod
+pojam_klase
 ```

@@ -9,7 +9,7 @@
 | `x * y`, `x / y`, `x % y`                                                                                                                                            | Multiplicative                             |
 | `x + y`, `x – y`                                                                                                                                                     | Additive                                   |
 | `x << y`, `x >> y`, `x >>> y`                                                                                                                                        | Shift                                      |
-| `x < y`, `x > y`, `x <= y`, `x >= y`, `is`, `as` 	                                                                                                                   | Relational and type-testing                |
+| `x < y`, `x > y`, `x <= y`, `x >= y`, `is`, `as`                                                                                                                     | Relational and type-testing                |
 | `x == y`, `x != y`                                                                                                                                                   | Equality                                   |
 | `x & y`                                                                                                                                                              | Boolean logical AND or bitwise logical AND |
 | `x ^ y`                                                                                                                                                              | Boolean logical XOR or bitwise logical XOR |

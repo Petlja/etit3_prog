@@ -23,7 +23,7 @@
 представљају странице троугла:
 
 ```cs
-public class Trougao
+class Trougao
 {
     public double a;
     public double b;
@@ -52,7 +52,7 @@ Console.WriteLine("Obim trougla je: {0}", t1.a + t1.b + t1.c);
 мењати. На пример, класу `Krug` можеш дефинисати на следећи начин:
 
 ```cs
-public class Krug
+class Krug
 {
     public double r;
     public const double pi = 3.14159265359;
@@ -84,7 +84,7 @@ Console.WriteLine("Obim kruga je: {0}", 2 * Krug.pi * k1.r);
 у класи `Krug` креираш методу за рачунање обима круга:
 
 ```cs
-public class Krug
+class Krug
 {
     public double r;
     public const double pi = Math.PI;
@@ -125,7 +125,7 @@ Console.WriteLine("Obim kruga je: {0}", k1.Obim());
 вратити израчуната вредност обима круга:
 
 ```cs
-public class Krug
+class Krug
 {
     public double r;
     public const double pi = Math.PI;
@@ -163,7 +163,7 @@ Console.WriteLine("Obim kruga je: {0}", k1.O);
 следећи начин:
 
 ```cs
-public class Krug
+class Krug
 {
     public double r;
     public const double pi = Math.PI;
@@ -196,7 +196,7 @@ Console.WriteLine("Obim kruga je: {0}", k1.Obim());
 на следећи начин:
 
 ```cs
-public class Pravougli
+class Pravougli
 {
     public double a;
     public double b;

@@ -70,7 +70,7 @@
 шта није добро у следећој класи?
 
 ```cs
-public class Pravougli
+class Pravougli
 {
     public double a;
     public double b;
@@ -118,7 +118,7 @@ Console.WriteLine("Obim trougla je: {0}", p2.Obim());
 приступа `private`:
 
 ```cs
-public class Pravougli
+class Pravougli
 {
     private double a;
     private double b;

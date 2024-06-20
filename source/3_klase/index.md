@@ -49,4 +49,5 @@
 :maxdepth: 1
 
 pojam_klase
+dinamicke
 ```

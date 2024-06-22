@@ -49,5 +49,6 @@
 :maxdepth: 1
 
 pojam_klase
+parcijalne_klase
 dinamicke
 ```

@@ -50,5 +50,6 @@
 
 pojam_klase
 parcijalne_klase
+parcijalne_metode
 dinamicke
 ```

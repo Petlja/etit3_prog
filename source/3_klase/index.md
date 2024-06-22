@@ -49,7 +49,8 @@
 :maxdepth: 1
 
 pojam_klase
-preklapanje_operatora
+preopterecenje_metoda
+preopterecenje_operatora
 parcijalne_klase
 parcijalne_metode
 dinamicke

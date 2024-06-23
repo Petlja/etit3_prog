@@ -103,6 +103,26 @@ public static bool operator !=(Kompleksni k1, Kompleksni k2)
 }
 ```
 
+Пошто си преоптеретио оператори `==` и `!=` требао би да преоптеретиш и методе
+`Equals()` и `GetHashCode()`:
+
+```cs
+public override bool Equals(object obj)
+{
+    if (obj is Kompleksni)
+    {
+        var other = (Kompleksni)obj;
+        return this == other;
+    }
+    return false;
+}
+
+public override int GetHashCode()
+{
+    return Re.GetHashCode() ^ Im.GetHashCode();
+}
+```
+
 У табели која следи наведени су предефинисани оператори који се не могу
 експлицитно преоптеретити, или се не могу уопште преоптеретити.
 

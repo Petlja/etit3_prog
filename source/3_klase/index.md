@@ -49,6 +49,8 @@
 :maxdepth: 1
 
 pojam_klase
+razlika_class_struct
+podrazumevani_konstruktor
 preopterecenje_metoda
 preopterecenje_operatora
 parcijalne_klase

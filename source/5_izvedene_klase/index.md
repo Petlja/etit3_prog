@@ -42,4 +42,6 @@
 02_definicija
 03_clanovi_izvedene
 04_pozivanje_konstruktora
+interfejsi
+interfejsi_kviz
 ```

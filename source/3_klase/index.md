@@ -53,6 +53,7 @@ razlika_class_struct
 podrazumevani_konstruktor
 konstruktor_sa_parametrima
 konstruktor_kopije
+this
 preopterecenje_metoda
 preopterecenje_operatora
 parcijalne_klase

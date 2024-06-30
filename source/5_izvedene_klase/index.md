@@ -42,6 +42,9 @@
 02_definicija
 03_clanovi_izvedene
 04_pozivanje_konstruktora
+apstraktne_klase
+zapecacene_klase
+apstraktne_zapecacene_kviz
 interfejsi
 interfejsi_kviz
 ```

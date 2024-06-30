@@ -52,7 +52,7 @@ html_css_files = [
     'https://fonts.googleapis.com/css?family=Source+Sans+Pro',
 ]
 html_context = {
-    
+    'theme_nosidebar': True,
 }
 html_show_copyright = False
 html_show_sourcelink = False

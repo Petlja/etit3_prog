@@ -57,6 +57,6 @@
 ```{toctree}
 :maxdepth: 1
 
-01_uvod
-02_izrada_projekta
+uvod
+izrada_projekta
 ```

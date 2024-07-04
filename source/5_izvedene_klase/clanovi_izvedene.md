@@ -93,4 +93,52 @@ CS0122: 'BaznaKlasa.broj' is inaccessible due to its protection level
 ```
 
 Сада, када је ти јасна разлика између наслеђивања и ограничавања доступности,
-можеш да 
+можеш да креираш објекте изведене класе и користиш чланове базне и изведене
+класе кроз те објекте. На пример:
+
+```cs
+using System;
+
+class BaznaKlasa
+{
+    public int x = 1;
+
+    public void MetodaBazne()
+    {
+        Console.WriteLine("Pozdrav iz bazne klase!");
+    }
+}
+
+class IzvedenaKlasa : BaznaKlasa
+{
+    public int y = 2;
+
+    public void MetodaIzvedene()
+    {
+        Console.WriteLine("Pozdrav iz izvedene klase!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        IzvedenaKlasa izv = new IzvedenaKlasa();
+        Console.WriteLine(izv.x);
+        Console.WriteLine(izv.y);
+        izv.MetodaBazne();
+        izv.MetodaIzvedene();
+    }
+}
+```
+
+У конзоли ће се прво исписати вредност поља `x` дефинисана у базној класи и
+вредност поља `y` дефинисана у изведеној класи, па ће се извршити методе
+`MetodaBazne()` и `MetodaIzvedene()`:
+
+```text
+1
+2
+Pozdrav iz bazne klase!
+Pozdrav iz izvedene klase!
+```

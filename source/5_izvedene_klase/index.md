@@ -41,7 +41,8 @@
 uvod
 definicija
 clanovi_izvedene
-pozivanje_konstruktora
+nadjacavanje_metoda
+konstruktori_izvedenih
 apstraktne_klase
 zapecacene_klase
 apstraktne_zapecacene_kviz

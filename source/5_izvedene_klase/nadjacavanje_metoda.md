@@ -20,11 +20,19 @@ class BaznaKlasa
     }
 }
 
-class IzvedenaKlasa : BaznaKlasa
+class IzvedenaKlasa1 : BaznaKlasa
 {
     public override void Metoda()
     {
-        Console.WriteLine("Pozdrav iz izvedene klase!");
+        Console.WriteLine("Pozdrav iz izvedene klase 1!");
+    }
+}
+
+class IzvedenaKlasa2 : BaznaKlasa
+{
+    public override void Metoda()
+    {
+        Console.WriteLine("Pozdrav iz izvedene klase 2!");
     }
 }
 
@@ -32,8 +40,12 @@ class Program
 {
     static void Main()
     {
-        IzvedenaKlasa izv = new IzvedenaKlasa();
-        izv.Metoda();
+        BaznaKlasa baz = new BaznaKlasa();
+        IzvedenaKlasa1 izv1 = new IzvedenaKlasa1();
+        IzvedenaKlasa2 izv2 = new IzvedenaKlasa2();
+        baz.Metoda();
+        izv1.Metoda();
+        izv2.Metoda();
     }
 }
 ```
@@ -41,10 +53,13 @@ class Program
 У конзоли ће се исписати...
 
 ```text
-Pozdrav iz izvedene klase!
+Pozdrav iz bazne klase!
+Pozdrav iz izvedene klase 1!
+Pozdrav iz izvedene klase 2!
 ```
 
-...јер је виртуелна метода базне класе надјачана у изведеној класи.
+...јер је виртуелна метода `Metoda()` базне класе надјачана у изведеним класама
+под истим именом.
 
 Иако у изведеној класи надјачаваш виртуелну методу базне класе, у изведеној
 класи можеш приступити виртуелној методи базне класе користећи кључну реч
@@ -89,6 +104,43 @@ Pozdrav iz izvedene klase!
 
 ...јер је у надјачаној методи изведене класе прво позвана виртуелна метода
 базне класе.
+
+Такође, базна класа може поставити референце на објекат изведена класе:
+
+```cs
+using System;
+
+class BaznaKlasa
+{
+    public virtual void Metoda()
+    {
+        Console.WriteLine("Pozdrav iz bazne klase!");
+    }
+}
+
+class IzvedenaKlasa : BaznaKlasa
+{
+    public override void Metoda()
+    {
+        Console.WriteLine("Pozdrav iz izvedene klase!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        BaznaKlasa baz = new IzvedenaKlasa();
+        baz.Metoda();
+    }
+}
+```
+
+У конзоли ће се исписати текст који исписује надјачана метода:
+
+```text
+Pozdrav iz izvedene klase!
+```
 
 Иако изгледа прилично једноставно, могућност надјавачавања метода базне класе у
 изведеним класама даје ти могућност да третираш различите објекте на унифициран

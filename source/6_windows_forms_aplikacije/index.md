@@ -67,4 +67,16 @@ dogadjaji
 dogadjaji_misa
 dogadjaji_tastature
 labela
+dugme
+okvir_za_sliku
+okvir_za_tekst
+panel
+okvir_za_grupu
+okvir_za_potvrdu
+radio_dugmad
+okvir_za_listu
+kombinovani_okvir
+timer
+kastovanje_kontrola
+dinamicko_kreiranje
 ```

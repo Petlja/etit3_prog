@@ -45,7 +45,8 @@
 ```{toctree}
 :maxdepth: 1
 
-01_uvod
+uvod
+izrada_projekta
 ugradjeni_tipovi
 konverzije_tipova
 deklaracija_podataka

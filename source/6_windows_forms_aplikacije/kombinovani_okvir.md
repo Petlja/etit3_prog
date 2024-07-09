@@ -6,8 +6,8 @@
 Контрола `ComboBox` дефинисана је у класи `ComboBox` у именском простору
 `System.Windows.Forms`, односно склопу `System.Windows.Forms.dll`. Класа
 `ComboBox` наслеђује класу `ListControl` која наслеђује класу `Control`, па
-због тога лабеле имају основна својства, догађаје и методе као и остале
-контроле у *Windows Forms App* пројектима.
+због тога комбиновани оквири имају основна својства, догађаје и методе као и
+остале контроле у *Windows Forms App* пројектима.
 
 Детаљан опис својстава, догађаја и метода класе `ComboBox` налази се у
 званичној [документацији](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.combobox?view=netframework-4.8).

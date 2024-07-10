@@ -54,6 +54,7 @@ podrazumevani_konstruktor
 konstruktor_sa_parametrima
 konstruktor_kopije
 this
+enkapsulacija
 preopterecenje_metoda
 preopterecenje_operatora
 parcijalne_klase

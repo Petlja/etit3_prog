@@ -79,4 +79,5 @@ kombinovani_okvir
 timer
 kastovanje_kontrola
 dinamicko_kreiranje
+zadatak_okvir_za_potvrdu
 ```

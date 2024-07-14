@@ -29,9 +29,9 @@
 * Употреба чланова изведене класе DONE
 * Конструктори изведених класа DONE
 * Композиција класе DONE
-* Апстрактна класа
-* Заједнички чланови класе
-* Интерфејси и наслеђивање интерфејса
+* Апстрактна класа DONE
+* Заједнички чланови класе DONE
+* Интерфејси и наслеђивање интерфејса DONE
 
 ## Садржај
 
@@ -42,11 +42,12 @@ uvod
 definicija
 clanovi_izvedene
 nadjacavanje_metoda
+zajednicki_clanovi
 konstruktori_izvedenih
-kompozicija
 apstraktne_klase
 zapecacene_klase
 apstraktne_zapecacene_kviz
 interfejsi
 interfejsi_kviz
+kompozicija
 ```

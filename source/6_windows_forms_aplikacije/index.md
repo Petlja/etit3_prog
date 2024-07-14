@@ -39,7 +39,7 @@
 * Догађаји миша DONE
 * Догађаји тастатуре DONE
 * Лабела DONE
-* Дугме
+* Дугме DONE
 * Слика (PictureBox) DONE
 * Оквир за текст (TextBox) DONE
 * Панел DONE

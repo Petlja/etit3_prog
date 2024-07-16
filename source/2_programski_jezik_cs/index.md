@@ -62,4 +62,5 @@ fajlovi_direktorijumi
 file_directory
 stream
 binary
+kviz
 ```

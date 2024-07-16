@@ -43,6 +43,7 @@ clanovi_izvedene
 nadjacavanje_metoda
 zajednicki_clanovi
 konstruktori_izvedenih
+kviz
 apstraktne_klase
 zapecacene_klase
 apstraktne_zapecacene_kviz

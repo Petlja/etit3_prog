@@ -62,4 +62,5 @@ preopterecenje_operatora
 parcijalne_klase
 parcijalne_metode
 dinamicke
+kviz
 ```

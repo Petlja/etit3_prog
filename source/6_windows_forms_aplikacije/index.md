@@ -82,4 +82,5 @@ dinamicko_kreiranje
 zadatak_pogodi_broj
 zadatak_scq
 zadatak_mcq
+zadatak_whack_a_mole
 ```

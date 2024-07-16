@@ -50,4 +50,5 @@ apstraktne_zapecacene_kviz
 interfejsi
 interfejsi_kviz
 kompozicija
+kviz_izvedene
 ```

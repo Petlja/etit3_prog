@@ -38,7 +38,6 @@
 ```{toctree}
 :maxdepth: 1
 
-uvod
 definicija
 clanovi_izvedene
 nadjacavanje_metoda

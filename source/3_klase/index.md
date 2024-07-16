@@ -35,8 +35,8 @@
 * Конструктор копије DONE
 * Кључна реч this DONE
 * Енкапсулација података DONE
-* set методе
-* get методе
+* set методе DONE
+* get методе DONE
 * Методе
 * Преклапање метода у класи DONE
 * Преклапање (overload) оператора у класи DONE
@@ -55,6 +55,8 @@ konstruktor_sa_parametrima
 konstruktor_kopije
 this
 enkapsulacija
+get_set
+metode
 preopterecenje_metoda
 preopterecenje_operatora
 parcijalne_klase

@@ -79,5 +79,7 @@ kombinovani_okvir
 timer
 kastovanje_kontrola
 dinamicko_kreiranje
-zadatak_okvir_za_potvrdu
+zadatak_pogodi_broj
+zadatak_scq
+zadatak_mcq
 ```

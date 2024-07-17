@@ -80,6 +80,7 @@ timer
 kastovanje_kontrola
 dinamicko_kreiranje
 zadatak_pogodi_broj
+zadatak_memorija
 zadatak_scq
 zadatak_mcq
 zadatak_whack_a_mole

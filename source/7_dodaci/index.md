@@ -7,4 +7,5 @@
 
 unicode_karakteri
 prioritet_operatora
+prelazne_sekvence
 ```

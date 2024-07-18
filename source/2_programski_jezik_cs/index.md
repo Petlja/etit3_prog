@@ -53,6 +53,7 @@ operatori_izrazi
 razgranata
 ciklicna
 nizovi
+string
 liste
 nabrojivi
 struct

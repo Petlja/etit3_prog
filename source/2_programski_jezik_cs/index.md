@@ -45,7 +45,8 @@
 
 uvod
 izrada_projekta
-ugradjeni_tipovi
+vrednosni_tipovi
+referentni_tipovi
 konverzije_tipova
 deklaracija_podataka
 operatori_izrazi

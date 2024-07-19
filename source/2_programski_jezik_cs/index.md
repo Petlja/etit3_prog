@@ -15,6 +15,7 @@ referentni_tipovi
 konverzije_tipova
 deklaracija_podataka
 operatori_izrazi
+bitski_operatori
 razgranata
 ciklicna
 nizovi

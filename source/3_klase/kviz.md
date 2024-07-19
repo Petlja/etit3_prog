@@ -275,3 +275,113 @@ public class Point
 
 Штиклирај наредбе којима се може допунити дефиниција конструктора.
 ```
+
+## Питање 14
+
+Дат је кôд програма који садржи објекте две класе у којима је дефинисан метод
+`ТoString()`.
+
+```cs
+namespace TestPrimer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Object a = new Klasa();
+            Object obj = new Object();
+            Console.WriteLine(a);
+            Console.WriteLine(obj);
+        }
+    }
+}
+
+class Klasa
+{
+    int x;
+    public override string ToString() { return "x u A je " + x; }
+}
+```
+
+```{mchoice}
+:answer1: Програм има грешку, јер наредбу Console.WriteLine(a) треба заменити наредбом Console.WriteLine(a.ТoString()).
+:answer2: Приликом извршавања наредбе Console.WriteLine(a), програм позива се метод ТoString() наслеђен из класе Object.
+:answer3: Приликом извршавања наредбе Console.WriteLine(a), програм позива метод ТoString() из класе Klasa.
+:answer4: Приликом извршавања наредбе Console.WriteLine(obj), програм позива метод ТoString() из класе Object.
+:correct: 3,4
+
+Анализирај кôд датог програма и одреди који су од датих исказа тачни. Заокружи
+бројеве испред очекиваних одговора.
+```
+
+## Питање 15
+
+Дефинисане су две класе:
+
+```cs
+class Program
+{
+    public static void Main(string[] args)
+    {
+        KlasaA a1 = new KlasaA();
+        KlasaA a2 = new KlasaA();
+        Console.WriteLine(a1.Equals(a2));
+    }
+}
+
+class KlasaA
+{
+    int x;
+    public bool Equals(KlasaA a)
+    {
+        return this.x == a.x;
+    }
+}
+```
+
+```{mchoice}
+:answer1: Програм има грешку, јер се изразом a1.Equals(a2) проверава једнакост објеката а1 и а2 различитог типа од Object.
+:answer2: Програм има грешку, јер се једнакост објеката а1 и а2 типа KlasaА проверава изразом а1 == а2.
+:answer3: Програм се извршава без грешке и приказује се true на екрану.
+:answer4: Програм се извршава без грешке и приказује се false на екрану.
+:correct: 3
+
+Анализирај дати кôд и одредити да ли је кôд исправно написан. Означи исказ који
+даје информацију о тачности кода.
+```
+
+## Питање 16
+
+Дефинисане су две класе:
+
+```cs
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Object a1 = new KlasaA();
+        Object a2 = new KlasaA();
+        Console.WriteLine(a1.Equals(a2));
+    }
+}
+
+class KlasaA
+{
+    int x;
+    public bool Equals(KlasaA a)
+    {
+        return this.x == a.x;
+    }
+}
+```
+
+```{mchoice}
+:answer1: Програм има грешку, јер се изразом a1.Equals(a2) проверава једнакост објеката а1 и а2 различитог типа од Object.
+:answer2: Програм има грешку, јер се једнакост објеката а1 и а2 типа KlasaА проверава изразом а1 == а2.
+:answer3: Програм се извршава без грешке и приказује се true на екрану.
+:answer4: Програм се извршава без грешке и приказује се false на екрану.
+:correct: 4
+
+Анализирај дати кôд и одредити да ли је кôд исправно написан. Означи исказ који
+даје информацију о тачности кода.
+```

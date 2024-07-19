@@ -19,5 +19,4 @@
 80_interfejsi
 81_kviz
 90_kompozicija
-100_kviz
 ```

@@ -29,6 +29,7 @@ kombinovani_okvir
 timer
 kastovanje_kontrola
 dinamicko_kreiranje
+zadatak_budilnik
 zadatak_pogodi_broj
 zadatak_memorija
 zadatak_typing_test

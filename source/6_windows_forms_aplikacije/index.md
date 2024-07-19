@@ -37,4 +37,6 @@ zadatak_scq
 zadatak_mcq
 zadatak_whack_a_mole
 zadatak_vezbaj_reflekse
+zadatak_iks_oks
+zadatak_igra_memorije
 ```

@@ -39,82 +39,6 @@ namespace TestPrimer
 
 ## Питање 2
 
-Дат је следећи кôд програма који формира и штампа елементе низа `а`:
-
-```cs
-namespace TestPrimer
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int[] a = new int[5];
-            for (int i = 0; i < a.Length; i++) a[i] = i;
-            Console.Write(a[i] + " ");
-        }
-    }
-}
-```
-
-```{mchoice}
-:answer1: Програм у конзоли исписује бројеве 0 1 2 3 4.
-:answer2: Програм има грешку, јер ће у последњој наредби Console.Write методa Main покушати приступ непостојећем елементу а[5].
-:answer3: Програм у конзоли исписује број 5.
-:answer4: Програм има грешку, јер променљива i у последњој наредби Console.Write у методу Main неће имати дефинисану вредност.
-:correct: 4
-
-Анализирај дати кôд и процени шта ће се догодити након његовог извршавања. Заокружи број испред очекиваног одговора.
-```
-
-## Питање 3
-
-Дата је декларација променљиве и низа:
-
-```cs
-int k;
-int[ ] brojevi = {5, 12, 37, 7, 27, 33, 36};
-```
-
-На основу дате декларације одредити шта је резултат позива:
-
-```cs
-k = Array.BinarySearch(brojevi, 37);
-```
-
-```{mchoice}
-:answer1: k=0, јер метод BinarySearch прво изврши сортирање низа у опадајућем редоследу, па онда тражи задату вредност.
-:answer2: метод BinarySearch баца изузетак увек када је низ неуређен и програм "пуца".
-:answer3: k=2, јер се тражени елемент налази на позицији 2.
-:answer4: k добија неочекивану вредност, јер низ мора бити сортиран у растућем поретку пре позива методе BinarySearch.
-:answer5: k=6, јер метод BinarySearch прво изврши сортирање низа у растућем редоследу, па онда тражи задату вредност.
-:correct: 4
-
-Заокружи број испред очекиваног одговора.
-```
-
-## Питање 4
-
-Дата је декларација једне стринг и једне целобројне променљиве, као и део кода:
-
-```cs
-string str = "Primer";
-int broj = 66;
-Console.WriteLine(str + broj + 65);
-Console.WriteLine(broj + 65 + str);
-```
-
-```{mchoice}
-:answer1: Primer6665 131Primer
-:answer2: Primer6665 6665Primer
-:answer3: Primer131 131Primer
-:answer4: PrimerBA BAPrimer
-:correct: 1
-
-Анализирај дати кôд и процени шта ће се приказати на екрану након његовог извршења. Заокружити број испред очекиваног одговора.
-```
-
-## Питање 5
-
 Дат је кôд који дефинише рекурзивни метод:
 
 ```cs
@@ -134,7 +58,7 @@ public long fun(int n)
 Анализирај дати кôд и одреди резултат извршавања задатог метода. Заокружити број испред очекиваног одговора.
 ```
 
-## Питање 6
+## Питање 3
 
 Дат је кôд који дефинише рекурзивни метод:
 
@@ -171,78 +95,17 @@ namespace TestPrimer
 Анализирај дати кôд и одреди шта ће се исписати у конзоли. Заокружи број испред очекиваног одговора.
 ```
 
-## Питање 7
+## Питање 4
 
-Дат је рекурзивни метод који проверава да ли је неки стринг палиндром.
-
-```cs
-public static bool palindrom(String s)
-{
-    if (s.Length <= 1)
-    {
-        return true; // bazni slučaј
-    }
-    else
-    {
-        if (___________________)
-        {
-            return false;
-        }
-        else
-        {
-            return palindrom(s.Substring(1, s.Length - 2));
-        }
-    }
-}
-```
+Дате су наредбе које дефинишу заглавље методе Print() са променљивим бројем параметара.
 
 ```{mchoice}
-:answer1: s[0] != s[s.Length - 1]
-:answer2: s[0] != s[s.Length]
-:answer3: s[1] != s[s.Length - 1]
-:answer4: s[1] != s[s.Length]
-:correct: 1
+:answer1: public void Print(params string[] niska, params double[] broj)
+:answer2: public void Print(params double[] broj, string niska)
+:answer3: public void params Print(double d1, double d2)
+:answer4: public void Print(params double[] broj)
+:answer5: public void Print(int n, params double[] broj)
+:correct: 4,5
 
-Да би кôд био комплетиран потребно је допунити девети ред условом `if` наредбе. Заокружи број испред очекиваног одговора.
-```
-
-## Питање 8
-
-Дат је рекурзивни метод који проверава да ли је неки стринг палиндром.
-
-```cs
-public static bool Palindrom(String s)
-{
-    return Palindrom(s, 0, s.Length - 1);
-}
-
-public static bool Palindrom(String s, int levi, int desni)
-{
-    if (desni <= levi)
-    {
-        return true; // bazni slucaj
-    }
-    else
-    {
-        if (s[levi] != s[desni])
-        {
-            return false;
-        }
-        else
-        {
-            return ___________________;
-        }
-    }
-}
-```
-
-```{mchoice}
-:answer1: Palindrom(s)
-:answer2: Palindrom(s, levi, desni)
-:answer3: Palindrom(s, levi + 1, desni - 1)
-:answer4: Palindrom(s, levi + 1, desni)
-:answer5: Palindrom(s, levi, desni - 1)
-:correct: 3
-
-Да би кôд био комплетиран потребно је допунити двадесети ред. Заокружи број испред очекиваног одговора.
+Одреди које од понуђених наредби исправне. Штиклирај очекиване одговоре.
 ```

@@ -299,3 +299,222 @@ class Klasa
 Заокружи број испред наведеног члана класе који се ни под којим условима НЕ
 наслеђује из родитељске класе у изведену класу.
 ```
+
+## Питање 9
+
+Дат је кôд којим су креиране три класе у ланцу наслеђивања. Унутар сваке класе
+декларисан је по један `private`, `public` и `protected` атрибут. У методи
+`Main()` класе `Program` креиран је објекат `s` класе `Sin` (`Sin s = new Sin();`).
+
+```cs
+public class Deda
+{
+    private double penzija;
+    protected string adresa;
+    public string ime;
+}
+
+public class Otac : Deda
+{
+    private double plata;
+    protected string firma;
+    public string struka;
+}
+
+public class Sin : Otac
+{
+    private double prosek;
+    protected int razred;
+    public string skola;
+}
+```
+
+```{mchoice}
+:answer1: adresa
+:answer2: ime
+:answer3: firma
+:answer4: struka
+:answer5: razred
+:answer6: skola
+:correct: 2,4,6
+
+Штиклирај поља која ће бити видљива у креираном објекту `s` класе `Sin`.
+```
+
+## Питање 10
+
+Дат је кôд којим су креиране три класе у ланцу наслеђивања.
+
+```cs
+public class Deda
+{
+    private double penzija;
+    protected string adresa;
+    public string ime;
+}
+
+public class Otac : Deda
+{
+    private double plata;
+    protected string struka;
+}
+
+public class Sin : Deda
+{
+    public int razred;
+}
+```
+
+```{mchoice}
+:answer1: penzija
+:answer2: adresa
+:answer3: ime
+:answer4: plata
+:answer5: struka
+:answer6: razred
+:correct: 2,3,6
+
+Имајући у виду класификаторе приступа пољима класа, заокружити бројеве испред
+поља која ће бити видљива унутар класе `Sin`.
+```
+
+## Питање 11
+
+```{mchoice}
+:answer1: new
+:answer2: virtual
+:answer3: sealed
+:answer4: override
+:answer5: abstract
+:answer6: base
+:correct: 2,3,5
+
+Да би наслеђени метод могао да се редефинише и тиме измени његова
+функционалност у класама наследницама, у родитељској класи испред ознаке
+повратног типа метода наводи се нека од понуђених кључних речи. Штиклирај
+кључнe речи омогућавају редефинисање дефинисаног метода кроз ланац наслеђивања.
+```
+
+## Питање 12
+
+Дефинисане су три класе:
+
+```cs
+class Program
+{
+    public static void Main(string[] args)
+    {
+        B b = new B();
+        b.Metod(5);
+        Console.WriteLine("b.i je " + b.CitajI());
+    }
+}
+
+class A
+{
+    int i;
+
+    public int CitajI()
+    {
+        return i;
+    }
+
+    public void Metod(int i)
+    {
+        this.i = i;
+    }
+}
+
+class B : A
+{
+    public void Metod(string s)
+    {
+        Console.WriteLine(s);
+    }
+}
+```
+
+```{mchoice}
+:answer1: Програм има грешку, јер је метод Metod(int i) надјачан (предефинисан) са различитим потписом у класи B.
+:answer2: Програм има грешку, јер се b.Mетод(5) не може позвати пошто је метод Metod(int i) заклоњен у класи B.
+:answer3: Програм има грешку због b.i, јер је поље i неприступачно из класе B.
+:answer4: Програм нема грешке, јер наслеђени метод класе А, Metod(int i) није надјачан у класи B, већ је дефинисан преоптерећен метод Metod(string s).
+:correct: 4
+
+Анализирај дати кôд и одредити да ли је кôд исправно написан. Означи исказ који
+даје информацију о тачности кода.
+```
+
+## Питање 13
+
+Дефинисане су две класе:
+
+```cs
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Object a1 = new KlasaA();
+        Object a2 = new KlasaA();
+        Console.WriteLine(a1.Equals(a2));
+    }
+}
+
+class KlasaA
+{
+    int x;
+    public bool Equals(KlasaA a)
+    {
+        return this.x == a.x;
+    }
+}
+```
+
+```{mchoice}
+:answer1: Програм има грешку, јер се изразом a1.Equals(a2) проверава једнакост објеката а1 и а2 различитог типа од Object.
+:answer2: Програм има грешку, јер се једнакост објеката а1 и а2 типа KlasaА проверава изразом а1 == а2.
+:answer3: Програм се извршава без грешке и приказује се true на екрану.
+:answer4: Програм се извршава без грешке и приказује се false на екрану.
+:correct: 4
+
+Анализирај дати кôд и одредити да ли је кôд исправно написан. Означи исказ који
+даје информацију о тачности кода.
+```
+
+## Питање 14
+
+Дефинисане су две класе:
+
+```cs
+class Program
+{
+    public static void Main(string[] args)
+    {
+        KlasaA a1 = new KlasaA();
+        KlasaA a2 = new KlasaA();
+        Console.WriteLine(a1.Equals(a2));
+    }
+}
+
+class KlasaA
+{
+    int x;
+    public bool Equals(KlasaA a)
+    {
+        return this.x == a.x;
+    }
+}
+```
+
+```{mchoice}
+:answer1: Програм има грешку, јер се изразом a1.Equals(a2) проверава једнакост објеката а1 и
+а2 различитог типа од Object.
+:answer2: Програм има грешку, јер се једнакост објеката а1 и а2 типа KlasaА проверава
+изразом а1 == а2.
+:answer3: Програм се извршава без грешке и приказује се true на екрану.
+:answer4: Програм се извршава без грешке и приказује се false на екрану.
+:correct: 3
+
+Анализирај дати кôд и одредити да ли је кôд исправно написан. Означи исказ који
+даје информацију о тачности кода.
+```

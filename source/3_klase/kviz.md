@@ -153,3 +153,137 @@ Figura f = new Figura("lovac", "beli", 3);
 
 Дати су искази који дефинишу конструктор. Штиклирај тачне исказе.
 ```
+
+## Питање 10
+
+Дат је следећи кôд програма:
+
+```cs
+namespace TestPrimer
+{
+    class Test
+    {
+        int x;
+
+        public Test(string s)
+        {
+            Console.WriteLine("Klasa Test");
+        }
+
+        static void Main(string[] args)
+        {
+            Test t = null;
+            Console.WriteLine(t.x);
+        }
+    }
+}
+```
+
+```{mchoice}
+:answer1: Програм има грешку јер променљива x није иницијализована.
+:answer2: Програм има грешку јер класа Test нема подразумевани конструктор.
+:answer3: Програм има грешку јер се у некој класи не може декларисати променљива типа те исте класе, као што је то овде случај са променљивом t.
+:answer4: Програм има грешку јер променљива t није иницијализована и има вредност null у моменту када се приказује поље t.x.
+:answer5: Програм нема грешака и нормално се извршава, не приказујући ништа на екрану.
+:correct: 4
+
+Анализираj дати кôд и заокружи број испред очекиваног одговора.
+```
+
+## Питање 11
+
+Дата је дефиниција класе:
+
+```cs
+public class Test
+{
+    private int broj;
+
+    public ??? int kvadrant(int n)
+    {
+        return n * n;
+    }
+
+    public ??? int getBroj()
+    {
+        return broj;
+    }
+}
+```
+
+```{mchoice}
+:answer1: Метода kvadrant МОРА да буде статичка, док метода getBroj може и не мора.
+:answer2: Обе методе морају бити статичке.
+:answer3: Ни једна од дефинисаних метода није статичка.
+:answer4: Метода getBroj НЕ СМЕ да буде статичка, док метода kvadrant може и не мора.
+:correct: 4
+
+Проценити где у дефиницији класе (испред које методе) треба заменити знакове ???
+службеном речју static. Заокружи број испред тачне изјаве.
+```
+
+## Питање 12
+
+Дата је дефиниција класе која се састоји од два конструктора, једне методе и
+поља `x`. У дефиницији се користи службена реч `this`.
+
+```cs
+    class TestPrimer
+    {
+        public double x;
+
+        public TestPrimer(double x)
+        {
+            this.Fun();
+            this.x = x;
+        }
+
+        public TestPrimer()
+        {
+            Console.WriteLine("Podrazumevani konstruktor");
+            this(23);
+        }
+
+        public void Fun()
+        {
+            Console.WriteLine("Poziv metoda fun()");
+        }
+    }
+```
+
+```{mchoice}
+:answer1: this.Fun() у конструктору TestPrimer(double x) може се поједноставити и заменити само са Fun().
+:answer2: this.x у конструктору TestPrimer(double x) може се поједноставити и заменити само са x.
+:answer3: позив конструктора this(23) унутар другог конструктора TestPrimer() је прво шта се извршава и мора се писати одмах после декларације public TestPrimer():this(23).
+:answer4: this(23) у конструктору Test() мора се заменити са прецизнијим изразом this(23.0).
+:correct: 1,3
+
+Анализирај дати кôд и процени тачност следећих исказа. Штиклирај тачне исказе.
+```
+
+## Питање 13
+
+Дата је дефиниција класе која се састоји од два конструктора, методе и поља
+`x` и `y`. У шестом реду дефинисан је конструктор са параметрима који формира
+тачку са координатама `x` и `y`.
+
+```cs
+public class Point
+{
+    private double x, y;
+    public Point() { x = 0; y = 0; }
+    public void set(double xx, double yy) { x = xx; y = yy; }
+    public Point(double x, double y) { ______________; }
+}
+```
+
+```{mchoice}
+:answer1: this.x=x; this.y=y;
+:answer2: x=x; y=y;
+:answer3: set(x,y);
+:answer4: set(this.x,this.y);
+:answer5: x=this.x; y=this.y;
+:correct: 1,3
+
+Штиклирај наредбе којима се може допунити дефиниција конструктора.
+```

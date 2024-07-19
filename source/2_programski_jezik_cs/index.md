@@ -17,7 +17,9 @@ operatori_izrazi
 razgranata
 ciklicna
 nizovi
+nizovi_kviz
 string
+string_kviz
 liste
 nabrojivi
 struct

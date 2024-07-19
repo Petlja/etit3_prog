@@ -36,4 +36,5 @@ zadatak_typing_test
 zadatak_scq
 zadatak_mcq
 zadatak_whack_a_mole
+zadatak_vezbaj_reflekse
 ```

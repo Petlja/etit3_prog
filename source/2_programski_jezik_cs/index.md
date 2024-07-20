@@ -10,6 +10,7 @@
 uvod
 izrada_projekta
 main
+citanje_ispis
 vrednosni_tipovi
 referentni_tipovi
 konverzije_tipova

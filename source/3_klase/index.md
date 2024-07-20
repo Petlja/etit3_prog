@@ -7,20 +7,21 @@
 ```{toctree}
 :maxdepth: 1
 
-pojam_klase
-dodavanje_klase
-razlika_class_struct
-podrazumevani_konstruktor
-konstruktor_sa_parametrima
-konstruktor_kopije
-this
-enkapsulacija
-get_set
-metode
-preopterecenje_metoda
-preopterecenje_operatora
-parcijalne_klase
-parcijalne_metode
-dinamicke
+010_pojam_klase
+011_dodavanje_klase
+012_razlika_class_struct
+020_podrazumevani_konstruktor
+021_konstruktor_sa_parametrima
+022_konstruktor_kopije
+030_this
+040_enkapsulacija
+041_enkapsulacija_kviz
+050_get_set
+060_metode
+061_preopterecenje_metoda
+062_preopterecenje_operatora
+070_parcijalne_klase
+071_parcijalne_metode
+080_dinamicke
 kviz
 ```

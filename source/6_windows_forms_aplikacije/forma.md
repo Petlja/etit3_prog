@@ -6,7 +6,10 @@
 ![Аутоматски креирана форма](./images/izrada-projekta-04.png)
 
 Класа `Form` припада именском простору `System.Windows.Forms` односно, склопу
-`System.Windows.Forms.dll`.
+`System.Windows.Forms.dll`. Детаљан опис својстава, догађаја и метода класе
+`Form` налази се у званичној
+[документацији](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.form?view=netframework-4.8).
+Има их много и нема потребе наводити их све на овом месту.
 
 Величину, боју и остала својства и функције форме можеш подесити помоћу
 својстава дефинисаних у класи `Form`. Својства форме `Form1` можеш мењати у

@@ -32,7 +32,9 @@
 ```
 
 ![Задатак - Игра "Запамти реч"](./images/zadatak_memorija1.png)
+
 ![Задатак - Игра "Запамти реч"](./images/zadatak_memorija2.png)
+
 ![Задатак - Игра "Запамти реч"](./images/zadatak_memorija3.png)
 
 ## Могуће решење задатка

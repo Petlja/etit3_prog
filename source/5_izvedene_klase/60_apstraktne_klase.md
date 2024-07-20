@@ -5,7 +5,7 @@
 класама дефинише "понашање" које њихове изведене класе морају да
 имплементирају.
 
-Апстрактну класу декларишеш навођењем кључне речи `abstract` пре њене
+Апстрактну класу треба да декларишеш навођењем кључне речи `abstract` пре њене
 дефиниције. На пример:
 
 ```cs
@@ -65,7 +65,6 @@ class Program
     {
         Nastavnik n = new Nastavnik();
         Console.WriteLine(n.Ime("Velimir Radlovacki"));
-        Console.WriteLine();
         Ucenik u = new Ucenik();
         Console.WriteLine(u.Ime("Petar Petrovic"));
     }
@@ -85,7 +84,6 @@ class Program
 
 ```text
 Nastavnik: Velimir Radlovacki
-
 Ucenik: Petar Petrovic
 ```
 
@@ -139,7 +137,6 @@ class Program
         Ucenik u = new Ucenik();
         Console.WriteLine(n.Ime("Velimir Radlovacki"));
         n.Skola();
-        Console.WriteLine();
         Console.WriteLine(u.Ime("Petar Petrovic"));
         u.Skola();
     }
@@ -156,7 +153,6 @@ class Program
 Nastavnik: Velimir Radlovacki
 Skolski centar "Nikola Tesla"
 Vrsac
-
 Ucenik: Petar Petrovic
 Skolski centar "Nikola Tesla"
 Vrsac

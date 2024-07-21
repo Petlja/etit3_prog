@@ -27,5 +27,4 @@
 070_parcijalne_klase
 071_parcijalne_metode
 080_dinamicke
-kviz
 ```

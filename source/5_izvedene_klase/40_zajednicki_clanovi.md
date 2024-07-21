@@ -102,6 +102,6 @@ protected object MemberwiseClone();
 ```
 
 О плитким и дубоким копијама учио си у лекцији
-[Конструктор копије](../3_klase/konstruktor_kopije.md), а сви ови чланови класе
+[Конструктор копије](../3_klase/022_konstruktor_kopije.md), а сви ови чланови класе
 `Object` описани су детаљно у званичној
 [документацији](https://learn.microsoft.com/en-us/dotnet/api/system.object?view=netframework-4.8).

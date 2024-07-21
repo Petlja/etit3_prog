@@ -19,79 +19,84 @@
 фиксна, листа аутоматски прилагођава своју величину када се у њу додају или из
 ње уклањају елементи.
 
-У следећем примеру демонстрирана је једноставност рада са листом у програмском
-језику C#:
+Нека је задатак да креираш листу `ucenici` и у њу иницијално додаш три ученика
+чија су имена `Paja`, `Raja` и `Gaja`:
 
 ```cs
-// Креирај листу "ucenici"
-List<string> ucenici = new List<string>();
-    
-// Додај шест елемената у листу
-ucenici.Add("Ucenik 1");
-ucenici.Add("Ucenik 2");
-ucenici.Add("Ucenik 3");
-ucenici.Add("Ucenik 4");
-ucenici.Add("Ucenik 5");
-ucenici.Add("Ucenik 6");
-
-// Испиши у конзоли све елементе листе
-foreach (var ucenik in ucenici)
-    Console.WriteLine(ucenik);
-
-// Обрни редослед елемената па их испиши
-ucenici.Reverse();
-foreach (var ucenik in ucenici)
-    Console.WriteLine(ucenik);
-
-// Обрни редослед прва три елемента листе и испиши листу
-// (од елемента са индексом 0, три елемента)
-ucenici.Reverse(0, 3);
-foreach (var ucenik in ucenici)
-    Console.WriteLine(ucenik);
-
-// Убаци елемент "Ucenik X" између елемената "Ucenik 3" и "Ucenik 4"
-// и испиши листу ("Ucenik X" треба да добије индекс 3)
-ucenici.Insert(3, "Ucenik X");
-foreach (var ucenik in ucenici)
-    Console.WriteLine(ucenik);
-
-// Сортирај елементе листе и испиши листу
-ucenici.Sort();
-foreach (var ucenik in ucenici)
-    Console.WriteLine(ucenik);
-
-// Да ли се у листи налази елемент "Ucenik 3"?
-if(ucenici.Contains("Ucenik 3"))
-    Console.WriteLine("U redu se nalazi Ucenik 3");
-else
-    Console.WriteLine("U redu se ne nalazi Ucenik 3");
-
-// Креирај подлисту "prvaGrupa" у којој се налазе прва три елемента листе
-// (од елемента са индексом 0, три елемента)
-List<string> prvaGrupa = ucenici.GetRange(0, 3);
-foreach (var ucenik in prvaGrupa)
-    Console.WriteLine(ucenik);
-
-// Копирај елементе листе у низ "nizUcenika" и испиши га
-string[] nizUcenika = ucenici.ToArray();
-foreach (var ucenik in nizUcenika)
-    Console.WriteLine(ucenik);
-
-// Обриши све елементе из листе
-ucenici.Clear();
+List<string> ucenici = new List<string>() { "Paja", "Raja", "Gaja" };
 ```
 
-Значи, захваљујући дефиницији листе у класи `List<T>` у именском простору
-`System.Collections.Generic`:
+У листу можеш накндадно да додајеш ученике методом `Add()`:
 
-* методом `Add()` додајеш елемент у листу,
-* методом `Reverse()` обрћеш редослед елемената у листи,
-* методом `Insert()` умећеш елемент у листу,
-* методом `Sort()` сортираш листу,
-* методом `Contains()` провераваш да ли се одређени елемент налази у листи,
-* методом `GetRange()` узоркујеш одређени опсег елемената из листе,
-* методом `ToArray()` копираш елементе листе у низ и
-* методом `Clear()` бришеш све елементе из листе.
+```cs
+ucenici.Add("Vlaja");
+ucenici.Add("Zlaja");
+ucenici.Add("Maja");
+```
+
+У конзоли, најједноставније, можеш да испишеш све ученике са листе помоћу
+наредбе циклуса за колекције:
+
+```cs
+foreach (string ucenik in ucenici)
+    Console.WriteLine(ucenik);
+```
+
+Методом `Reverse()` можеш да обрнеш редослед ученика у листи...
+
+```cs
+ucenici.Reverse();
+```
+
+...а у параметрима методе `Reverse()` можеш да дефинишеш, на пример, обртање
+редоследа од ученика са индексом `0`, три ученика:
+
+```cs
+ucenici.Reverse(0, 3);
+```
+
+Методом `Insert();` можеш да убациш новог ученика на листу, на пример, на треће
+место на листи (индекс `2`) убаци ученика чије је име `Pera`:
+
+```cs
+ucenici.Insert(2, "Pera");
+```
+
+Методом `Sort()` једноставно се сортирају сви ученици на листи...
+
+```cs
+ucenici.Sort();
+```
+
+...а претрага се може вршити методом `Contains()`. На пример, да ли се на листи
+налази ученик чије је име `Raja`:
+
+```cs
+if(ucenici.Contains("Raja"))
+    Console.WriteLine("Nalazi se.");
+else
+    Console.WriteLine("Ne nalazi se.");
+```
+
+Подлисту можеш да креираш методом `GetRange()`, на пример, подлисту `prvaGrupa`
+у којој се налазе прва три ученика на листи:
+
+```cs
+List<string> prvaGrupa = ucenici.GetRange(0, 3);
+```
+
+Елементе листе можеш да копираш у низ, на пример елементе листе `ucenici` у низ
+`nizUcenika`:
+
+```cs
+string[] nizUcenika = ucenici.ToArray();
+```
+
+На крају, све ученике можеш да обришеш са листе методом `Clear()`:
+
+```cs
+ucenici.Clear();
+```
 
 Ако се говори о сличностима и разликама између рада са листама у програмским
 језицима C# и C, сигурно је прво запажање лакоћа коришћења листи у језику C#

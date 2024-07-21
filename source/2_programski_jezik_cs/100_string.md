@@ -63,12 +63,12 @@ string rezultat = str1 + ", " + str2 + "!";  // "Hello, World!"
 
 ```cs
 string text = "Hello, World!";
-string sub = text.Substring(7, 5);             // "World"
+string sub = text.Substring(7, 5);             // World
 int indeks = text.IndexOf('W');                // 7
-string zamenjen = text.Replace("World", "C#"); // "Hello, C#!"
-string velika = text.ToUpper();                // "HELLO, WORLD!"
-string[] reci = text.Split(' ');               // ["Hello,", "World!"]
-string spojeni = string.Join("-", reci);       // "Hello,-World!"
+string zamenjen = text.Replace("World", "C#"); // Hello, C#!
+string velika = text.ToUpper();                // HELLO, WORLD!
+string[] reci = text.Split(' ');               // reci[0] = Hello, reci[1] = World!
+string spojeni = string.Join(" ", reci);       // Hello, World!
 ```
 
 `String.Format` омогућава форматирање стрингова у шаблоне. На пример:

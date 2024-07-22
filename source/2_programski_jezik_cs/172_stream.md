@@ -1,4 +1,4 @@
-# Класе StreamWriter и StreamReader
+# Рад са токовима
 
 Поред класа `File` и `Directory` о којима си учио у претходној лекцији, за рад
 са фајловима често се користе класе `StreamWriter` и `StreamReader` које су

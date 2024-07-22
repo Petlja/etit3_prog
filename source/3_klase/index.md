@@ -18,8 +18,8 @@
 030_this
 031_kviz
 040_enkapsulacija
-041_enkapsulacija_kviz
 050_get_set
+051_enkapsulacija_kviz
 060_metode
 061_preopterecenje_metoda
 062_preopterecenje_operatora

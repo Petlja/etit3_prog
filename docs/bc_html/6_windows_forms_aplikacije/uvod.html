@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Увод &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Израда пројекта" href="izrada_projekta.html" />
+    <link rel="prev" title="Windows Forms апликације" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Увод<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>До сада си научио много о програмирању, али су све апликације које си креирао
+биле у текстуалном режиму тј. извршавале су се у командној линији или конзоли
+оперативног система, на пример у <em>Command Prompt</em>-у или <em>PowerShell</em>-у. Каже се
+да те апликације имају текстуални кориснички интерфејс, односно интерфејс
+командне линије (енгл. <em>Command Line Interface - CLI</em>). У кругу ИТ
+професионалаца <em>CLI</em> апликације се и даље свакодневно користе и представљају
+незаменљиве алате за систем администраторе и програмера. Међутим, просечан
+корисник рачунара вероватно никада неће задавати текстуалне команде оперативном
+систему, нити користити апликације у командној линији.</p>
+<p>Пре четрдесете година, 1984. године, појавио се <em>Macintosh</em>, први масовно
+комерцијално доступан рачунар са графичким корисничким интерфејсом (енгл.
+<em>Graphical User Interface - GUI</em>), а годину дана касније представљен је и
+оперативни систем <em>Windows</em> за персоналне рачунаре. Ови догађаји променили су
+начин на који корисници користе рачунаре. Задавање команди и унос података
+искључиво тастатуром замењен је радом са визуелним елементима попут икона,
+прозора, менија, дугмади и других контрола. Тако је миш, поред тастатуре,
+постао основни улазни уређај за персоналне рачунаре.</p>
+<p>Временом се графички кориснички интерфејс мењао и представљани су разни
+показивачки уређаји попут трекбола (енгл. <em>Trackball</em>), тачпеда (енгл.
+<em>Touchpad</em>), стилуса (енгл. <em>Stylus</em>) и графичких табли за цртање (енгл.
+<em>Graphics Drawing Tablet</em>). Значајан корак у развоју графичких корисничких
+интерфејса била је и појава екрана на додир (енгл. <em>Touchscreen</em>) на мобилним
+уређајима. Поред свих иновација, улепшаног дизајна, анимација и других ефеката,
+принцип рада у графичком корисничком окружењу остао је исти. Апликације се
+извршавају у прозорима. У прозорима се налазе одређене контроле попут дугмади,
+оквира за унос текста, менија итд. Интеракцијом корисника са контролама
+региструју се догађаји у оперативном систему, на пример догађај клика миша на
+дугме или догађај одабира ставке у менију.</p>
+<p>Твој задатак биће:</p>
+<ul class="simple">
+<li><p>да дефинишеш <strong>својства</strong> контрола (да дизајнираш <em>GUI</em>) и</p></li>
+<li><p>да дефинишеш <strong>догађаје</strong> контрола (да развијаш <em>GUI</em>, односно програмираш
+функционалност апликације).</p></li>
+</ul>
+<p>Погледај изглед неке једноставне <em>Windows</em> апликације, на пример Калкулатора:</p>
+<p><img alt="Калкулатор" src="../_images/calculator1.png" /></p>
+<p>У насловној линији прозора налази се икона и назив, испод ње налази се мени,
+испод њега простор за приказ бројева, па испод њега група дугмади. Ово би био
+први део задатка приликом израде <em>GUI</em> апликација који подразумева дефинисање
+својстава контрола. На пример, контрола у доњем левом углу је дугме, на којем
+је исписан текст <code class="docutils literal notranslate"><span class="pre">0</span></code>. За то дугме дефинисана је његова ширина, висина и
+координате, његова боја, фонт којим је исписан текст итд. Иако ти све ово
+изгледа једноставно у односу на <em>класично програмирање</em>, дизајн корисничког
+интерфејса и корисничког искуства (енгл. <em>UI/UX Design</em>) је важна област у
+процесу развоја апликације. Постоје случајеви да добро дизајниране апликације
+са лошом функционалношћу има више корисника него лоше дизајнирана апликација са
+одличном функционалношћу.</p>
+<p>Након постављања контрола и дефинисања њигових својстава, следи други део
+задатка - дефинисање догађаја, тј. програмирање функционалности апликације. На
+пример, ако у апликацији Калкулатор поставиш показивач мише преко дугмета <code class="docutils literal notranslate"><span class="pre">0</span></code>
+промениће се његова боја, што представља догађај постављања показивача миша
+преко контроле:</p>
+<p><img alt="Калкулатор" src="../_images/calculator2.png" /></p>
+<p>Ако кликнеш на дугме <code class="docutils literal notranslate"><span class="pre">0</span></code>, док се у простору за приказ бројева налази <code class="docutils literal notranslate"><span class="pre">0</span></code>, неће
+се десити ништа. Ако кликнеш на дугме <code class="docutils literal notranslate"><span class="pre">0</span></code>, а у простору за приказ бројева
+постоји макар једна унета цифра различита од нуле, онда ће се дописати једна
+нула, што представља догађај клика миша на контролу. Ако кликнеш десним
+тастером миша на дугме <code class="docutils literal notranslate"><span class="pre">0</span></code> неће се десити ништа, што значи да није дефинисан
+догађај десног клика миша на контролу итд.</p>
+<p>Пре него што почнеш са развојен GUI апликација, неопходно је да у развојном
+окружењу креираш адекватно решење и у оквиру њега нови пројекат, слично као што
+си то радио за CLI апликације. Када креираш нови пројекат, и први и други део
+задатка моћићеш да решаваш на више начина, што ће бити тема у наредним
+лекцијама.</p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

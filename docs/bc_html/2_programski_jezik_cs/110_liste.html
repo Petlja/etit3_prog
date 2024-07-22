@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Листе &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Енумерације" href="120_nabrojivi.html" />
+    <link rel="prev" title="Квиз" href="101_string_kviz.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Листе<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Претходне школске године радио си са листама у програмском језику C, где није
+постојао уграђени тип листе - листе си морао да имплементираш ручно коришћењем
+структура и показивача. Најчешћи тип листе којег си користио била је повезана
+листа (енгл. <em>linked list</em>), која се састоји од низа чворова где сваки чвор
+садржи податке и указивач на следећи чвор.</p>
+<p>У програмском језику C# листa представља јако типизирану листу објеката којима
+се може приступити путем индекса. Дефинисана је у класи <code class="docutils literal notranslate"><span class="pre">List&lt;T&gt;</span></code> у именском
+простору <code class="docutils literal notranslate"><span class="pre">System.Collections.Generic</span></code>, заједно са другим генеричким колекцијама
+о којима ћеш учити у IV разреду.</p>
+<p>Класа <code class="docutils literal notranslate"><span class="pre">List&lt;T&gt;</span></code> пружа бројне функционалности за рад са динамичким низовима, као
+што су: приступ елементима, додавање нових елемената, брисање елемената,
+претрага елемената и сортирање елемената. Она може да чува елементе било ког
+типа, што омогућава већу флексибилност и сигурност при раду са различитим
+типовима података. За разлику од статички алоцираних низова чија је величина
+фиксна, листа аутоматски прилагођава своју величину када се у њу додају или из
+ње уклањају елементи.</p>
+<p>Нека је задатак да креираш листу <code class="docutils literal notranslate"><span class="pre">ucenici</span></code> и у њу иницијално додаш три ученика
+чија су имена <code class="docutils literal notranslate"><span class="pre">Paja</span></code>, <code class="docutils literal notranslate"><span class="pre">Raja</span></code> и <code class="docutils literal notranslate"><span class="pre">Gaja</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ucenici</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Paja&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Raja&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gaja&quot;</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>У листу можеш накндадно да додајеш ученике методом <code class="docutils literal notranslate"><span class="pre">Add()</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">ucenici</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Vlaja&quot;</span><span class="p">);</span>
+<span class="n">ucenici</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Zlaja&quot;</span><span class="p">);</span>
+<span class="n">ucenici</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Maja&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>У конзоли, најједноставније, можеш да испишеш све ученике са листе помоћу
+наредбе циклуса за колекције:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">ucenici</span><span class="p">)</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">ucenik</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Методом <code class="docutils literal notranslate"><span class="pre">Reverse()</span></code> можеш да обрнеш редослед ученика у листи…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">ucenici</span><span class="p">.</span><span class="n">Reverse</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>…а у параметрима методе <code class="docutils literal notranslate"><span class="pre">Reverse()</span></code> можеш да дефинишеш, на пример, обртање
+редоследа од ученика са индексом <code class="docutils literal notranslate"><span class="pre">0</span></code>, три ученика:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">ucenici</span><span class="p">.</span><span class="n">Reverse</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Методом <code class="docutils literal notranslate"><span class="pre">Insert();</span></code> можеш да убациш новог ученика на листу, на пример, на треће
+место на листи (индекс <code class="docutils literal notranslate"><span class="pre">2</span></code>) убаци ученика чије је име <code class="docutils literal notranslate"><span class="pre">Pera</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">ucenici</span><span class="p">.</span><span class="n">Insert</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Pera&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Методом <code class="docutils literal notranslate"><span class="pre">Sort()</span></code> једноставно се сортирају сви ученици на листи…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">ucenici</span><span class="p">.</span><span class="n">Sort</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>…а претрага се може вршити методом <code class="docutils literal notranslate"><span class="pre">Contains()</span></code>. На пример, да ли се на листи
+налази ученик чије је име <code class="docutils literal notranslate"><span class="pre">Raja</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">ucenici</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="s">&quot;Raja&quot;</span><span class="p">))</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Nalazi se.&quot;</span><span class="p">);</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Ne nalazi se.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Подлисту можеш да креираш методом <code class="docutils literal notranslate"><span class="pre">GetRange()</span></code>, на пример, подлисту <code class="docutils literal notranslate"><span class="pre">prvaGrupa</span></code>
+у којој се налазе прва три ученика на листи:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">prvaGrupa</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenici</span><span class="p">.</span><span class="n">GetRange</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Елементе листе можеш да копираш у низ, на пример елементе листе <code class="docutils literal notranslate"><span class="pre">ucenici</span></code> у низ
+<code class="docutils literal notranslate"><span class="pre">nizUcenika</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">nizUcenika</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenici</span><span class="p">.</span><span class="n">ToArray</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>На крају, све ученике можеш да обришеш са листе методом <code class="docutils literal notranslate"><span class="pre">Clear()</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">ucenici</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Ако се говори о сличностима и разликама између рада са листама у програмским
+језицима C# и C, сигурно је прво запажање лакоћа коришћења листи у језику C#
+захваљујући обезбеђеној „подршци” у класи <code class="docutils literal notranslate"><span class="pre">List&lt;T&gt;</span></code>. Поред тога, у језику C#
+управљање меморијом је аутоматизовано захваљујући сакупљачу смећа (енгл.
+<em>garbage collector</em>), док у језику C корисник мора ручно да управља меморијом.
+Сличности су да листе у језицима C# и C омогућавају динамичко управљање
+низовима података и да могу да се користе за имплементацију различитих
+алгоритама и структура података.</p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

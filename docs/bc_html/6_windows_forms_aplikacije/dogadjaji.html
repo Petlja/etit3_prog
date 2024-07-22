@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Догађаји &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Заједничка својства, догађаји и методе" href="zajednicka.html" />
+    <link rel="prev" title="Методе" href="metode.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Догађаји<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>У <em>Windows Forms App (.NET Framework)</em> пројектима догађаји контрола
+представљају механизам помоћу којег објекти могу да комуницирају и реагују на
+разне акције корисника, као што су кликови мишем, притисци тастера и промене у
+контролама. Догађаји омогућавају динамично понашање апликације и омогућавају ти
+да дефинишеш шта треба да се деси када се одређени догађај јави.</p>
+<p>Догађаји се дефинишу унутар класа контрола и обично су повезани са делегатима
+који одређују потпис метода који ће бити позвани када се догађај активира.</p>
+<p>Догађаје контрола можеш сам „пријавити” додавањем руковаоца догађајима
+(енгл. <em>Event Handlers</em>) који ће бити позвани када се догађај догоди. На
+пример, у самом коду можеш пријавити догађај клика на форму:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHandler</span><span class="p">(</span><span class="n">frmGlavna_Click</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Руковаоци догађајима су методе које се извршавају када се догађај активира.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">frmGlavna_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Кликнуто је на форму!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Приваљивање догађаја додавањем руковаоца догађаја обично се врши за динамички
+креиране контроле, о чему ће више бити речи у последњој лекцији. За контроле
+креиране у дизајнеру, догађаји се једноставно дефинишу у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору,
+као што си то радио у лекцији <a class="reference internal" href="forma.html"><span class="std std-doc">Форма</span></a>:</p>
+<ul class="simple">
+<li><p>прво треба да одабереш контролу,</p></li>
+<li><p>потом у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору кликнеш на дугме <code class="docutils literal notranslate"><span class="pre">Events</span></code> са иконом грома <code class="docutils literal notranslate"><span class="pre">🗲</span></code> и</p></li>
+<li><p>двапут кликнеш у поље поред догађаја којег желиш да дефинише (или у пољу поред
+догађаја одабереш име руковаоца догађаја, ако си га мануелно написао).</p></li>
+</ul>
+<p>Ако више не желиш да одређени метод обрађује догађај, можеш га уклонити у
+самом коду:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHandler</span><span class="p">(</span><span class="n">frmGlavna_Click</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ако креираш неку прилагођену контролу, онда можеш дефинисати и своје догађаје
+за ту прилагођену контролу:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MojaKontrola</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Control</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">event</span><span class="w"> </span><span class="n">EventHandler</span><span class="w"> </span><span class="n">MojDogadjaj</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">NaMojDogadjaj</span><span class="p">(</span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MojDogadjaj</span><span class="o">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">PokreniDogadjaj</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">NaMojDogadjaj</span><span class="p">(</span><span class="n">EventArgs</span><span class="p">.</span><span class="n">Empty</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Тако дефинисан прилагођени догађај за прилагођену контролу можеш пријавити
+након креирања примерка контроле…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">MojaKontrola</span><span class="w"> </span><span class="n">mojaKontrola</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MojaKontrola</span><span class="p">();</span>
+<span class="n">mojaKontrola</span><span class="p">.</span><span class="n">MojDogadjaj</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHandler</span><span class="p">(</span><span class="n">mojaKontrola_MojDogadjaj</span><span class="p">);</span>
+
+<span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">mojaKontrola_MojDogadjaj</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Догађај је покренут!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…и касније покренути:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">mojaKontrola</span><span class="p">.</span><span class="n">PokreniDogadjaj</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Догађаји контрола су моћан алат који омогућавају апликацијама да реагују на
+корисничке акције и друге промене у окружењу апликације - односно да
+имплементирају интерактивност.</p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Дугме &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Оквир за слику" href="okvir_za_sliku.html" />
+    <link rel="prev" title="Лабела" href="labela.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Дугме<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Контрола дугме (енгл. <em>Button</em>) дефинисана је у класи <code class="docutils literal notranslate"><span class="pre">Button</span></code> која се налази у
+именском простору <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code>, односно склопу
+<code class="docutils literal notranslate"><span class="pre">System.Windows.Forms.dll</span></code>. Класа <code class="docutils literal notranslate"><span class="pre">Button</span></code> наслеђује класу <code class="docutils literal notranslate"><span class="pre">ButtonBase</span></code> која
+наслеђује класу <code class="docutils literal notranslate"><span class="pre">Control</span></code>, па због тога дугме има основна својства, догађаје и
+методе као и остале контроле у <em>Windows Forms App</em> пројектима.</p>
+<p>Детаљан опис својстава, догађаја и метода класе <code class="docutils literal notranslate"><span class="pre">Button</span></code> налази се у званичној
+<a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.button?view=netframework-4.8">документацији</a>.
+Има их много и нема потребе наводити их све на овом месту.</p>
+<p>Дугме представља једну од основних контрола у десктоп апликацијама. Можеш га
+користити за обављање многих радњи у складу са захтевима. Својствима дугмета
+можеш детаљно дефинисати изглед и положај дугмета на форми. Неке од основних
+својстава дугмета која ћеш често користити су:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Text</span></code>. Одређује текст у контроли.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TextAlign</span></code>. Одређује поравнање текста унутар контроле.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Enabled</span></code>. Одређује да ли је дугме омогућено за интеракцију.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BackColor</span></code> и <code class="docutils literal notranslate"><span class="pre">ForeColor</span></code>. Одређује боју текста и боју позадине текста.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FlatStyle</span></code>. Одређује визуелни стил приказа дугмета.</p></li>
+</ul>
+<p>Дугме учествује у редоследу картица (енгл. <em>TAB order</em>) у којем добија свој
+индекс (<code class="docutils literal notranslate"><span class="pre">TabIndex</span></code>) и фокус (<code class="docutils literal notranslate"><span class="pre">TabStop</span></code>), па према томе, дугме може да се кликне
+мишем, а ако је у фокусу, тастерима <code class="docutils literal notranslate"><span class="pre">ENTER</span></code> и <code class="docutils literal notranslate"><span class="pre">SPACE</span></code>.</p>
+<p>Најчешћи догађај дугмета је догађај клика мишем <code class="docutils literal notranslate"><span class="pre">Click</span></code>, а доступни су и сви
+остали догађаји. Пример коришћења дугмета на форми може бити апликација из
+претходне лекције…</p>
+<p><img alt="Пример употребе контроле лабела" src="../_images/labela-primer-upotrebe2.png" /></p>
+<p>…где је у четвртом оквиру за групу постављено шест дугмади, а дугмад су
+постављена и у доњем десном углу апликације.</p>
+<p>Нека је задатак да креираш Windows Forms Apps (.NET Framework) пројекат са
+једном формом димензија 320×240 која нема оквире нити дугмад Minimize, Maximize
+и Close у горњем десном углу. На форму треба да поставиш:</p>
+<ul class="simple">
+<li><p>једну лабелу са текстом <strong>Да ли волиш програмирање?</strong></p></li>
+<li><p>једно дугме са текстом <strong>Да</strong> и</p></li>
+<li><p>једно дугме са текстом <strong>Не</strong>.</p></li>
+</ul>
+<p>Положај, величину, изглед и визуелни стил приказа дугмади одреди сам. Кликом
+на дугме <strong>Да</strong> у дну треба да се прикаже лабела са текстом
+<strong>Посети <code class="docutils literal notranslate"><span class="pre">www.petlja.org</span></code>!</strong> и дугме са текстом <strong>Затвори</strong>. Кликом на дугме
+<strong>Не</strong> треба да искочи порука са текстом <strong>Погрешан одговор!</strong>, а кликом на
+приказано дугме са текстом <strong>Затвори</strong>, апликација треба да се затвори.</p>
+<section id="id2">
+<h2>Креирање и постављање својстава дугмади дизајнером<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Форма са иницијално постављеним контролама може да изгледа на пример овако:</p>
+<p><img alt="Контрола дугме" src="../_images/button-01.png" /></p>
+<p>Обрати пажњу да је на слици у фокусу прво дугме, јер је његов <code class="docutils literal notranslate"><span class="pre">TabIndex</span></code>
+постављен на <code class="docutils literal notranslate"><span class="pre">1</span></code>. Притиском на тастер <code class="docutils literal notranslate"><span class="pre">TAB</span></code> на тастатури фокус прелази на друго
+дугме чији је <code class="docutils literal notranslate"><span class="pre">TabIndex</span></code> постављен на <code class="docutils literal notranslate"><span class="pre">2</span></code>. Пошто апликација нема дугме <code class="docutils literal notranslate"><span class="pre">Close</span></code>
+у горњем десном углу, можеш је затворити комбинацијом тастера <code class="docutils literal notranslate"><span class="pre">ALT</span></code> и <code class="docutils literal notranslate"><span class="pre">F4</span></code>.</p>
+<p>Постави испод и лабелу са текстом <strong>Посети <code class="docutils literal notranslate"><span class="pre">www.petlja.org</span></code>!</strong> и дугме са
+текстом <strong>Затвори</strong>, па њихова својства <code class="docutils literal notranslate"><span class="pre">Visible</span></code> постави на <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Кликом на прво дугме потребно је да прикажеш постављену лабелу и дугме.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnDa_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">lblPosetiPetlju</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">True</span><span class="p">;</span>
+<span class="w">    </span><span class="n">btnIzlaz</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">True</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Сада ће апликација изгледати овако након клика на прво дугме:</p>
+<p><img alt="Контрола дугме" src="../_images/button-02.png" /></p>
+<p>На крају, потребно је да дефинишеш догађај клика на дугме са текстом
+<strong>Затвори</strong>…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BtnIzlaz_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Application</span><span class="p">.</span><span class="n">Exit</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…и да реализујеш испис поруке са текстом <strong>Погрешан одговор!</strong> када се кликне
+на дугме <strong>Не</strong>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnNe_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Погрешан одговор!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>На контроли <code class="docutils literal notranslate"><span class="pre">Button</span></code> уместо текста можеш да прикажеш слику користећи својсво
+<code class="docutils literal notranslate"><span class="pre">Image</span></code>. Потребно је да кликнеш на дугме, па у својсву <code class="docutils literal notranslate"><span class="pre">Image</span></code> кликнеш на
+три тачке <code class="docutils literal notranslate"><span class="pre">...</span></code>. Слику можеш да одабереш из фајла или из ресурса.</p>
+<p>Нека је задатак да текст <code class="docutils literal notranslate"><span class="pre">Да</span></code> и <code class="docutils literal notranslate"><span class="pre">Не</span></code> заменим сликама:</p>
+<p><img alt="Да" src="../_images/da.png" /><img alt="Не" src="../_images/ne.png" /></p>
+<p>Кликни на прво дугме, обриши текст из својства <code class="docutils literal notranslate"><span class="pre">Text</span></code>, својство <code class="docutils literal notranslate"><span class="pre">BackColor</span></code>
+постави на <code class="docutils literal notranslate"><span class="pre">White</span></code>, па у својству <code class="docutils literal notranslate"><span class="pre">Image</span></code> кликни на три тачке <code class="docutils literal notranslate"><span class="pre">...</span></code>.</p>
+<p><img alt="Контрола дугме" src="../_images/panel-1.png" />!</p>
+<p>Одабери <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">Resource</span></code>, па кликни на <code class="docutils literal notranslate"><span class="pre">Import</span></code> и одабери слику <code class="docutils literal notranslate"><span class="pre">da.png</span></code> и
+кликни <code class="docutils literal notranslate"><span class="pre">OK</span></code>.</p>
+<p><img alt="Контрола дугме" src="../_images/button-03.png" /></p>
+<p>Сада је дугме потпуно променило изглед:</p>
+<p><img alt="Контрола дугме" src="../_images/button-04.png" /></p>
+<p>Исто уради и за друго дугме:</p>
+<p><img alt="Контрола дугме" src="../_images/button-05.png" /></p>
+<p>Слика на дугмету може бити постављена и путем својства <code class="docutils literal notranslate"><span class="pre">BackgroundImage</span></code>, где
+се касније својством <code class="docutils literal notranslate"><span class="pre">BackgroundImageLayout</span></code> може дефинисати распоред
+приказивања позадинске слике:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Tile</span></code>: поплочај,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Stetch</span></code>: развуци,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Center</span></code>: центрирај и</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Zoom</span></code>: развуци пропорционално.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Интерфејси &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Квиз" href="81_interfejsi_kviz.html" />
+    <link rel="prev" title="Квиз" href="71_apstraktne_zapecacene_kviz.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Интерфејси<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Интерфејси представљају један од важних концепата објектно-оријентисаног
+програмирања. Можеш их посматрати као потпуно апстрактне класе чији су сви
+чланови апстрактни и јавни. Интерфејси садрже дефиниције за групу повезаних
+функционалности које класе морају да имплементирају. Каже се и да интерфејси
+представљају „уговоре” којe класе морају да имплементирају.</p>
+<p>Интерфејси садрже само дефиниције својих чланова, а не и њихову имплементацију,
+што је основни концепт рада са интерфејсима. Они не садрже никаква поља, па ни
+статичка. Не садрже ни конструкторе, ни деструкторе тј. финализаторе. Пошто су
+сви чланови интерфејса јавни, у интерфејсу не смеш користити модификаторе
+приступа. На крају, у интерфејсу не смеш дефинисати никакве типове.</p>
+<p>Назив интерфејса мора бити валидан идентификатор, а по конвенцији, треба да
+почне великим словом <code class="docutils literal notranslate"><span class="pre">I</span></code>. Да би декларисао интерфејс, уместо кључне речи
+<code class="docutils literal notranslate"><span class="pre">class</span></code>, треба да користиш кључну реч <code class="docutils literal notranslate"><span class="pre">interface</span></code>. На пример:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">interface</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У овом интерфејсу декларисана је метода <code class="docutils literal notranslate"><span class="pre">Ime()</span></code> без модификатора приступа, где
+је тело методе замењено знаком <code class="docutils literal notranslate"><span class="pre">;</span></code>. Пошто интерфејси не садрже конструкторе, из
+њих не можеш директно инцанцирати објекте! Интерфејсе можеш користити само за
+извођење класа или других интерфејса. На пример, класа која наслеђује интерфејс
+<code class="docutils literal notranslate"><span class="pre">IOsoba</span></code> може да изгледа овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Osoba</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Значи, класа <code class="docutils literal notranslate"><span class="pre">Osoba</span></code> има имплементиран интерфејс <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code>, што значи да
+наслеђује интерфејс <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code> и имплементира све чланове интерфејса <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code>.</p>
+<p>Када креираш класу која имплементира интерфејс, у класи мораш креирати методе
+које одговарају методама дефинисаним у интерфејсу, где: метода у класи мора
+бити јавна, јер су све методе у интерфејсу имплицитно јавне; тип вредности коју
+враћа метода мора одговарати типу методе у интерфејсу; назив методе мора
+одговарати називу у интерфејсу; параметри у методи, ако постоје, морају
+одговарати параметрима у методи у интерфејсу.</p>
+<p>Поред метода, интерфејси могу да садрже и својства, индексере и догађаје. Ако
+интерфејс садржи својство, класа мора реализовати бар једну од метода <code class="docutils literal notranslate"><span class="pre">get</span></code> или
+<code class="docutils literal notranslate"><span class="pre">set</span></code>. Сви чланови интефејса су имплицитно јавни, апстрактни и виртуелни.</p>
+<p>Нека је задатак да креираш интерфејс <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code> са методом <code class="docutils literal notranslate"><span class="pre">Ime()</span></code> и класе које
+<code class="docutils literal notranslate"><span class="pre">Nastavnik</span></code> и <code class="docutils literal notranslate"><span class="pre">Ucenik</span></code> које морају да имплементирају тај интерфејс. То може да
+изгледа, на пример овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">interface</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Nastavnik</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ucenik: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Ucenik</span><span class="p">:</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Nastavnik: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Ucenik</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ucenik</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">Ime</span><span class="p">(</span><span class="s">&quot;Petar Petrovic&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="n">Nastavnik</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Nastavnik</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">Ime</span><span class="p">(</span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У овом једноставном примеру обе класе имплеменирале су интерфејс <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code> према
+наведеним правилима - метода <code class="docutils literal notranslate"><span class="pre">Ime()</span></code> јесте јавна, тип вредности <code class="docutils literal notranslate"><span class="pre">string</span></code> коју
+враћа метода <code class="docutils literal notranslate"><span class="pre">Ime()</span></code> одговара типу методе у интерфејсу, име методе <code class="docutils literal notranslate"><span class="pre">Ime()</span></code>
+одговара имену методе у интерфејсу и параметар у методи <code class="docutils literal notranslate"><span class="pre">string</span> <span class="pre">ime</span></code> одговара
+параметру у методи у интерфејсу.</p>
+<section id="id2">
+<h2>Надјачавање имплементираних метода<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Ако у изведеној класи треба да надјачаш методу базне класе, која је у базној
+класи имплементирана интерфејсом, онда ту методу у базној класи требаш
+прогласити виртуелном, а у изведеној класи надјачаном. На пример:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">interface</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Osoba</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Nastavnik</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Osoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Nastavnik: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Osoba</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Osoba</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">o</span><span class="p">.</span><span class="n">Ime</span><span class="p">(</span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="n">Nastavnik</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Nastavnik</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">Ime</span><span class="p">(</span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У овом једноставном примеру, виртуелна метода <code class="docutils literal notranslate"><span class="pre">Ime()</span></code> објекта <code class="docutils literal notranslate"><span class="pre">o</span></code> вратиће само
+вредност свог аргумента тј. <code class="docutils literal notranslate"><span class="pre">Velimir</span> <span class="pre">Radlovacki</span></code>, док ће метода <code class="docutils literal notranslate"><span class="pre">Ime()</span></code> објекта
+<code class="docutils literal notranslate"><span class="pre">n</span></code>, којом је надјачана, вратити стринг <code class="docutils literal notranslate"><span class="pre">Nastavnik:</span></code> спојен са вредношћу свог
+аргумента, тј. <code class="docutils literal notranslate"><span class="pre">Nastavnik:</span> <span class="pre">Velimir</span> <span class="pre">Radlovacki</span></code>.</p>
+</section>
+<section id="id3">
+<h2>Наслеђивање са имплементацијом интерфејса<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Ако класу изводиш из друге класе уз имплементацију интефејса, након двотачке
+треба да наведеш базну класу, па запету, па базни интерфејс.</p>
+<p>Нека класа <code class="docutils literal notranslate"><span class="pre">Osoba</span></code> имплементира интерфејс <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code> и нека класа <code class="docutils literal notranslate"><span class="pre">Nastavnik</span></code>
+наслеђује класу <code class="docutils literal notranslate"><span class="pre">Osoba</span></code> са имплементираним интерфејсом <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code>. На пример,
+овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">interface</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Osoba</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Nastavnik</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Osoba</span><span class="p">,</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">ImeNastavnika</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">imeNastavnika</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Nastavnik: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">imeNastavnika</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Nastavnik</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Nastavnik</span><span class="p">();</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">n</span><span class="p">.</span><span class="n">Ime</span><span class="p">(</span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">));</span>
+<span class="w">        </span><span class="n">n</span><span class="p">.</span><span class="n">ImeNastavnika</span><span class="p">(</span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Приликом дефиниције класе <code class="docutils literal notranslate"><span class="pre">Nastavnik</span></code>, прво је наведен назив класе <code class="docutils literal notranslate"><span class="pre">Nastavnik</span></code>,
+па двотачка, па базна класа <code class="docutils literal notranslate"><span class="pre">Osoba</span></code>, па запета, па базни интерфејс <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code>.
+Објекат <code class="docutils literal notranslate"><span class="pre">n</span></code> класе <code class="docutils literal notranslate"><span class="pre">Nastavnik</span></code> може да користи јавну методу <code class="docutils literal notranslate"><span class="pre">Ime()</span></code> која је
+наслеђена из класе <code class="docutils literal notranslate"><span class="pre">Osoba</span></code>, а имплементирана на основу дефиниције у интерфејсу
+<code class="docutils literal notranslate"><span class="pre">IOsoba</span></code>.</p>
+</section>
+<section id="id4">
+<h2>Наслеђивање међу интерфејсима<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Интерфејси могу наслеђивати друге интерфејсе. У следећем примеру…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">interface</span><span class="w"> </span><span class="n">IJmbg</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Jmbg</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">jmbg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">interface</span><span class="w"> </span><span class="n">IOsoba</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IJmbg</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Osoba</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IOsoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Jmbg</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">jmbg</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">jmbg</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…класа <code class="docutils literal notranslate"><span class="pre">Osoba</span></code> имплементира интерфејс <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code> који наслеђује интерфејс
+<code class="docutils literal notranslate"><span class="pre">IJmbg</span></code>. То значи да у класи <code class="docutils literal notranslate"><span class="pre">Osoba</span></code> мораш имплементирати све што је дефинисано
+интрефејсом <code class="docutils literal notranslate"><span class="pre">IOsoba</span></code> и све што је дефинисано интерфејсом <code class="docutils literal notranslate"><span class="pre">IJmbg</span></code>.</p>
+</section>
+<section id="id5">
+<h2>Вишеструка имплементација интерфејса<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>У ранијим лекцијама напоменуто је да програмски језик C# не подржава вишеструко
+наслеђивање, што је тачно када се говори о наслеђивању класа. Међутим,
+програмски језик C# подржава вишеструко наслеђивање интерфејса, шо значи да у
+једној класи можеш имплементирати више интерфејса.</p>
+<p>На пример, за наставнике су битни подаци име и ЈМБГ, а за ученике име, ЈМБГ и
+ЈОБ (јединствени образовни број). Наставници немају додељен ЈОБ, али ученици
+морају да имају додељен ЈОБ. У оваквој ситуацији могу се дефинисати три
+интерфејса <code class="docutils literal notranslate"><span class="pre">IIme</span></code>, <code class="docutils literal notranslate"><span class="pre">IJmbg</span></code> и <code class="docutils literal notranslate"><span class="pre">IJob</span></code>. Прва два ће се имплементирати у класи
+<code class="docutils literal notranslate"><span class="pre">Nastavnik</span></code>, односно, сва три ће се имплементирати у класи <code class="docutils literal notranslate"><span class="pre">Ucenik</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">interface</span><span class="w"> </span><span class="n">IIme</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">interface</span><span class="w"> </span><span class="n">IJmbg</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Jmbg</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">jmbg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">interface</span><span class="w"> </span><span class="n">IJob</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="nf">Job</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">job</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Nastavnik</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IIme</span><span class="p">,</span><span class="w"> </span><span class="n">IJmbg</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Jmbg</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">jmbg</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">jmbg</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Ucenik</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IIme</span><span class="p">,</span><span class="w"> </span><span class="n">IJmbg</span><span class="p">,</span><span class="w"> </span><span class="n">IJob</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Ime</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Jmbg</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">jmbg</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">jmbg</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">Job</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">job</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">job</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Из свега наученог у овој лекцији можеш закључити да су интерфејси у програмском
+језику C# одличан алат за стварање добро структурираног и одрживог кода. Они
+омогућавају одвајање дефиниције од имплементације, што доприноси бољој
+модуларности и поновној употреби кода.</p>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Рад са текстуалним фајловима &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Рад са токовима" href="172_stream.html" />
+    <link rel="prev" title="Фајлови и директоријуми" href="170_fajlovi_direktorijumi.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Рад са текстуалним фајловима<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Oсновне операције за рад са текстуалним фајловима могу се реализовати помоћу
+метода из класе <code class="docutils literal notranslate"><span class="pre">File</span></code> из именског простора <code class="docutils literal notranslate"><span class="pre">System.IO</span></code>.</p>
+<p>Метода <code class="docutils literal notranslate"><span class="pre">WriteAllText</span></code> креира нови фајл, уписује задати текст у фајл и затвара
+фајл. Ако фајл већ постоји, онда ће се његов садржај обрисати, а уписаће се
+задати текст. Метода <code class="docutils literal notranslate"><span class="pre">ReadAllText</span></code> отвара фајл, учитава цео текст из фајла у
+стринг и затвара фајл.</p>
+<p>Нека је задатак да се упише текст <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> у фајл <code class="docutils literal notranslate"><span class="pre">MojFajl.txt</span></code> који се
+налази у истом директоријуму где се налази и извршни фајл апликације, па након
+тога из фајла <code class="docutils literal notranslate"><span class="pre">MojFajl.txt</span></code> прочита уписани текст и испише у конзоли:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">tekstZaUpis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">File</span><span class="p">.</span><span class="n">WriteAllText</span><span class="p">(</span><span class="s">&quot;MojFajl.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">tekstZaUpis</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">procitanTekst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllText</span><span class="p">(</span><span class="s">&quot;MojFajl.txt&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">procitanTekst</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Метода <code class="docutils literal notranslate"><span class="pre">WriteAllLines</span></code> креира нови фајл, уписује низ стрингова у фајл и затвара
+фајл. Сваки елемент низа стрингова уписује се у нову линију фајла, тј. нови
+ред. Метода <code class="docutils literal notranslate"><span class="pre">ReadAllLines</span></code> отвара фајл, учитава све линије (редове) у елементе
+низа стрингова и затвара фајл.</p>
+<p>Нека је сада задатак да се у првој линији фајла <code class="docutils literal notranslate"><span class="pre">Podaci.txt</span></code> упише твоје име и
+презиме, у другој адреса твоје електронске поште и у трећој твој број телефона.
+Фајл треба да буде у претходно креираном директоријуму <code class="docutils literal notranslate"><span class="pre">C:\Imenik\</span></code>. Након тога
+све уписане линије треба да се испишу у конзоли:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">linijeZaUpis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s">&quot;velimir.radlovacki@teslavs.edu.rs&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s">&quot;+38113830668&quot;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">        </span><span class="n">File</span><span class="p">.</span><span class="n">WriteAllLines</span><span class="p">(</span><span class="s">@&quot;C:\Imenik\Podaci.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">linijeZaUpis</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">procitaneLinije</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllLines</span><span class="p">(</span><span class="s">@&quot;C:\Imenik\Podaci.txt&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">linija</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">procitaneLinije</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">linija</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У овом задатку, приликом навођења апсолутне путање, испред наводника користи се
+карактер <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, јер се у свакој апсолутној путањи налази бар један карактер <code class="docutils literal notranslate"><span class="pre">\</span></code>.
+Такође, требаш водити рачуна да методе за рад са фајловима неће креирати
+директоријуме. На пример, да директоријум <code class="docutils literal notranslate"><span class="pre">C:\Imenik\</span></code> није претходно креиран,
+јавила би се грешка:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Unhandled Exception: System.IO.DirectoryNotFoundException: Could not find a part of the path &#39;C:\Imenik\Podaci.txt&#39;.
+</pre></div>
+</div>
+<p>Интересантне методе из класе <code class="docutils literal notranslate"><span class="pre">File</span></code> су и метода <code class="docutils literal notranslate"><span class="pre">AppendAllText</span></code> која додаје
+текст у фајл и затвара фајл и метода <code class="docutils literal notranslate"><span class="pre">AppendAllLines</span></code> која додаје низ стрингова
+у фајл и затвара фајл. Ако фајл не постоји биће креиран.</p>
+<p>Нека је сада задатак да се у фајл <code class="docutils literal notranslate"><span class="pre">C:\Imenik\Podaci.txt</span></code> дода и твоја адреса
+становања, па у конзоли испишу све уписане линије:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">adresaStana</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sterijina 40, Vrsac 26300&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">File</span><span class="p">.</span><span class="n">AppendAllText</span><span class="p">(</span><span class="s">@&quot;C:\Imenik\Podaci.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">adresaStana</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">procitaneLinije</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">.</span><span class="n">ReadAllLines</span><span class="p">(</span><span class="s">@&quot;C:\Imenik\Podaci.txt&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">linija</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">procitaneLinije</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">linija</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>До сада си научио да користиш свега неколико од мноштва метода из класе <code class="docutils literal notranslate"><span class="pre">File</span></code>.
+Доступне су и методе за креирање, брисање и померање фајлова, методе за
+шифровање и дешифровање фајлова и методе за рад са атрибутима и осталим
+метаподацима фајлова у фајл систему.</p>
+<p>Комплетан списак свих типова који омогућавају читање и писање у фајлове и
+токове података и типове који пружају основну подршку за фајлове и
+директоријуме можеш пронаћи у званичној
+<a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.io?view=netframework-4.8">документацији</a>.</p>
+<section id="id2">
+<h2>Основне операције за рад са директоријумима<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Неке основне операције за рад са директоријумима могу се реализовати помоћу
+метода из класа <code class="docutils literal notranslate"><span class="pre">File</span></code>, <code class="docutils literal notranslate"><span class="pre">Directory</span></code> и <code class="docutils literal notranslate"><span class="pre">DirectoryInfo</span></code> из именског простора
+<code class="docutils literal notranslate"><span class="pre">System.IO</span></code>.</p>
+<p>Метода <code class="docutils literal notranslate"><span class="pre">EnumerateFiles</span></code> враћа имена фајлова са путањом која одговарају
+критеријуму за претрагу.</p>
+<p>На пример, нека је потребно да се у конзоли испишу путање до свих фајлова са
+екстензијом <code class="docutils literal notranslate"><span class="pre">txt</span></code> који се налазе у директоријуму <code class="docutils literal notranslate"><span class="pre">C:\Imenik</span></code> креираном у
+претходном задатку:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">txtEkstenzije</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Directory</span><span class="p">.</span><span class="n">EnumerateFiles</span><span class="p">(</span><span class="s">@&quot;C:\Imenik&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*.txt&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">putanja</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">txtEkstenzije</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">putanja</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Метода <code class="docutils literal notranslate"><span class="pre">EnumerateDirectories</span></code> враћа имена директоријума са путањом која
+одговарају критеријуму за претрагу.</p>
+<p>Нека је задатак исписати све директоријуме који се налазе у кореном
+директоријуму <code class="docutils literal notranslate"><span class="pre">C:\</span></code>.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">direktorijumiC</span><span class="o">=</span><span class="w"> </span><span class="n">Directory</span><span class="p">.</span><span class="n">EnumerateDirectories</span><span class="p">(</span><span class="s">@&quot;C:\&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">direktorijum</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">direktorijumiC</span><span class="p">)</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">direktorijum</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Интересантне су и методе <code class="docutils literal notranslate"><span class="pre">Exists</span></code>, која одређује да ли задати директоријум
+постоји и <code class="docutils literal notranslate"><span class="pre">CreateDirectory</span></code>, која креира задати директоријум.</p>
+<p>У другом примеру у овој лекцији упозорен си да методе за рад са фајловима неће
+креирати наведене директоријуме у путањи до фајла, већ да ће доћи до грешке ако
+директоријуми не постоје. То значи да би била добра пракса да се прво провери
+да ли директоријуми постоје, па ако не постоје да се креирају. Нека је задатак
+да се провери да ли постоји директоријум <code class="docutils literal notranslate"><span class="pre">C:\Imenik</span></code>, па ако не постоји да се
+креира и у оба случаја да се пошаљу поруке у конзоли.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Directory</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="s">@&quot;C:\Imenik&quot;</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">@&quot;Direktorijum C:\Imenik vec postoji!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Directory</span><span class="p">.</span><span class="n">CreateDirectory</span><span class="p">(</span><span class="s">@&quot;C:\Imenik&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">@&quot;Direktorijum C:\Imenik je uspesno kreiran!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Овај задатак може се решити и помоћу метода <code class="docutils literal notranslate"><span class="pre">Exists</span></code> и <code class="docutils literal notranslate"><span class="pre">Create</span></code> из класе
+<code class="docutils literal notranslate"><span class="pre">DirectoryInfo</span></code>.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">DirectoryInfo</span><span class="w"> </span><span class="n">direktorijum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DirectoryInfo</span><span class="p">(</span><span class="s">@&quot;c:\Imenik&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">direktorijum</span><span class="p">.</span><span class="n">Exists</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">@&quot;Direktorijum C:\Imenik vec postoji!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">direktorijum</span><span class="p">.</span><span class="n">Create</span><span class="p">();</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">@&quot;Direktorijum C:\Imenik je uspesno kreiran!&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

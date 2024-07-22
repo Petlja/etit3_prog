@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Конверзије типова &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Референтни типови података" href="042_referentni_tipovi.html" />
+    <link rel="prev" title="Вредносни типови података" href="040_vrednosni_tipovi.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Конверзије типова<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>У програмском језику C# могуће је вршити конверзије између било која два
+нумеричка типа - имплицитно или експлицитно. Експлицитне конверзије врше се
+каст изразима (енгл. <em>Cast Expression</em>) облика <code class="docutils literal notranslate"><span class="pre">(T)E</span></code>, где је <code class="docutils literal notranslate"><span class="pre">E</span></code> израз, а <code class="docutils literal notranslate"><span class="pre">T</span></code>
+жељени тип. На пример:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">12.345</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">x</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">y</span><span class="p">);</span><span class="w">    </span><span class="c1">// 12</span>
+</pre></div>
+</div>
+<section id="id2">
+<h2>Имплицитне конверзије<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>У следећој табели приказане су све предефинисане имплицитне конверзије између
+нумеричких типова:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>из</p></th>
+<th class="head"><p>у</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">decimal</span></code> или <code class="docutils literal notranslate"><span class="pre">nint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">byte</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">decimal</span></code>, <code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">short</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">decimal</span></code> или <code class="docutils literal notranslate"><span class="pre">nint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ushort</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">decimal</span></code>, <code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">decimal</span></code> или <code class="docutils literal notranslate"><span class="pre">nint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">uint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">decimal</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code> или <code class="docutils literal notranslate"><span class="pre">decimal</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ulong</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code> или <code class="docutils literal notranslate"><span class="pre">decimal</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code> или <code class="docutils literal notranslate"><span class="pre">decimal</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code> или <code class="docutils literal notranslate"><span class="pre">decimal</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Ако се у програму врше имплицитне конверзије, онда требаш водити рачуна о
+губитку прецизности. Имплицитне конверзије из типова <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code> у тип <code class="docutils literal notranslate"><span class="pre">float</span></code>, односно из типова <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code>,
+<code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code> у тип <code class="docutils literal notranslate"><span class="pre">double</span></code> могу да доведу до губитка прецизности, али не
+и до губитка реда величине. На пример:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1234554321</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">y</span><span class="p">);</span><span class="w">    </span><span class="c1">// 1.234554E+09</span>
+</pre></div>
+</div>
+<p>Остале имплицитне конверзије не могу да доведу до губитка прецизности.</p>
+<p>У програмском језику C# нису дефинисане имплицитне конверзије у типове <code class="docutils literal notranslate"><span class="pre">byte</span></code> и
+<code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, као ни имплицитне конверзије из типова <code class="docutils literal notranslate"><span class="pre">double</span></code> и <code class="docutils literal notranslate"><span class="pre">decimal</span></code>. Нису
+дефинисане ни имплицитне конверзије између типа <code class="docutils literal notranslate"><span class="pre">decimal</span></code> и типова <code class="docutils literal notranslate"><span class="pre">float</span></code> и
+<code class="docutils literal notranslate"><span class="pre">double</span></code>.</p>
+</section>
+<section id="id3">
+<h2>Експлицитне конверзије<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>У следећој табели приказане су све предефинисане експлицитне конверзије између
+нумеричких типова, за које нису дефинисане имплицитне конверзије:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>из</p></th>
+<th class="head"><p>у</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">byte</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">short</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ushort</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code> или <code class="docutils literal notranslate"><span class="pre">short</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">uint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code> или <code class="docutils literal notranslate"><span class="pre">nint</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">long</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ulong</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">decimal</span></code>, <code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">double</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">decimal</span></code>, <code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">decimal</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>, <code class="docutils literal notranslate"><span class="pre">nint</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code> или <code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nuint</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sbyte</span></code>, <code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code> или <code class="docutils literal notranslate"><span class="pre">nint</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Експлицитне конверзије могу да доведу до губитка података или грешака
+„преливања”, ако тип који се конвертује (изворни тип) није у опсегу типа у који
+се конвертује (одредишни тип). Ако је изворни тип већи од одредишног, онда се
+изворна вредност скраћује одбацивањем њених додатних најважнијих битова. Ако је
+изворни тип мањи од одредишног, онда се изворна вредност проширује или знаком
+или нулама, тако да одговара величини одредишног типа. Ако је изворни тип исте
+величине као и одредишни, онда се изворна вредност третира као одредишна
+вредност.</p>
+<p>Ако се тип <code class="docutils literal notranslate"><span class="pre">decimal</span></code> конвертује у неки целобројни тип, изворна вредност се
+заокружује. Ако је заокружена изворна вредност ван опсега одредишне вредности
+долази до грешке преливања. Ако се типови <code class="docutils literal notranslate"><span class="pre">float</span></code> или <code class="docutils literal notranslate"><span class="pre">double</span></code> конвертују у
+неки целобројни тип, изворна вредност се такође заокружује. Ако је заокружена
+изворна вредност ван опсега одредишне вредности, долази до грешке преливања или
+је резултат неодређена вредност типа одредишта.</p>
+<p>Ако се тип <code class="docutils literal notranslate"><span class="pre">double</span></code> конвертује у тип <code class="docutils literal notranslate"><span class="pre">float</span></code>, изворна вредност се заокружује на
+најближу одредишну вредност. Ако је изворна вредност премала или превелика да
+стане у одредишну, резултат је нула или бесконачно. Ако се типови <code class="docutils literal notranslate"><span class="pre">float</span></code> или
+<code class="docutils literal notranslate"><span class="pre">double</span></code> конвертују у тип <code class="docutils literal notranslate"><span class="pre">decimal</span></code>, изворна вредност се конвертује у одредишну
+и заокружује на најближи број до двадесетосме децимале. Ако је изворна вредност
+премала, онда је резултат нула, односно, ако је изворна вредност превелика
+долази до грешке преливања. На крају, ако се тип <code class="docutils literal notranslate"><span class="pre">decimal</span></code> конвертује у типове
+<code class="docutils literal notranslate"><span class="pre">float</span></code> или <code class="docutils literal notranslate"><span class="pre">double</span></code>, изворна вредност се заокружује на најближу одредишну
+вредност.</p>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

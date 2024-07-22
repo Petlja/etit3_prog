@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Подразумевани конструктор &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Конструктор са параметрима" href="021_konstruktor_sa_parametrima.html" />
+    <link rel="prev" title="Квиз" href="014_kviz.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Подразумевани конструктор<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>У претходним лекцијама научио си да су конструктори специјалне методе које се
+користе приликом инстанцирања објекта. Имају исто име као и класа у којој су
+дефинисани и могу бити различитих облика.</p>
+<p>Практично, у статичкој меморији чува се референца на објекат, а сам објекат
+чува се у динамичкој меморији, на хипу. Да би се објекат сачувао на хипу, за
+њега се мора алоцирати одговарајући простор.</p>
+<p>Први облик конструктора о којем ћеш учити је подразумевани конструктор. Њега
+креира компајлер уколико класа нема дефинисане конструкторе. Његов задатак је
+да приликом инстанцирања објекта алоцира одговарајући простор за објекат на
+хипу и обезбеди иницијализацију поља на подразумеване вредности.</p>
+<p>Нека класа <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code> има четири поља и нека је у класи <code class="docutils literal notranslate"><span class="pre">Program</span></code> креиран
+један објекат <code class="docutils literal notranslate"><span class="pre">z</span></code> класе <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zaposleni</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">prijavljen</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">staz</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">zarada</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Zaposleni</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Zaposleni</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Извршавањем овог програма на хипу је креиран објекат <code class="docutils literal notranslate"><span class="pre">z</span></code> као инстанца класе
+<code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code>, чије поље <code class="docutils literal notranslate"><span class="pre">ime</span></code> има вредност <code class="docutils literal notranslate"><span class="pre">null</span></code>, поље <code class="docutils literal notranslate"><span class="pre">prijavljen</span></code> логичку
+вредност <code class="docutils literal notranslate"><span class="pre">false</span></code>, поље <code class="docutils literal notranslate"><span class="pre">staz</span></code> целобројну вредност <code class="docutils literal notranslate"><span class="pre">0</span></code> и поље <code class="docutils literal notranslate"><span class="pre">zarada</span></code> реалну
+вредност <code class="docutils literal notranslate"><span class="pre">0</span></code>. Ове вредности су аутоматске додељене пољима јер су то
+подразумеване вредности типова коришћених за декларацију поља. Компајлер ће
+због тога избацити следећа упозорења:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CS0649: Field &#39;Zaposleni.ime&#39; is never assigned to, and will always have its default value null
+CS0649: Field &#39;Zaposleni.prijavljen&#39; is never assigned to, and will always have its default value false
+CS0649: Field &#39;Zaposleni.staz&#39; is never assigned to, and will always have its default value 0
+CS0649: Field &#39;Zaposleni.zarada&#39; is never assigned to, and will always have its default value 0
+</pre></div>
+</div>
+<p>У класи <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code> компајлер је заправо креирао подразумевани конструктор који
+је позивом кључне речи <code class="docutils literal notranslate"><span class="pre">new</span></code>, тј. приликом инстанцирања објекта <code class="docutils literal notranslate"><span class="pre">z</span></code>, обезбедио
+иницијализацију објекта и постављање његових поља на подразумеване вредности.
+То значи да кôд у класи <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code> заправо изгледа овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zaposleni</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">prijavljen</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">staz</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">zarada</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">Zaposleni</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">    </span><span class="c1">// Podrazumevani konstruktor</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Подразумевани конструктор који се аутоматски генерише од стране компајлера
+не садржи параметре, нити неку експлицитну логику, али је неопходан да би се
+омогућило инстанцирање објекта.</p>
+<p>Подразумевани конструктор можеш дефинисати експлицитно, чак иако је исти као и
+подразумевани конструктор којег би генерисао компајлер. У овом случају то и
+нема пуно смисла, али помоћу експлицитно дефинисаног подразумеваног
+конструктора можеш да имплементираш додатну логику за иницијализацију објекта и
+вредности поља. На пример:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zaposleni</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">prijavljen</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">staz</span><span class="p">;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">zarada</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">Zaposleni</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;UNESI IME!&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">prijavljen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">        </span><span class="n">staz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">        </span><span class="n">zarada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">49864.0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Zaposleni</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Zaposleni</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Овако дефинисан конструктор поставио је иницијалне вредности свих поља, па
+компајлер неће јављати никаква упозорења. Иако је поље стаж постављено на <code class="docutils literal notranslate"><span class="pre">0</span></code>
+што представља подразумевану вредност за тип <code class="docutils literal notranslate"><span class="pre">int</span></code>, та вредност је експлицитно
+дефинисана и не узрокује појаву упозорења. Осим избегавања упозорења од стране
+компајлера, могу да постоје бројни разлози за имплементацију додатне логике за
+иницијализацију поља. У овом случају:</p>
+<ul class="simple">
+<li><p>постављено је иницијално име запосленог <code class="docutils literal notranslate"><span class="pre">UNESI</span> <span class="pre">IME!</span></code> тј. спречено је да поље
+<code class="docutils literal notranslate"><span class="pre">ime</span></code> иницијално буде <code class="docutils literal notranslate"><span class="pre">null</span></code>. Ако корисник програма случајно заборави да унесе
+име запосленог, а у даљем развоју програма о томе није вођено рачуна, покушај
+уписа податка <code class="docutils literal notranslate"><span class="pre">null</span></code> у базу података може да доведе до проблема;</p></li>
+<li><p>постављена је иницијална вредност <code class="docutils literal notranslate"><span class="pre">true</span></code> поља <code class="docutils literal notranslate"><span class="pre">prijavljen</span></code>, јер организације
+не би смеле да имају непријављене запослене;</p></li>
+<li><p>постављена је иницијална вредност поља <code class="docutils literal notranslate"><span class="pre">staz</span></code> на <code class="docutils literal notranslate"><span class="pre">0</span></code>, јер јесте вероватно да
+нови запослени немају никаквог радног искуства;</p></li>
+<li><p>постављена је иницијална вредност поља <code class="docutils literal notranslate"><span class="pre">zarada</span></code> на <code class="docutils literal notranslate"><span class="pre">49864.0</span></code> што је минимална
+загарантована зарада, јер организације не би смеле да исплаћују зараде мање од
+минималне.</p></li>
+</ul>
+<p>Да ли ћеш користити могућност експлицитног дефинисања подразумеваног
+коструктора за имплементацију додатне логике за иницијализацију објекта и
+вредности поља или не, зависи од ситуације. Овим приступом можеш да осигураш да
+су сви објекти класе правилно иницијализовани и да имају подразумеване
+вредности које су смислене за конкретну ситуацију. То може бити добра пракса из
+следећих разлога:</p>
+<ul class="simple">
+<li><p><strong>Специфична иницијализација</strong>. Можеш поставити вредности поља на вредности
+које нису подразумеване вредности типова, што може бити корисно ако твоја класа
+захтева специфичне иницијалне вредности.</p></li>
+<li><p><strong>Лакше одржавање</strong>. Иницијализациона логика је централизована у
+конструктору, што олакшава одржавање кода. Ако треба да измените
+иницијализацију, довољно је да то урадиш на једном месту.</p></li>
+<li><p><strong>Јасноћа кода</strong>. Експлицитни конструктор може учинити кôд јаснијим јер
+омогућава да видиш на једном месту како се објекти иницијализују.</p></li>
+<li><p><strong>Избегавање грешака</strong>. Можеш имплементирати додатну логику за проверу и
+валидацију у конструктору како би био сигуран да су објекти исправно
+иницијализовани.</p></li>
+</ul>
+<p>Међутим, постоје ситуације у којима није потребно да дефинишеш експлицитни
+конструктор, посебно ако класа нема никакву специфичну иницијализацију и може
+се ослонити на подразумеване вредности типова. У тим случајевима можеш оставити
+компајлер да генерише подразумевани конструктор.</p>
+<section id="id2">
+<h2>Статички конструктор<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Класа може да има дефинисан статички конструктор који се обично користи за
+иницијализацију статичких чланова или извршавање кода који треба да се
+изврши само једном приликом учитавања класе. У следећем примеру…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Brojanje</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">brojac</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nf">Brojanje</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">brojac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">Povecaj</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">++</span><span class="n">brojac</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…у класи <code class="docutils literal notranslate"><span class="pre">Brojanje</span></code> дефинисано је статичко поље <code class="docutils literal notranslate"><span class="pre">brojac</span></code>, статички
+конструктор којим је иницијализована вредност статичког поља и метода
+<code class="docutils literal notranslate"><span class="pre">Povecaj()</span></code>. Приликом инстанцирања објекта класе <code class="docutils literal notranslate"><span class="pre">Brojanje</span></code>,
+констуктором се иницијализује вредност поља бројач на <code class="docutils literal notranslate"><span class="pre">0</span></code>, а позивом методе
+<code class="docutils literal notranslate"><span class="pre">Povecaj()</span></code>, та вредност се увећава за <code class="docutils literal notranslate"><span class="pre">1</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">Brojanje</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Brojanje</span><span class="p">();</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">Povecaj</span><span class="p">());</span><span class="w">    </span><span class="c1">// 1</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

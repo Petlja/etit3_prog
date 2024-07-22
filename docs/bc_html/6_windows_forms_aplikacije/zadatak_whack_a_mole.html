@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Задатак: Игра - кликни на кртицу &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Задатак: Вежбај рефлексе" href="zadatak_vezbaj_reflekse.html" />
+    <link rel="prev" title="Задатак: Квиз питања са више тачних одговора" href="zadatak_mcq.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Задатак: Игра - кликни на кртицу<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Припреми слику кртице (нпр. <code class="docutils literal notranslate"><span class="pre">krtica.bmp</span></code>) и слику рупе (нпр. <code class="docutils literal notranslate"><span class="pre">rupa.bmp</span></code>) и
+учитај их у фајл са ресурсима. Постави девет оквира за слику, једну лабелу и
+један тајмер. Иницијално, у свим оквирима за слику треба да буде учитана слика
+рупе, а у лабели текст <code class="docutils literal notranslate"><span class="pre">Резултат:</span> <span class="pre">0</span></code>. На откуцај тајмера, у насумично одабраном
+оквиру за слику треба да се прикаже слика кртице. Ако корисник кликне на слику
+кртице повећава се резултат у лабели.</p>
+<p><img alt="Задатак - Игра &quot;Кликни на кртицу&quot;" src="../_images/zadatak_whack_a_mole.png" /></p>
+<section id="id2">
+<h2>Могуће решење задатка<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Windows.Forms</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">ZadatakUdariKrticu</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Form1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Form</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Random</span><span class="p">();</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rezultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">PictureBox</span><span class="p">[]</span><span class="w"> </span><span class="n">rupe</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">krtica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">Form1</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<span class="w">            </span><span class="n">InicijalizujIgru</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">InicijalizujIgru</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">rupe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PictureBox</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox2</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox3</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox4</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox5</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox6</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox7</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox8</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox9</span><span class="w"> </span><span class="p">};</span>
+<span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">rupa</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">rupe</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">rupa</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Properties</span><span class="p">.</span><span class="n">Resources</span><span class="p">.</span><span class="n">rupa</span><span class="p">;</span>
+<span class="w">                </span><span class="n">rupa</span><span class="p">.</span><span class="n">SizeMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PictureBoxSizeMode</span><span class="p">.</span><span class="n">StretchImage</span><span class="p">;</span>
+<span class="w">                </span><span class="n">rupa</span><span class="p">.</span><span class="n">Tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;rupa&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">rupa</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Rupa_Click</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">            </span><span class="n">label1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Резултат: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rezultat</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">timer1_Tick</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">krtica</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">rupe</span><span class="p">[</span><span class="n">krtica</span><span class="p">].</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Properties</span><span class="p">.</span><span class="n">Resources</span><span class="p">.</span><span class="n">rupa</span><span class="p">;</span>
+<span class="w">                </span><span class="n">rupe</span><span class="p">[</span><span class="n">krtica</span><span class="p">].</span><span class="n">Tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;rupa&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">krtica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">.</span><span class="n">Next</span><span class="p">(</span><span class="n">rupe</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+<span class="w">            </span><span class="n">rupe</span><span class="p">[</span><span class="n">krtica</span><span class="p">].</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Properties</span><span class="p">.</span><span class="n">Resources</span><span class="p">.</span><span class="n">krtica</span><span class="p">;</span>
+<span class="w">            </span><span class="n">rupe</span><span class="p">[</span><span class="n">krtica</span><span class="p">].</span><span class="n">Tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;krtica&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Rupa_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">kliknuto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sender</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">PictureBox</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kliknuto</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">kliknuto</span><span class="p">.</span><span class="n">Tag</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;krtica&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">rezultat</span><span class="o">++</span><span class="p">;</span>
+<span class="w">                </span><span class="n">label1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Резултат: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rezultat</span><span class="p">;</span>
+<span class="w">                </span><span class="n">kliknuto</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Properties</span><span class="p">.</span><span class="n">Resources</span><span class="p">.</span><span class="n">rupa</span><span class="p">;</span>
+<span class="w">                </span><span class="n">kliknuto</span><span class="p">.</span><span class="n">Tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;rupa&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">krtica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Додатни задатак<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Усаврши игру на следећи начин:</p>
+<ol class="arabic simple">
+<li><p>Промени систем бодовања тако да се у лабели приказује текст <code class="docutils literal notranslate"><span class="pre">Резултат:</span> <span class="pre">Х</span> <span class="pre">од</span> <span class="pre">Y</span></code>
+где је <code class="docutils literal notranslate"><span class="pre">Х</span></code> број кликнутих кртица, а <code class="docutils literal notranslate"><span class="pre">Y</span></code> укупан број кртица који се до датог
+тренутка појавио.</p></li>
+<li><p>Дефиниши максимални број појављивања кртица (или омогући кориснику да одабере
+тај број или га унесе) тако да игра има свој крај.</p></li>
+<li><p>Дефиниши више нивоа тежине играња којима се мења брзина откуцаја тајмера у
+милисекундама.</p></li>
+</ol>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

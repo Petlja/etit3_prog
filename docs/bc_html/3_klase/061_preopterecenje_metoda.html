@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Преоптерећење метода у класи &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Преоптерећење оператора у класи" href="062_preopterecenje_operatora.html" />
+    <link rel="prev" title="Методе" href="060_metode.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Преоптерећење метода у класи<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>У литератури о програмском језику C# наићићеш на изразе преклапање метода и
+преоптерећење метода - у питању су само различити преводи енглеског израза
+<em>method overloading</em>. Ове изразе не требаш мешати са надјачавањем тј.
+превладањем метода (енгл. <em>method overriding</em>) - у питању је потпуно различита
+техника која се тиче наслеђивања и полиморфизна и која ће бити тема у поглављу
+<a class="reference internal" href="../5_izvedene_klase/index.html"><span class="std std-doc">Изведене класе</span></a>.</p>
+<p>О преоптерећењу метода унутар једне класе учио си у претходном поглављу.
+Наравно, преоптерећене методе се могу налазити и у засебној класи, а концепт
+преоптерећења је исти - методе са истим именом које имају:</p>
+<ul class="simple">
+<li><p>различите типове параметара,</p></li>
+<li><p>различит број параметара,</p></li>
+<li><p>различит редослед параметара и</p></li>
+<li><p>комбинације различитих типова, броја и редоследа параметара.</p></li>
+</ul>
+<section id="id2">
+<h2>Преоптерећене методе са различитим типовима параметара<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Једноставан пример метода са истим именом које имају различите типове
+параметара могу бити методе за испис прослеђеног аргумента у конзоли:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Stampanje</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">broj</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Broj: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">broj</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">poruka</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Poruka: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">poruka</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Stampanje</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stampanje</span><span class="p">();</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="m">5</span><span class="p">);</span><span class="w">                   </span><span class="c1">// Broj: 5</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// Poruka: Hello, World!</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У овом примеру, у класи <code class="docutils literal notranslate"><span class="pre">Stampanje</span></code> дефинисане су две јавне методе са истим
+именом <code class="docutils literal notranslate"><span class="pre">Stampaj</span></code>. У класи <code class="docutils literal notranslate"><span class="pre">Program</span></code> креиран је објекат <code class="docutils literal notranslate"><span class="pre">s</span></code> класе <code class="docutils literal notranslate"><span class="pre">Stampanje</span></code>.
+Ако се из класе <code class="docutils literal notranslate"><span class="pre">Program</span></code> позове метода <code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са аргументом типа <code class="docutils literal notranslate"><span class="pre">int</span></code>,
+онда ће извршити метода која има параметар типа <code class="docutils literal notranslate"><span class="pre">int</span></code>, односно, ако се позове
+метода <code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са аргументом типа <code class="docutils literal notranslate"><span class="pre">string</span></code>, онда ће се извршити метода која
+има параметар типа <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+</section>
+<section id="id3">
+<h2>Преоптерећене методе са различитим бројем параметара<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Једноставан пример метода са истим именом које имају различит број
+параметара могу бити методе за испис прослеђеног аргумента у конзоли једанпут
+или <code class="docutils literal notranslate"><span class="pre">n</span></code> број пута, где је <code class="docutils literal notranslate"><span class="pre">n</span></code> прослеђен као други аргумент:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Stampanje</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">poruka</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Poruka: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">poruka</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">poruka</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Poruka: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">poruka</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Stampanje</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stampanje</span><span class="p">();</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// Poruka: Hello, World!</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="s">&quot;Hello!&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">);</span><span class="w">    </span><span class="c1">// Poruka: Hello!</span>
+<span class="w">                                   </span><span class="c1">// Poruka: Hello!</span>
+<span class="w">                                   </span><span class="c1">// Poruka: Hello!</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>И у овом примеру, у класи <code class="docutils literal notranslate"><span class="pre">Stampanje</span></code> дефинисане су две јавне методе са истим
+именом <code class="docutils literal notranslate"><span class="pre">Stampaj</span></code>. У класи <code class="docutils literal notranslate"><span class="pre">Program</span></code> креиран је објекат <code class="docutils literal notranslate"><span class="pre">s</span></code> класе <code class="docutils literal notranslate"><span class="pre">Stampanje</span></code>.
+Ако се из класе <code class="docutils literal notranslate"><span class="pre">Program</span></code> позове метода <code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са једним аргументом
+извршиће се метода која има један параметар, односно, ако се позове метода
+<code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са два аргумента, извршиће се метода која има два параметра.</p>
+</section>
+<section id="id4">
+<h2>Преоптерећене методе са различитим редоследом параметара<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Једноставан пример метода са истим именом које имају различит редослед
+параметара могу бити функције за испис различитих порука на основу редоследа
+прослеђених аргумената:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Stampanje</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Takmicar broj &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; zove se &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Takmicar &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; osvojio je &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; poena.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Stampanje</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stampanje</span><span class="p">();</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Takmicar broj 1 zove se Velimir Radlovacki.</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">80</span><span class="p">);</span><span class="w"> </span><span class="c1">// Takmicar Velimir Radlovacki osvojio je 80 poena.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>И у овом примеру, у класи <code class="docutils literal notranslate"><span class="pre">Stampanje</span></code> дефинисане су две јавне методе са истим
+именом <code class="docutils literal notranslate"><span class="pre">Stampaj</span></code>. У класи <code class="docutils literal notranslate"><span class="pre">Program</span></code> креиран је објекат <code class="docutils literal notranslate"><span class="pre">s</span></code> класе <code class="docutils literal notranslate"><span class="pre">Stampanje</span></code>.
+Ако се из класе <code class="docutils literal notranslate"><span class="pre">Program</span></code> позове метода <code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са аргументима <code class="docutils literal notranslate"><span class="pre">int</span></code> и
+<code class="docutils literal notranslate"><span class="pre">string</span></code> извршиће се прва метода, односно, ако се позове метода <code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са
+аргументима <code class="docutils literal notranslate"><span class="pre">string</span></code> и <code class="docutils literal notranslate"><span class="pre">int</span></code> извршиће се друга метода.</p>
+</section>
+<section id="id5">
+<h2>Преоптерећене методе са различитим типовима, бројем и/или редоследом параметара<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>Ради веће флексибилности, по потреби, можеш и комбиновати технике преоптерећења
+метода из претходна три примера.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Stampanje</span>
+<span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Na takmicenju ucestvuje takmicar &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Na takmicenju ucestvuje &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; takmicara.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Takmicar broj &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; zove se &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Stampaj</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Takmicar &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; osvojio je &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; poena.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Stampanje</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stampanje</span><span class="p">();</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">);</span><span class="w">     </span><span class="c1">// Na takmicenju ucestvuje takmicar Velimir Radlovacki.</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="m">20</span><span class="p">);</span><span class="w">                       </span><span class="c1">// Na takmicenju ucestvuje 20 takmicara.</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Takmicar broj 1 zove se Velimir Radlovacki.</span>
+<span class="w">        </span><span class="n">s</span><span class="p">.</span><span class="n">Stampaj</span><span class="p">(</span><span class="s">&quot;Velimir Radlovacki&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">80</span><span class="p">);</span><span class="w"> </span><span class="c1">// Takmicar Velimir Radlovacki osvojio je 80 poena.</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У последњем примеру, у класи <code class="docutils literal notranslate"><span class="pre">Stampanje</span></code> дефинисане су четири јавне методе са
+истим именом <code class="docutils literal notranslate"><span class="pre">Stampaj</span></code>. У класи <code class="docutils literal notranslate"><span class="pre">Program</span></code> креиран је објекат <code class="docutils literal notranslate"><span class="pre">s</span></code> класе
+<code class="docutils literal notranslate"><span class="pre">Stampanje</span></code>. Ако се из класе <code class="docutils literal notranslate"><span class="pre">Program</span></code> позове метода <code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са аргументом
+типа <code class="docutils literal notranslate"><span class="pre">int</span></code> извршиће се прва метода, ако се позове метода <code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са
+аргументом типа <code class="docutils literal notranslate"><span class="pre">string</span></code> извршиће се друга метода, ако се позове метода
+<code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са два аргумента <code class="docutils literal notranslate"><span class="pre">int</span></code> и <code class="docutils literal notranslate"><span class="pre">string</span></code> извршиће се трећа метода и ако се
+позове метода <code class="docutils literal notranslate"><span class="pre">s.Stampaj</span></code> са два аргумента <code class="docutils literal notranslate"><span class="pre">string</span></code> и <code class="docutils literal notranslate"><span class="pre">int</span></code> извршиће се четврта
+метода.</p>
+<p>Из претходних примера можеш закључити да је преоптерећење функција важан
+концепт у програмском језику C# који помаже програмерима да створе
+флексибилнији и једноставнији приступ методама класе, омогућавајући корисницима
+класа да користе једно име метода за различите, али повезане функционалности.</p>
+<p>Преоптерећење функција у класи је засновано искључиво на параметрима метода.
+Повратни тип метода није део потписа метода у контексту преклапања, па се
+методе не могу разликовати само по повратном типу.</p>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Форма &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Својства" href="svojstva.html" />
+    <link rel="prev" title="Израда пројекта" href="izrada_projekta.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Форма<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Форма представља прозор у GUI апликацији. Када креираш нови <em>Windows Forms App</em>
+пројекат, аутоматски се креира и једна форма која се зове <code class="docutils literal notranslate"><span class="pre">Form1</span></code>.</p>
+<p><img alt="Аутоматски креирана форма" src="../_images/izrada-projekta-04.png" /></p>
+<p>Класа <code class="docutils literal notranslate"><span class="pre">Form</span></code> припада именском простору <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code> односно, склопу
+<code class="docutils literal notranslate"><span class="pre">System.Windows.Forms.dll</span></code>. Детаљан опис својстава, догађаја и метода класе
+<code class="docutils literal notranslate"><span class="pre">Form</span></code> налази се у званичној
+<a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.form?view=netframework-4.8">документацији</a>.
+Има их много и нема потребе наводити их све на овом месту.</p>
+<p>Величину, боју и остала својства и функције форме можеш подесити помоћу
+својстава дефинисаних у класи <code class="docutils literal notranslate"><span class="pre">Form</span></code>. Својства форме <code class="docutils literal notranslate"><span class="pre">Form1</span></code> можеш мењати у
+<code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору када је <code class="docutils literal notranslate"><span class="pre">Form1</span></code> у фокусу, или у самом коду.</p>
+<p>На пример, нека је задатак да се форма <code class="docutils literal notranslate"><span class="pre">Form1</span></code> зове <code class="docutils literal notranslate"><span class="pre">frmGlavna</span></code>, да у њеној
+насловној линији пише <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>, да се иницијално прикаже на центру
+екрана, да је димензија 800x600 пиксела и да је плаве боје. Ако знаш енглески
+језик, лако ћеш пронаћи ова својства у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору. Кликни било где
+на форму, како би она била у фокусу, па промени следећа својства:</p>
+<ul class="simple">
+<li><p>име форме, својство <code class="docutils literal notranslate"><span class="pre">(Name)</span></code>, промени из <code class="docutils literal notranslate"><span class="pre">Form1</span></code> у <code class="docutils literal notranslate"><span class="pre">frmGlavna</span></code>,</p></li>
+<li><p>текст на насловној линији, својство <code class="docutils literal notranslate"><span class="pre">Text</span></code>, промени из <code class="docutils literal notranslate"><span class="pre">Form1</span></code> у
+<code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>,</p></li>
+<li><p>стартна позиција, својство <code class="docutils literal notranslate"><span class="pre">StartPosition</span></code>, промени <code class="docutils literal notranslate"><span class="pre">WindowsDefaultLocation</span></code>
+на <code class="docutils literal notranslate"><span class="pre">CenterScreen</span></code>,</p></li>
+<li><p>димензије форме, својство <code class="docutils literal notranslate"><span class="pre">Size</span></code> па <code class="docutils literal notranslate"><span class="pre">Width</span></code> и <code class="docutils literal notranslate"><span class="pre">Height</span></code>, промени <code class="docutils literal notranslate"><span class="pre">816</span></code> и <code class="docutils literal notranslate"><span class="pre">489</span></code>
+на <code class="docutils literal notranslate"><span class="pre">800</span></code> и <code class="docutils literal notranslate"><span class="pre">600</span></code> и на крају</p></li>
+<li><p>боја форме, својство <code class="docutils literal notranslate"><span class="pre">BackColor</span></code> промени из <code class="docutils literal notranslate"><span class="pre">Control</span></code> у <code class="docutils literal notranslate"><span class="pre">Blue</span></code>.</p></li>
+</ul>
+<p><img alt="Својства форме" src="../_images/form-properties.png" /></p>
+<p>Својства форме у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору организована су по категоријама:
+<em>Accessibility</em>, <em>Apperance</em>, <em>Behavior</em>,… зато што је притиснута икона
+<code class="docutils literal notranslate"><span class="pre">Categorized</span></code> на врху <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозора. Ако ти је лакше да својства тражиш
+по абецедном распореду, кликни на икону <code class="docutils literal notranslate"><span class="pre">Alphabetical</span></code> која се налази поред
+иконе <code class="docutils literal notranslate"><span class="pre">Categorized</span></code>. Корисно је и да знаш да се својства која си мењао
+приказују задебљаним фонтом. Резултат покретања пројекта сада ће бити:</p>
+<p><img alt="Форма са измењеним својствима" src="../_images/frmGlavna.png" /></p>
+<p>У уводној лекцији напоменуто је да су догађаји битни елементи приликом развоја
+GUI апликација. Јадан од честих догађаја је <em>„на клик”</em>. На пример, нека
+је задатак да се кликом миша на форму промени боја форме из плаве у црвену и
+текст у насловној линији из <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> у <code class="docutils literal notranslate"><span class="pre">Welcome!</span></code>. Кликни било где на
+форму, како би она била у фокусу, па кликни на икону <code class="docutils literal notranslate"><span class="pre">🗲</span></code> (<code class="docutils literal notranslate"><span class="pre">Events</span></code>). Пронађи
+догађај <code class="docutils literal notranslate"><span class="pre">Click</span></code> и кликни два пута брзо у поље поред. Креираће се метода
+<code class="docutils literal notranslate"><span class="pre">frmGlavna_Click</span></code>. У телу методе неопходно је да унесеш кôд како би се
+променила боја и насловна линија форме.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">frmGlavna_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">BackColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Welcome!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Нека је сада задатак да се дуплим кликом на форму изађе из апликације. Кликни
+било где на форму, како би она била у фокусу, па кликни на икону <code class="docutils literal notranslate"><span class="pre">🗲</span></code>
+(<code class="docutils literal notranslate"><span class="pre">Events</span></code>). Пронађи догађај <code class="docutils literal notranslate"><span class="pre">DoubleClick</span></code> и кликни два пута брзо у поље поред.
+Креираће се метода <code class="docutils literal notranslate"><span class="pre">frmGlavna_DoubleClick</span></code>. У телу методе неопходно је да
+унесеш кôд за излазак из апликације.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">frmGlavna_DoubleClick</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Application</span><span class="p">.</span><span class="n">Exit</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У овом једноставном примеру мењао си нека својства форме и дефинисао неке
+догађаје. Више о својствима и догађајима форме научићеш у наредним лекцијама.</p>
+<p>Вероватно си користио апликације у оквиру којих постоји више форми и те форме
+су биле различитих типова. У Windows Forms App пројектима подржан је рад са
+више форми, али ће то бити једна од тема у IV разреду.</p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Квиз &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Апстрактне класе" href="60_apstraktne_klase.html" />
+    <link rel="prev" title="Конструктори изведених класа" href="50_konstruktori_izvedenih.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Квиз<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<section id="id2">
+<h2>Питање 1<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice correct-answers="4">
+    <question><p>Означи исказ који представља исправан наставак дате тврдње. При креирању
+објеката изведене класе…</p>
+</question>  <answer><p>извршава се само конструктор изведене класе.</p>
+</answer>  <answer><p>прво се извршава конструктор родитељске класе, али само ако је позван кључном речју base.</p>
+</answer>  <answer><p>обавезно се прво извршава конструктор изведене, а потом конструктор родитељске класе.</p>
+</answer>  <answer><p>обавезно се прво извршава конструктор родитељске, а потом конструктор изведене класе.</p>
+</answer>  
+      </multiple-choice>
+    </div>
+    </section>
+<section id="id3">
+<h2>Питање 2<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice correct-answers="2">
+    <question><p>У програмском језику C# користи се службена реч <code class="docutils literal notranslate"><span class="pre">base</span></code>. Процени који од
+наредних исказа, који дефинишу дату службену реч, НИЈЕ тачан. Означи очекивани
+одговор.</p>
+</question>  <answer><p>Службена реч base може послужити за позивање конструктора родитељске класе.</p>
+</answer>  <answer><p>Службена реч base може послужити за позивање приватних метода родитељске класе којима се другачије не може приступити.</p>
+</answer>  <answer><p>Службена реч base може послужити за позивање заклоњеног метода родитељске класе.</p>
+</answer>  <answer><p>Службена реч base може послужити за позивање заклоњеног поља родитељске класе.</p>
+</answer>  
+      </multiple-choice>
+    </div>
+    </section>
+<section id="id4">
+<h2>Питање 3<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Дефинисане су три класе:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span><span class="w"> </span><span class="nn">TestPrimer</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">KlasaB</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KlasaB</span><span class="p">();</span>
+<span class="w">            </span><span class="n">b</span><span class="p">.</span><span class="n">Print</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">KlasaA</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">KlasaA</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">KlasaB</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">KlasaA</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice correct-answers="2,3">
+    <question><p>Анализирај дате класе и процени који су од понуђених исказа тачни. Штиклирај
+очекиване одговоре.</p>
+</question>  <answer><p>Програм има грешку, јер <code class="docutils literal notranslate"><span class="pre">KlasaB</span></code> нема подразумевани конструктор <code class="docutils literal notranslate"><span class="pre">KlasaB()</span></code>.</p>
+</answer>  <answer><p>Програм има грешку јер <code class="docutils literal notranslate"><span class="pre">KlasaB</span></code> има подразумевани конструктор, док родитељска <code class="docutils literal notranslate"><span class="pre">KlasaА</span></code> нема такав конструктор. Програм би радио без грешке уколико би се уклонио конструктор са параметрима из <code class="docutils literal notranslate"><span class="pre">KlasaА</span></code>.</p>
+</answer>  <answer><p>Програм има грешку која се може отклонити уколико би се у <code class="docutils literal notranslate"><span class="pre">KlasaА</span></code> експлицитно додао конструктор без параметара <code class="docutils literal notranslate"><span class="pre">KlasaА()</span></code>.</p>
+</answer>  <answer><p>Програм нема грешку, извршава се, али се на конзоли ништа не исписује јер је поље <code class="docutils literal notranslate"><span class="pre">s</span></code> добило подразумевану вредност <code class="docutils literal notranslate"><span class="pre">String.Empty</span></code>.</p>
+</answer>  
+      </multiple-choice>
+    </div>
+    </section>
+<section id="id5">
+<h2>Питање 4<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>Нека базна класа има дефинисан јавни подразумевани конструктор…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">BaznaKlasa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…и нека је у изведеној класи дефинисан јавни подразумевани конструктор:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">IzvedenaKlasa</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">IzvedenaKlasa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice correct-answers="3">
+    <question><p>Означи тачан исказ.</p>
+</question>  <answer><p>Доћиће до грешке јер у базној класи није експлицитно позван јавни подразумевани конструктор класе <code class="docutils literal notranslate"><span class="pre">System.Object</span></code>.</p>
+</answer>  <answer><p>Доћиће до грешке јер у изведеној класи није експлицитно позван јавни подразумевани конструктор базне класе.</p>
+</answer>  <answer><p>Неће доћи до грешке јер ће компајлер сам допунити кôд конструктора у изведеној класи кључном речју <code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+</answer>  <answer><p>Неће доћи до грешке јер се увек прво позива конструктор изведене класе.</p>
+</answer>  
+      </multiple-choice>
+    </div>
+    </section>
+<section id="id6">
+<h2>Питање 5<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+
+    <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
+    <multiple-choice correct-answers="3">
+    <question><p>Означи тачан исказ.</p>
+</question>  <answer><p>Класа <code class="docutils literal notranslate"><span class="pre">System.Object</span></code> нема јавни подразумевани конструктор.</p>
+</answer>  <answer><p>Класа <code class="docutils literal notranslate"><span class="pre">System.Object</span></code> има јавни подразумевани конструктор који се мора експлицитно позвати кључном речју <code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+</answer>  <answer><p>Класа <code class="docutils literal notranslate"><span class="pre">System.Object</span></code> има јавни подразумевани конструктор који се не мора експлицитно позивати.</p>
+</answer>  <answer><p>Из класе <code class="docutils literal notranslate"><span class="pre">System.Object</span></code> се не наслеђују друге класе, па позив њеног јавног подразумеваног конструктора није битан.</p>
+</answer>  
+      </multiple-choice>
+    </div>
+    </section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

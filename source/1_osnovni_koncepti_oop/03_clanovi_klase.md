@@ -36,7 +36,7 @@ Klasa Krug {
     promenljiva r;    // полупречник
     promenljiva O;    // обим
     promenljiva P;    // површина
-    konstanta promenljiva Pi = 3.14159265359;
+    konstantna promenljiva Pi = 3.14159265359;
 
     funkcija Obim(promenljiva Poluprecnik) {
         r = Poluprecnik;

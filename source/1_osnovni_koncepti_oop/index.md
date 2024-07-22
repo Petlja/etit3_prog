@@ -7,10 +7,10 @@
 ```{toctree}
 :maxdepth: 1
 
-uvod
-klasa_i_objekat
-clanovi_klase
-enkapsulacija
-nasledjivanje
-polimorfizam
+01_uvod
+02_klasa_i_objekat
+03_clanovi_klase
+04_enkapsulacija
+05_nasledjivanje
+06_polimorfizam
 ```

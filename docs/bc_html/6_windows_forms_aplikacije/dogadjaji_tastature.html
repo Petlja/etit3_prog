@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Догађаји тастатуре &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Лабела" href="labela.html" />
+    <link rel="prev" title="Догађаји миша" href="dogadjaji_misa.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Догађаји тастатуре<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Слично као и у претходној лекцији, догађаји тастатуре у
+<em>Windows Forms App (.NET Framework)</em> пројектима омогућавају ти да реагујеш на
+уносе са тастатуре. Постоје три главна догађаја која су повезана са уносом са
+тастатуре:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">KeyDown</span></code> - јавља се када корисник притисне и задржи тастер на тастатури,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KeyPress</span></code> - јавља се када корисник притисне тастер који генерише карактер,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KeyUp</span></code> - јавља се када корисник пусти тастер који је био притиснут.</p></li>
+</ul>
+<p>Догађаји тастатуре су веома корисни у разним сценаријима за побољшање
+корисничког интерфејса и искуства, омогућавање пречица и управљање
+интеракцијама у реалном времену. У видео играма, ови догађаји су посебно
+значајни за контролу кретања и/или акција играча.</p>
+<p>Да би користио догађаје тастатуре, својство форме <code class="docutils literal notranslate"><span class="pre">KeyPreview</span></code> треба да
+поставиш на <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<section id="id2">
+<h2>Задатак<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Креирај нови <em>Windows Forms App (.NET Framework)</em> пројекат са једном формом
+димензија 320×240 и текстом „Тестирај WSAD!” у насловној линији форме. Тастери
+<code class="docutils literal notranslate"><span class="pre">W</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code> и <code class="docutils literal notranslate"><span class="pre">D</span></code> се често користе у видео играма за кретање напред, назад,
+лево, десно.</p>
+<p><img alt="Догађаји тастатуре" src="../_images/keyboard-01.png" /></p>
+<p>Како корисник притиска на тастере <code class="docutils literal notranslate"><span class="pre">W</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code> и <code class="docutils literal notranslate"><span class="pre">D</span></code> тако треба текст насловне
+линије форме у складу са тим да се мења. На пример, када корисник притисне <code class="docutils literal notranslate"><span class="pre">W</span></code>,
+текст треба да се промени у <code class="docutils literal notranslate"><span class="pre">Играч</span> <span class="pre">иде</span> <span class="pre">напред!</span></code>, када пусти тастер <code class="docutils literal notranslate"><span class="pre">W</span></code> текст
+треба да се промени у <code class="docutils literal notranslate"><span class="pre">Играч</span> <span class="pre">је</span> <span class="pre">стао!</span></code>:</p>
+<p><img alt="Догађаји тастатуре" src="../_images/keyboard-02.png" />
+<img alt="Догађаји тастатуре" src="../_images/keyboard-03.png" /></p>
+<p>Ако корисник притисне неки други тастер, треба га обавестити поруком да се
+тестирају само тастери <code class="docutils literal notranslate"><span class="pre">W</span></code>, <code class="docutils literal notranslate"><span class="pre">S</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code> и <code class="docutils literal notranslate"><span class="pre">D</span></code>.</p>
+<p><img alt="Догађаји тастатуре" src="../_images/keyboard-04.png" /></p>
+<p>Кликни на форму, па дефиниши догађај <code class="docutils literal notranslate"><span class="pre">KeyDown</span></code>…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_KeyDown</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">KeyEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">W</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Играч иде напред!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">S</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Играч иде назад!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">A</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Играч иде лево!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">D</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Играч иде десно!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Дозвољено је да притискаш тастере W, S, A и D!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…и догађај <code class="docutils literal notranslate"><span class="pre">KeyUp</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_KeyUp</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">KeyEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">W</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">S</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">A</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">D</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Играч је стао!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Као и догађаји миша, догађаји тастатуре су догађаји ниског нивоа. У овом
+примеру, догађајем <code class="docutils literal notranslate"><span class="pre">KeyDown</span></code> испитује се да ли је притиснут тастер на основу
+кода тастера, па се на основу тога исписује адекватан текст у насловној линији
+форме. Догађајем <code class="docutils literal notranslate"><span class="pre">KeyUp</span></code> испитује се да ли је пуштен један од притиснутих
+тастер на основу кода тастера, па се на основу тога опет исписује адекватан
+текст у насловној линији форме.</p>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

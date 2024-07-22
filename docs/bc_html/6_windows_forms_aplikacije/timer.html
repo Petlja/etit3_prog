@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Тајмер &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Кастовање контрола" href="kastovanje_kontrola.html" />
+    <link rel="prev" title="Комбиновани оквир" href="kombinovani_okvir.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Тајмер<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Контрола <strong>тајмер</strong> (енгл. <em>Timer</em>) дефинисана је у класи <code class="docutils literal notranslate"><span class="pre">Timer</span></code> у именском
+простору <code class="docutils literal notranslate"><span class="pre">System.Timers</span></code>, односно склопу <code class="docutils literal notranslate"><span class="pre">System.dll</span></code>. Обрати пажњу да се, у
+односу на остале контроле, ова контрола не налази у <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code> и не
+наслеђује директно или индиректно класу <code class="docutils literal notranslate"><span class="pre">Control</span></code>. Због тога ова контрола није
+„видљива” на форми у току извршавања програма и нема заједничка својства,
+догађаје и методе као остале <em>Windows Forms</em> контроле попут лабеле, дугмета или
+оквира за текст.</p>
+<p>Контрола <code class="docutils literal notranslate"><span class="pre">Timer</span></code> покреће догађај након задатог временског интервала, са
+могућношћу покретања понављајућих догађаја. Заснована је на серверу који
+покреће <code class="docutils literal notranslate"><span class="pre">Elapsed</span></code> догађај када прође број милисекунди дефинисан у својству
+<code class="docutils literal notranslate"><span class="pre">Interval</span></code>. Користећи својство <code class="docutils literal notranslate"><span class="pre">AutoReset</span></code>, тајмер можеш да конфигуришеш да
+покрене догађај једном или више пута.</p>
+<p>Постоји неограничено конкретних примера употребе контроле тајмер. Једноставни
+примери могу бити: ажурирање одређене контроле на форми у одређеним временским
+интервалима (нпр. промена фотографије у оквиру за слике), аутоматски приказ и
+сакривање питања и одговора у квизу знања у одређеним временским интервалима,
+периодична провера стања неке компоненте или сервиса (нпр. интренет конекције),
+очитањање података са серијског порта у задатом временском интервалу (нпр.
+приликом комуникације са Ардуино микроконтролером) итд.</p>
+<section id="id2">
+<h2>Својства и догађај тајмера<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Контрола тајмер у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору има свега неколико својстава:</p>
+<ul class="simple">
+<li><p>својством <code class="docutils literal notranslate"><span class="pre">Name</span></code> поставља се или се очитава име контроле,</p></li>
+<li><p>својством <code class="docutils literal notranslate"><span class="pre">Enabled</span></code> поставља се или се очитава вредност која указује да ли
+је тајмер омогућен (<code class="docutils literal notranslate"><span class="pre">True</span></code>) или онемогућен (<code class="docutils literal notranslate"><span class="pre">False</span></code>),</p></li>
+<li><p>својством <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">Member</span></code>одређује се да ли ће се за тајмер генерисати
+декларација у коду форме - вредност <code class="docutils literal notranslate"><span class="pre">True</span></code> подразумева да ће се генерисати
+приватно поље у класи форме, а вредност <code class="docutils literal notranslate"><span class="pre">False</span></code> да се неће генерисати поље у
+класи форме,</p></li>
+<li><p>својством <code class="docutils literal notranslate"><span class="pre">Interval</span></code> поставља се или се очитава вредност у милисекундама за
+покретање догађаја и</p></li>
+<li><p>својством <code class="docutils literal notranslate"><span class="pre">Modifiers</span></code> одређује се ниво, односно модификатор приступа за поље
+које представља ту контролу у класи форме.</p></li>
+</ul>
+<p>Контрола тајмер у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору има један догађај - догађај <code class="docutils literal notranslate"><span class="pre">Tick</span></code> који
+се генерише када је истекао временски интервал одређен својство интервал.</p>
+<p>Детаљан опис свих својстава, догађаја и метода класе <code class="docutils literal notranslate"><span class="pre">Timer</span></code> налази се у
+званичној <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.timers.timer?view=netframework-4.8">документацији</a>.
+Има их много и нема потребе наводити их све на овом месту.</p>
+</section>
+<section id="id3">
+<h2>Задатак<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Нека је задатак да направиш једноставну GUI апликацију <strong>Штоперица</strong>.
+Апликација треба да има једну лабелу и једно дугме. Иницијално, на дугмету
+треба да буде исписан текст „СТАРТ”, а у лабели цифра <code class="docutils literal notranslate"><span class="pre">0</span></code>. Када се кликне на
+дугме, текст исписан у дугмету треба да се промени у „СТОП”, а у лабели, сваке
+секунде треба да се ажурира протекло време у секундама. Када се кликне на
+дугме са текстом „СТОП”, треба да се појави порука са коначним бројем секунди,
+а контроле на форми да се врате у иницијално стање.</p>
+<p>Креирај нови <em>Windows Forms App (.NET Framework)</em> пројекат са формом димензија
+240×240. Постави једну лабелу <code class="docutils literal notranslate"><span class="pre">label1</span></code> и једно дугме <code class="docutils literal notranslate"><span class="pre">button1</span></code>. У дизајнеру
+можеш да промениш подразумевана својства којима се дефинише изглед форме,
+лабеле и дугмета по жељи, на пример овако:</p>
+<p><img alt="Тајмер" src="../_images/timer-01.png" /></p>
+<p>На форму превуци и једну контролу Timer. У току дизајна програма ова контрола
+биће видљива испод форме:</p>
+<p><img alt="Тајмер" src="../_images/timer-02.png" /></p>
+<p>Једино својство додате контроле <code class="docutils literal notranslate"><span class="pre">timer1</span></code> које треба да промениш је <code class="docutils literal notranslate"><span class="pre">Interval</span></code>.
+Како је у задатку тражено да се лабела ажурира сваке секунде, у својству
+<code class="docutils literal notranslate"><span class="pre">Interval</span></code> потребно је да унесеш број <code class="docutils literal notranslate"><span class="pre">1000</span></code>, јер је <span class="math notranslate nohighlight">\(1s=1000ms\)</span>.</p>
+<p>Задатак можеш решити на више начина. Најједноставнији начин је да кликом на
+дугме провериш да ли је тајмер покренут или није покренут, па на основу тога
+донесеш одлуку да ли треба да га покренеш или зауставиш. Када покренеш тајмер,
+покренућеш једини догађај тајмера <code class="docutils literal notranslate"><span class="pre">Tick</span></code> у којем треба да ажурираш број
+секунди у лабели.</p>
+<p>У јавној парцијалној класи <code class="docutils literal notranslate"><span class="pre">Form1</span> <span class="pre">:</span> <span class="pre">Form</span></code> деклариши и иницијализуј поље
+<code class="docutils literal notranslate"><span class="pre">sekunde</span></code> на следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sekunde</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Овом пољу приступаће и ажурирати га догађај клика миша на дугме и догађај
+откуцаја тајмера.</p>
+<p>Кликни на <code class="docutils literal notranslate"><span class="pre">timer1</span></code> и дефиниши догађај <code class="docutils literal notranslate"><span class="pre">timer1_Tick</span></code> на следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">timer1_Tick</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="o">++</span><span class="n">sekunde</span><span class="p">;</span>
+<span class="w">    </span><span class="n">label1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sekunde</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Значи, када се покрене тајмер, сваке секунде инкрементираће целобројну вредност
+поља <code class="docutils literal notranslate"><span class="pre">sekunde</span></code> и исписати је у лабели.</p>
+<p>Иницијално је контрола <code class="docutils literal notranslate"><span class="pre">timer1</span></code> онемогућена, што можеш видети у <code class="docutils literal notranslate"><span class="pre">Properties</span></code>
+прозору, где је својство <code class="docutils literal notranslate"><span class="pre">Enabled</span></code> контроле <code class="docutils literal notranslate"><span class="pre">timer1</span></code> постављено на <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+То значи да треба да кликнеш на <code class="docutils literal notranslate"><span class="pre">button1</span></code> и дефиниши догађај <code class="docutils literal notranslate"><span class="pre">button1_Click</span></code> на
+следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">timer1</span><span class="p">.</span><span class="n">Enabled</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">timer1</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ако тајмер није омогућен, метода <code class="docutils literal notranslate"><span class="pre">timer1.Start()</span></code> омогућава и покреће тајмер, а
+у супротном метода <code class="docutils literal notranslate"><span class="pre">timer1.Stop()</span></code> зауставља и онемогућава тајмер.</p>
+<p>Сада је још потребно да исправно решиш промену текста на контролама дугме и
+лабела и прикажеш поруку о протеклом броју секунди у складу са захтевима
+задатка. Иницијално је вредност поља <code class="docutils literal notranslate"><span class="pre">sekunde</span></code> једнака нули. Када се тајмер
+покрене та вредност почеће да расте, текст у лабели почеће да се мења, а текст
+на дугмету треба да се промени у <code class="docutils literal notranslate"><span class="pre">СТОП</span></code>. Ако се кликне на дугме док је тајмер
+покренут, у поруци треба да се испише вредност поља <code class="docutils literal notranslate"><span class="pre">sekunde</span></code>, вредност поља
+<code class="docutils literal notranslate"><span class="pre">sekunde</span></code> треба поставити на <code class="docutils literal notranslate"><span class="pre">0</span></code>, у лабели променити текст на <code class="docutils literal notranslate"><span class="pre">0</span></code> и дугмету
+променити текст на <code class="docutils literal notranslate"><span class="pre">СТАРТ</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">timer1</span><span class="p">.</span><span class="n">Enabled</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">    </span><span class="n">button1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;СТОП&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">timer1</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="w">    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Број секунди: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sekunde</span><span class="p">);</span>
+<span class="w">    </span><span class="n">sekunde</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">label1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">button1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;СТАРТ&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>Комплетно решење задатка<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Windows.Forms</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Tajmer</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Form1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Form</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sekunde</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">Form1</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">timer1_Tick</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">sekunde</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="n">label1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sekunde</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">button1_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">timer1</span><span class="p">.</span><span class="n">Enabled</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">                </span><span class="n">button1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;СТОП&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">timer1</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="w">                </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Број секунди: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">sekunde</span><span class="p">);</span>
+<span class="w">                </span><span class="n">sekunde</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">                </span><span class="n">label1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;0&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">button1</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;СТАРТ&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span><span class="w">    </span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

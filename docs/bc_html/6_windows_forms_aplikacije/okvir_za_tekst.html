@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Оквир за текст &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Панел" href="panel.html" />
+    <link rel="prev" title="Оквир за слику" href="okvir_za_sliku.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Оквир за текст<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Контрола <strong>оквир за текст</strong> (енгл. <em>TextBox</em>) дефинисана је у класи <code class="docutils literal notranslate"><span class="pre">TextBox</span></code> у
+именском простору <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code>, односно склопу
+<code class="docutils literal notranslate"><span class="pre">System.Windows.Forms.dll</span></code>. Класа <code class="docutils literal notranslate"><span class="pre">TextBox</span></code> наслеђује класу <code class="docutils literal notranslate"><span class="pre">TextBoxBase</span></code>, која
+наслеђује класу <code class="docutils literal notranslate"><span class="pre">Control</span></code>, па због тога оквир за текст има основна својства,
+догађаје и методе као и остале контроле у <em>Windows Forms App (.NET Framework)</em>
+пројектима.</p>
+<p>Детаљан опис својстава, догађаја и метода класе <code class="docutils literal notranslate"><span class="pre">TextBox</span></code> налази се у
+званичној <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textbox?view=netframework-4.8">документацији</a>.
+Има их много и нема потребе наводити их све на овом месту.</p>
+<p>Оквир за текст се најчешће користи за добављање текстуалног уноса од корисника,
+а ређе за приказ текста. Дозвољен је један формат текста за целу контролу, што
+значи да не може део текста бити нпр. укошен, а други задебљан. Оквир за текст
+може се користити за унос и приказ текста у више редова.</p>
+<p>У једној линији текста у оквиру за текст могуће је унети или приказати до 2048
+карактера, а ако је омогућено својство <code class="docutils literal notranslate"><span class="pre">Multiline</span></code> за унос и приказ текста у
+више редова, могуће је унети или приказати до 32 KB текста.</p>
+<p>Нека је задатак да креираш једноставну GUI апликацију за демонстрацију рада са
+контролом <code class="docutils literal notranslate"><span class="pre">TextBox</span></code>. При врху форме треба да се налази лабела са текстом:
+„КРЕДЕНЦИЈАЛИ КОРИСНИКА”. Испод те лабеле треба да поставиш две лабеле са
+текстом „Корисничко име:” и „Лозинка:” и два оквира за текст за унос
+корисничког имена и лозинке. На форми треба да поставиш и дугме са текстом
+„УНЕСИ”. Ако је корисник унео податке у оба оквира за текст и кликнуо на дугме,
+у трећем оквиру за текст треба да се прикаже текст у више редова о унетим
+подацима, на пример: „Корисник са корисничким именом velimirradlovacki унео је
+лозинку Pr0gram!ranje”.</p>
+<p>Креирај нови <em>Windows Forms App (.NET Framework)</em> пројекат са формом димензија
+320×240, постави контроле као на слици…</p>
+<p><img alt="Оквир за текст" src="../_images/okvirzatekst-1.png" /></p>
+<p>…и дај им нека смислена имена. Својства првог оквира за текст не треба да
+мењаш, међутим, други оквир за текст не треба да приказује унете карактере него
+звездице, а текст у трећем оквиру за текст треба да буде приказан у више линија
+од стране апликације, а не корисника. Корисник не би смео да има могућност
+измене текста у трећем оквиру за текст.</p>
+<p>Да би креирао оквир за унос лозинке, кликни на други оквир за текст, пронађи
+својство <code class="docutils literal notranslate"><span class="pre">PasswordChar</span></code> и унеси карактер <code class="docutils literal notranslate"><span class="pre">*</span></code>. Сада корисник може да уноси текст
+у другом оквиру за текст, али ће се у оквиру видети само звездице.</p>
+<p><img alt="Оквир за текст" src="../_images/okvirzatekst-2.png" /></p>
+<p>Да би креирао оквир за приказ текста у више линија, кликни на трећи оквир за
+текст, па својства <code class="docutils literal notranslate"><span class="pre">Multiline</span></code> и <code class="docutils literal notranslate"><span class="pre">ReadOnly</span></code> постави на <code class="docutils literal notranslate"><span class="pre">True</span></code>. Прошири га
+по потреби, на пример овако:</p>
+<p><img alt="Оквир за текст" src="../_images/okvirzatekst-3.png" /></p>
+<p>Можеш да приметиш да је позадина трећег оквира из беле боје претворена у сиву,
+односно у стандардну боју контрола, чиме се даје до знања да се у њој не може
+мењати текст.</p>
+<p>На крају треба да дефинишеш догађај <code class="docutils literal notranslate"><span class="pre">Click</span></code> за дугме:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnUnesi_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">txtIme</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">txtLozinka</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">txtIme</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">lozinka</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">txtLozinka</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+<span class="w">        </span><span class="n">txtInformacije</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Корисник са корисничким именом &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">+</span>
+<span class="w">            </span><span class="s">&quot; унео је лозинку &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">lozinka</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Мораш унети корисничко име и лозинку!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ако је корисник унео корисничко име и лозинку, у трећем оквиру за текст
+исписаће се тражени текст…</p>
+<p><img alt="Оквир за текст" src="../_images/okvirzatekst-4.png" /></p>
+<p>…а ако није, добиће одговарајућу поруку:</p>
+<p><img alt="Оквир за текст" src="../_images/okvirzatekst-5.png" /></p>
+<p>Ако предвидим да ће генерисани текст можда бити превелик да стане у оквир за
+текст, можеш укључити скрол траке постављањем својства <code class="docutils literal notranslate"><span class="pre">ScrollBars</span></code> на
+<code class="docutils literal notranslate"><span class="pre">Horizontal</span></code>, <code class="docutils literal notranslate"><span class="pre">Vertical</span></code> или <code class="docutils literal notranslate"><span class="pre">Both</span></code>:</p>
+<p><img alt="Оквир за текст" src="../_images/okvirzatekst-6.png" /></p>
+<p>Понекад ћеш желети да сви карактери у оквиру за текст буду унети или приказани
+великим словима или да сви карактери у оквиру за текст буду унети или приказани
+малим словима. Променом својства <code class="docutils literal notranslate"><span class="pre">CharacterCasing</span></code> са <code class="docutils literal notranslate"><span class="pre">Normal</span></code> на <code class="docutils literal notranslate"><span class="pre">Upper</span></code>,
+односно на <code class="docutils literal notranslate"><span class="pre">Lower</span></code> можеш дефинисати да се сви карактери уносе или приказују
+само великим или само малим словима:</p>
+<p>Ако је задатак да забраниш кориснику да може да копира текст из апликације, на
+пример генерисани текст из трећег оквира за текст, онда тај задатак можеш
+једноставно решити постављањем својства <code class="docutils literal notranslate"><span class="pre">ShortcutsEnabled</span></code> на <code class="docutils literal notranslate"><span class="pre">False</span></code>. Ако
+корисник кликне десним кликом миша на селектовани текст у трећем оквиру за
+текст, неће имати <code class="docutils literal notranslate"><span class="pre">Cut</span></code>, <code class="docutils literal notranslate"><span class="pre">Copy</span></code>, <code class="docutils literal notranslate"><span class="pre">Paste</span></code>, нити остале опције.</p>
+<p>На крају. можеш користити и догађаје као што су <code class="docutils literal notranslate"><span class="pre">Validating</span></code> и <code class="docutils literal notranslate"><span class="pre">Validated</span></code> за
+проверу исправности унешеног текста и својства <code class="docutils literal notranslate"><span class="pre">AutoCompleteMode</span></code> и
+<code class="docutils literal notranslate"><span class="pre">AutoCompleteSource</span></code> за сугестије кориснику за аутоматско довршавање уноса док
+уноси текст.</p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

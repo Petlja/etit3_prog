@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Оквир за потврду &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Радио дугмe" href="radio_dugmad.html" />
+    <link rel="prev" title="Оквир за групу" href="okvir_za_grupu.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Оквир за потврду<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Контрола <strong>оквир за потврду</strong> (енгл. <em>CheckBox</em>) дефинисана је у класи
+<code class="docutils literal notranslate"><span class="pre">CheckBox</span></code> у именском простору <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code>, односно склопу
+<code class="docutils literal notranslate"><span class="pre">System.Windows.Forms.dll</span></code>. Класа <code class="docutils literal notranslate"><span class="pre">CheckBox</span></code> наслеђује класу <code class="docutils literal notranslate"><span class="pre">ButtonBase</span></code>, која
+наслеђује класу <code class="docutils literal notranslate"><span class="pre">Control</span></code>, па због тога оквир за потврду има основна својства,
+догађаје и методе као и остале контроле у <em>Windows Forms App (.NET Framework)</em>
+пројектима.</p>
+<p>Детаљан опис својстава, догађаја и метода класе <code class="docutils literal notranslate"><span class="pre">CheckBox</span></code> налази се у
+званичној <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.textbox?view=netframework-4.8">документацији</a>.
+Има их много и нема потребе наводити их све на овом месту.</p>
+<p>Контрола оквир за потврду означава да ли је одређени услов „укључен” или
+„искључен”. Обично се користи да представи кориснику избор типа Да/Не или
+Тачно/Нетачно. На пример, „Да ли се слажеш са условима коришћења…”, где
+корисник треба да штиклира оквир за потврду како би наставио даље. Ако се ова
+контрола користи у групама у неком контејнеру, онда се може имплементирати
+вишеструки избор, где корисник изабира једну или више понуђених опција.</p>
+<p>Контрола поља за потврду је слична контроли радио дугме по томе што се користи
+за означавање избора који је направио корисник. Разликује се по томе што се
+код радио дугмади може изабрати само по једно радио дугме у групи, док се код
+поља за потврду може изабрати било који број поља за потврду у групи.</p>
+<p>Ова контрола има два важна својства, <code class="docutils literal notranslate"><span class="pre">Checked</span></code> и <code class="docutils literal notranslate"><span class="pre">CheckState</span></code>. Својство
+<code class="docutils literal notranslate"><span class="pre">Checked</span></code> враћа тачно или нетачно. Својство <code class="docutils literal notranslate"><span class="pre">CheckState</span></code> враћа или <code class="docutils literal notranslate"><span class="pre">Checked</span></code>
+или <code class="docutils literal notranslate"><span class="pre">Unchecked</span></code> или, ако је својство <code class="docutils literal notranslate"><span class="pre">ThreeState</span></code> постављено на <code class="docutils literal notranslate"><span class="pre">True</span></code>, може да
+врати и <code class="docutils literal notranslate"><span class="pre">Indeterminate</span></code>, где се оквир приказује са затамњеним изгледом који
+указује да опција није доступна.</p>
+<p>Нека је задатак да креираш једноставну GUI апликацију за демонстрацију рада са
+контролом <code class="docutils literal notranslate"><span class="pre">CheckBox</span></code>. При врху форме треба да се налази оквир за потврду са
+текстом: „слажем се са условима коришћења апликације”. Испод, треба да се
+налази оквир за групу са текстом „Штиклирај објектно-оријентисане језике” и
+четири оквира за потврду са текстом:</p>
+<ul class="simple">
+<li><p>C</p></li>
+<li><p>C++</p></li>
+<li><p>Java</p></li>
+<li><p>C#</p></li>
+</ul>
+<p>Испод оквира за групу треба да се налази дугме са текстом „ОДГОВОРИ”. Кликом
+на дугме, ако корисник није штиклирао први оквир за потврду, онда треба да
+добије одговарајућу поруку о томе, а ако јесте, онда треба да се провери да ли
+су штиклирани тачни одговори.</p>
+<p>Креирај нови <em>Windows Forms App (.NET Framework)</em> пројекат са формом димензија
+320×240, постави контроле као на слици…</p>
+<p><img alt="Оквир за потврду" src="../_images/okvirzapotvrdu-1.png" /></p>
+<p>…и дај им нека смислена имена.</p>
+<p>Дефиниши догађај <code class="docutils literal notranslate"><span class="pre">Click</span></code> за дугме на следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnOdgovor_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chkUslovi</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// ... провера тачних одговора</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Мораш се сложити са условима коришћења!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>На овај начин си имплементирао први захтев, да корисник не може да одговара на
+питања, док се прво не сложи са условима коришћења апликације, о чему добија
+одговарајућу поруку:</p>
+<p><img alt="Оквир за потврду" src="../_images/okvirzapotvrdu-2.png" /></p>
+<p>Како да провериш да ли је корисник све тачно штиклирао, може да зависи
+од постављених правила. На пример, на твом твом матурском испиту, на тесту за
+проверу стручно-теоријских знања важило би правило:</p>
+<ul class="simple">
+<li><p>за три тачна и ни један нетачан одговор добио би маскималних 3 бода,</p></li>
+<li><p>за два тачна и ни један нетачан одговор добио би 2 бода,</p></li>
+<li><p>за један тачан и ни један нетачан одговор добио би 1 бод и</p></li>
+<li><p>за све остало добио би 0 бодова.</p></li>
+</ul>
+<p>Ово правило могао би да имплементираш овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnOdgovor_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chkUslovi</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">bodovi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">chkOdogovor1</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chkOdogovor2</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span><span class="w"> </span><span class="n">bodovi</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chkOdogovor3</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span><span class="w"> </span><span class="n">bodovi</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">chkOdogovor4</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span><span class="w"> </span><span class="n">bodovi</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Добио си &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bodovi</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; од могућа 3 бода!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Мораш се сложити са условима коришћења!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У некој конкретној апликацији за тестове знања, питање, одговори у текстовима
+оквира за потврду и тачни одговори приказани као <code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code> стања оквира за
+потврду учитавали би се из фајла или базе података и динамички смењивали једно
+за другим.</p>
+<p>Понекад ће бити потребно да апликација реагује на штиклирање оквира за потврду.
+На пример, ако се задатак прошири захтевом да се прикаже одговарајућа порука у
+тренутку када корисник штиклира да се слаже са условима коришћења, тај захтев
+можеш имплементирати дефинисањем догађаја <code class="docutils literal notranslate"><span class="pre">Click</span></code> на оквир за потврду:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">chkUslovi_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Хвала што си се сложио са условима коришћења!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

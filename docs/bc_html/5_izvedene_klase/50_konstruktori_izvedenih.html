@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Конструктори изведених класа &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Квиз" href="51_konstruktori_izvedenih_kviz.html" />
+    <link rel="prev" title="Заједнички чланови класе" href="40_zajednicki_clanovi.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Конструктори изведених класа<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Када креираш инстанцу изведене класе, конструктор базне класе се позива пре
+конструктора изведене класе. Ово је неопходно како би се осигурало да се сви
+чланови базне класе правилно иницијализују, пре него што се иницијализују
+чланови изведене класе.</p>
+<p>Конструктор изведене класе позива конструктор своје базне класе помоћу кључне
+речи <code class="docutils literal notranslate"><span class="pre">base</span></code>. На пример, ако је дефинисана базна класа <code class="docutils literal notranslate"><span class="pre">BaznaKlasa</span></code> овако…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">BaznaKlasa</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…онда у изведеној класи <code class="docutils literal notranslate"><span class="pre">IzvedenaKlasa</span></code>, конструктор базне класе треба да
+дефинишеш овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">IzvedenaKlasa</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">IzvedenaKlasa</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="w"> </span><span class="p">(</span><span class="n">ime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ако то не урадиш доћи ће до грешке:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CS7036: There is no argument given that corresponds to the required parameter &#39;ime&#39; of &#39;BaznaKlasa.BaznaKlasa(string)&#39;
+</pre></div>
+</div>
+<p>Значи, ако базна класа нема дефинисан јавни подразумевани конструктор, у
+изведеној класи мораш експлицитно позвати један од конструктора базне класе
+користећи кључну реч <code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+<p>С друге стране, ако базна класа има дефинисан јавни подразумевани конструктор,
+на пример овако…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">BaznaKlasa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…а ти у изведеној класи дефинишеш јавни подразумевани конструктор овако…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">IzvedenaKlasa</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">IzvedenaKlasa</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…компајлер ће сам допунити твој кôд у изведеној класи овако…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">IzvedenaKlasa</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">IzvedenaKlasa</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…и неће доћи до грешке.</p>
+<p>Значи, кључну реч <code class="docutils literal notranslate"><span class="pre">base</span></code> треба да користиш у конструктору изведене класе да
+би експлицитно позвао конструктор базне класе, што је корисно када базна класа
+нема јавни подразумевани конструктор или када желиш да позовеш одређени
+конструктор базне класе са параметрима. Ако базна класа има јавни подразумевани
+конструктор, није неопходно да у изведеној класи користиш кључну реч <code class="docutils literal notranslate"><span class="pre">base</span></code> за
+његов позив - компајлер ће то урадити за тебе.</p>
+<p>Класа <code class="docutils literal notranslate"><span class="pre">System.Object</span></code> има јавни подразумевани конструктор, па нема потребе да
+га позиваш помоћу <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">base()</span></code> нити да размишљаш о томе - компајлер ће то увек
+урадити за тебе.</p>
+<p>Треба да знаш да је редослед иницијализације увек такав да се прво позива
+конструктор базне класе, а затим конструктор изведене класе. Ово увек важи -
+без обзира да ли користиш подразумевани или експлицитни конструктор базне
+класе.</p>
+<p>На крају, ако у базној класи није дефинисан ни један конструктор…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">IzvedenaKlasa</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaznaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…компајлер ће у изведеној класи аутоматски креирати јавни подразумевани
+конструктор који позива јавни подразумевани конструктор базне класе, којег је
+такође он аутоматски креирао.</p>
+<p>Кључну реч <code class="docutils literal notranslate"><span class="pre">base</span></code> можеш користити и приликом позивања метода или приступа
+својствима и индексерима базне класе, о чему ћеш учити касније.</p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

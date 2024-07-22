@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Оквир за слику &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Оквир за текст" href="okvir_za_tekst.html" />
+    <link rel="prev" title="Дугме" href="dugme.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Оквир за слику<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Контрола <strong>оквир за слику</strong> (енгл. <em>PictureBox</em>) дефинисана је у класи
+<code class="docutils literal notranslate"><span class="pre">PictureBox</span></code> у именском простору <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code>, односно склопу
+<code class="docutils literal notranslate"><span class="pre">System.Windows.Forms.dll</span></code>. Класа <code class="docutils literal notranslate"><span class="pre">PictureBox</span></code> наслеђује класу <code class="docutils literal notranslate"><span class="pre">Control</span></code>, па
+због тога оквир за слику има основна својства, догађаје и методе као и остале
+контроле у <em>Windows Forms App (.NET Framework)</em> пројектима.</p>
+<p>Детаљан опис својстава, догађаја и метода класе <code class="docutils literal notranslate"><span class="pre">PictureBox</span></code> налази се у
+званичној <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.picturebox?view=netframework-4.8">документацији</a>.
+Има их много и нема потребе наводити их све на овом месту.</p>
+<p>Контрола оквир за слику користи се за учитавање, приказивање и манипулацију
+слика. Слику можеш учитати из фајла, ресурса или са <em>URL</em>-а користећи својство
+<code class="docutils literal notranslate"><span class="pre">Image</span></code>. Помоћу својства <code class="docutils literal notranslate"><span class="pre">SizeMode</span></code> можеш подесити начин на који се слика
+приказује у оквиру за слику, постављајући следеће вредности:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Normal</span></code>: Подразумевана вредност, слика се приказује у оригиналној величини.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StretchImage</span></code>: Слика се „развлачи” да попуни оквир за слику.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AutoSize</span></code>: Оквир за слику се аутоматски прилагођава величини слике.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CenterImage</span></code>: Слика се центрира у оквиру за слику.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Zoom</span></code>: Слика се пропорционално „развлачи” тако да стане у оквир за слику без
+губитка пропорција.</p></li>
+</ul>
+<p>Оквир за слике може да учита слику формата битмапе (BMP), иконе (ICO),
+<em>Windows Metafile</em> (WMF), JPEG, GIF или PNG. Ако је неопходно да слика буде
+транспарентна, оквир за слику подржава транспарентност у следећим графичким
+форматима:</p>
+<ul class="simple">
+<li><p>32-bit PNG,</p></li>
+<li><p>8-bit PNG,</p></li>
+<li><p>32-bit BMP,</p></li>
+<li><p>32-bit TIFF или</p></li>
+<li><p>GIF.</p></li>
+</ul>
+<p>Ако желиш да учиташ слику великих димензија, води рачуна о меморијским
+ресурсима. Можеш да користиш методу <code class="docutils literal notranslate"><span class="pre">Dispose()</span></code> за ослобађање меморије након
+што слика више није потребна. Ако учитаваш слику са интернета, корисно је да
+користиш асинхроне методе попут <code class="docutils literal notranslate"><span class="pre">LoadAsync()</span></code> како би избегао да програм
+постане неактиван док се чека да се слика учита.</p>
+<p>Нека је задатак да креираш једноставну GUI апликацију за демонстрацију рада са
+контролом <code class="docutils literal notranslate"><span class="pre">PictureBox</span></code>. При врху форме треба да се налази лабела са текстом:
+„На мрежним дијаграмима, за бежичне уређаје користе се следећи симболи:”. Испод
+лабеле треба да поставиш три дугмета са текстом…</p>
+<ul class="simple">
+<li><p>Приступна тачка</p></li>
+<li><p>Бежични мост</p></li>
+<li><p>Бежични рутер</p></li>
+</ul>
+<p>…и оквир за слику. Иницијално, оквир за слику треба да буде празан и треба да
+има белу позадину. Када корисник кликне на неко од понуђених дугмади, у средини
+оквира за слику треба да се прикаже једна од три понуђене слике:</p>
+<p><img alt="Приступна тачка" src="../_images/waccesspoint.jpg" /><img alt="Бежични мост" src="../_images/wbridge.jpg" /><img alt="Бежични рутер" src="../_images/wrouter.jpg" /></p>
+<p>Слике, преузете са странице <a class="reference external" href="https://www.cisco.com/c/en/us/about/brand-center/network-topology-icons.html">Network Topology Icons</a>,
+су различитих димензија.</p>
+<p>Креирај нови <em>Windows Forms App (.NET Framework)</em> пројекат са формом димензија
+320×240, постави контроле као на слици…</p>
+<p><img alt="Оквир за слику" src="../_images/okvirzasliku-1.png" /></p>
+<p>…и дај им нека смислена имена. Својство <code class="docutils literal notranslate"><span class="pre">BackColor</span></code> треба да буде промењено
+на <code class="docutils literal notranslate"><span class="pre">White</span></code>, како би позадина оквира била бела, а својство <code class="docutils literal notranslate"><span class="pre">SizeMode</span></code> на
+<code class="docutils literal notranslate"><span class="pre">CenterImage</span></code>, како би се слике приказивале у средини оквира за слику.</p>
+<p>Под претпоставком да си ископирао слике у исти директоријум у којем се налази и
+изврши фајл, дефиниши догађај <code class="docutils literal notranslate"><span class="pre">Click</span></code> за прво дугме:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnPristupna_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">pristupnaTacka</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="s">&quot;waccesspoint.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pcbUredjaj</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pristupnaTacka</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Сада, кликом на прво дугме креира се објекат <code class="docutils literal notranslate"><span class="pre">pristupnaTacka</span></code> типа <code class="docutils literal notranslate"><span class="pre">Bitmap</span></code>, па
+се исти додељује својству <code class="docutils literal notranslate"><span class="pre">Image</span></code>, оквира за слику <code class="docutils literal notranslate"><span class="pre">pcbUredjaj</span></code>:</p>
+<p><img alt="Оквир за слику" src="../_images/okvirzasliku-2.png" /></p>
+<p>Исто можеш урадити и за друго и треће дугме, па ако корисник кликне на друго
+дугме, својству <code class="docutils literal notranslate"><span class="pre">Image</span></code>, оквира за слику <code class="docutils literal notranslate"><span class="pre">pcbUredjaj</span></code> биће додељена друга
+слика…</p>
+<p><img alt="Оквир за слику" src="../_images/okvirzasliku-3.png" /></p>
+<p>…односно, ако кликне на треће дугме, својству <code class="docutils literal notranslate"><span class="pre">Image</span></code>, оквира за слику
+<code class="docutils literal notranslate"><span class="pre">pcbUredjaj</span></code> биће додељена трећа слика:</p>
+<p><img alt="Оквир за слику" src="../_images/okvirzasliku-4.png" /></p>
+<p><strong>Шта није у реду са овим решењем?</strong> Ако корисник кликне узастопно десет пута
+на прво дугме, десет пута ће креирати нови објекат у меморији. Ово може да буде
+нарочито опасно када су слике великих димензија. Решење проблема је једноставно
+коришћењем методе <code class="docutils literal notranslate"><span class="pre">Dispose()</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnPristupna_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pcbUredjaj</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pcbUredjaj</span><span class="p">.</span><span class="n">Image</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">        </span><span class="n">pcbUredjaj</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">pristupnaTacka</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="s">&quot;waccesspoint.jpg&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pcbUredjaj</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pristupnaTacka</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Прво се проверава да ли већ постоји слика у оквиру за слику. Ако постоји, она
+се ослобађа позивањем <code class="docutils literal notranslate"><span class="pre">Dispose()</span></code> методе. На овај начин, корисник може да
+кликне на било које дугме колико год пута жели. Сваким кликом, ако већ постоји
+објекат додељен својству <code class="docutils literal notranslate"><span class="pre">Image</span></code>, тај објекат ће бити уништен. Након такве
+провере може се креирати нови објекат и доделити својству <code class="docutils literal notranslate"><span class="pre">Image</span></code>.</p>
+<p>Још боље решење је да се слике дефинишу као поља у класи <code class="docutils literal notranslate"><span class="pre">Form1</span></code>. Ово решење
+омогућава учитавање слика једном и коришћење истих инстанци слика касније, без
+потребе за сталним учитавањем и ослобађањем ресурса. Цео програм могао би да
+изгледа овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Windows.Forms</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">OkvirZaSliku</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Form1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Form</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">pristupnaTacka</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="s">&quot;waccesspoint.jpg&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">bezicniMost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="s">&quot;wbridge.jpg&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">bezicniRuter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="s">&quot;wrouter.jpg&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">Form1</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnPristupna_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pcbUredjaj</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pristupnaTacka</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnMost_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pcbUredjaj</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bezicniMost</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnRuter_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pcbUredjaj</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bezicniRuter</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_FormClosing</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">FormClosingEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">pristupnaTacka</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">            </span><span class="n">bezicniMost</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">            </span><span class="n">bezicniRuter</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Добра пракса је да ресурсе типа <code class="docutils literal notranslate"><span class="pre">Bitmap</span></code>, када више нису неопходни, експлицитно
+ослободиш. Ако не ослободиш ресурсе, може доћи до тзв. цурења меморије. У
+примеру изнад то је урађено у догађају <code class="docutils literal notranslate"><span class="pre">FormClosing</span></code>. Други начин да ослободиш
+ове ресурсе је, да уместо дефинисања <code class="docutils literal notranslate"><span class="pre">FormClosing</span></code> догађаја, у другом делу
+парцијалне класе <code class="docutils literal notranslate"><span class="pre">Form1</span></code>, у фајлу <code class="docutils literal notranslate"><span class="pre">Form1.Designer.cs</span></code>, пронађеш и модификујем
+методу <code class="docutils literal notranslate"><span class="pre">Dispose()</span></code> на следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="c1">/// &lt;summary&gt;</span>
+<span class="c1">/// Clean up any resources being used.</span>
+<span class="c1">/// &lt;/summary&gt;</span>
+<span class="c1">/// &lt;param name=&quot;disposing&quot;&gt;true if managed resources should be disposed; otherwise, false.&lt;/param&gt;</span>
+<span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Dispose</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">disposing</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">disposing</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pristupnaTacka</span><span class="o">?.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">        </span><span class="n">bezicniMost</span><span class="o">?.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">        </span><span class="n">bezicniRuter</span><span class="o">?.</span><span class="n">Dispose</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">components</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">components</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">base</span><span class="p">.</span><span class="n">Dispose</span><span class="p">(</span><span class="n">disposing</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

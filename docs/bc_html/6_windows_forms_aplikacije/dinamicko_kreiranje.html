@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Динамичко креирање контрола &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Задатак: Будилник" href="zadatak_budilnik.html" />
+    <link rel="prev" title="Кастовање контрола" href="kastovanje_kontrola.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Динамичко креирање контрола<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>На почетку поглавља поменуто је да контроле у <em>Windows Forms App</em>
+<em>(.NET Framework)</em> пројектима можеш постављати на два начина:</p>
+<ul class="simple">
+<li><p>статички, односно помоћу дизајнера, током израде апликације (енгл.
+<em>Design-Time</em>), или</p></li>
+<li><p>динамички, односно програмским кодом у току извршавања апликације (енгл.
+<em>Run-Time</em>).</p></li>
+</ul>
+<p>Динамичко креирање контрола је корисно у ситуацијама када није унапред познат
+број или врста контрола потребних у апликацији или када се број или врста
+контрола мења у зависности од акција корисника или неких других фактора.</p>
+<p>Нека је задатак да креираш једноставну <em>Windows Forms App (.NET Framework)</em>
+апликацију у којој корисник бира да ли жели да му се прикаже неки текст у
+лабели или нека слика у оквиру за слике. Како не знаш унапред да ли ће корисник
+одабрати опцију за приказ текста или опцију за приказ слике, не можеш унапред
+поставити контролу у дизајнеру која ће да одговара избору корисника. Решење је
+да динамички креираш ону контролу коју је корисник одабрао.</p>
+<p>Наравно, решење може бити да поставиш обе контроле, сакријеш их, па прикажеш
+ону коју је корисник одабрао, али онда твоја апликација непотребно креира
+два објекта у меморији, уместо једног. Биће ситуација када је број контрола
+које треба поставити велик и непредвидив, па сакривање статички постављених
+контрола не може да буде решење.</p>
+<p>Креирај <em>Windows Forms App (.NET Framework)</em> пројекат са формом димензија
+640×480. У врху постави једну лабелу са текстом „Који програмски језик је 2000.
+године дизајнирао Андерс Хејлсберг у компанији Microsoft?”. Испод
+постави два дугмета са текстом „Прикажи текст” и „Прикажи слику”.</p>
+<p><img alt="Динамичко креирање контрола" src="../_images/dinamicko-01.png" /></p>
+<p>Ако корисник кликне на прво дугме, испод треба да се прикаже лабела са текстом
+„Програмски језик C#”, а друго дугме треба да постане онемогућено. Ако корисник
+кликне на друго дугме, испод треба да се прикаже следећа слика…</p>
+<p><img alt="C# лого" src="https://upload.wikimedia.org/wikipedia/commons/d/d2/C_Sharp_Logo_2023.svg" /></p>
+<p>…а прво дугме треба да постане онемогућено.</p>
+<p>Кликни на прво дугме и креирај догађај миша <code class="docutils literal notranslate"><span class="pre">Click</span></code>, па исто ро уради и са
+другим дугметом. У тексту задатка тражи се да кликом на прво дугме, друго дугме
+треба да постане онемогућено и обрнуто, кликом на друго дугме, прво дугме треба
+да постане онемогућено:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnTekst_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">btnSlika</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnSlika_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">btnTekst</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="id2">
+<h2>Креирање инстанци контрола<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>У догађају <code class="docutils literal notranslate"><span class="pre">btnTekst_Click</span></code> потребно је да креираш инстанцу контроле коју желиш
+да додаш - у овом случају инстанцу лабеле:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">Label</span><span class="w"> </span><span class="n">lblOdgovor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>У догађају <code class="docutils literal notranslate"><span class="pre">btnSlika_Click</span></code> потребно је да креираш инстанцу оквира за слику:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">PictureBox</span><span class="w"> </span><span class="n">pcbOdgovor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PictureBox</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Дефинисање својстава динамички креираних контрола<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Након иницијализације, потребно је да дефинишеш својства динамички креираних
+контрола. Пошто те контроле не постоје током дизајна програма, односно нису
+видљиве у дизајнеру, својства мораш дефинисати у самом коду.</p>
+<p>Својствa које требаш прво подесити су својство <code class="docutils literal notranslate"><span class="pre">Name</span></code> и својство <code class="docutils literal notranslate"><span class="pre">Location</span></code>
+којим се одређује локација динамички креиране контроле на форми у односу на
+горњи леви угао форме одређена <em>(X, Y)</em> координатама. Након тога можеш
+дефинисати остала својства контроле.</p>
+<p>У случају лабеле, поред својстава <code class="docutils literal notranslate"><span class="pre">Name</span></code> и <code class="docutils literal notranslate"><span class="pre">Location</span></code>, биће довољно да
+дефинишеш својство <code class="docutils literal notranslate"><span class="pre">Text</span></code>, својство <code class="docutils literal notranslate"><span class="pre">Font</span></code> и својство <code class="docutils literal notranslate"><span class="pre">AutoSize</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;lblOdgovor&quot;</span><span class="p">;</span>
+<span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="m">140</span><span class="p">,</span><span class="w"> </span><span class="m">160</span><span class="p">);</span>
+<span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Програмски језик C#&quot;</span><span class="p">;</span>
+<span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Font</span><span class="p">(</span><span class="s">&quot;Microsoft Sans Serif&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">24</span><span class="p">);</span>
+<span class="n">lblOdgovor</span><span class="p">.</span><span class="n">AutoSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>У случају оквира за слике, поред својстава <code class="docutils literal notranslate"><span class="pre">Name</span></code> и <code class="docutils literal notranslate"><span class="pre">Location</span></code>, биће довољно да
+дефинишеш саму слику, па након тога дефинишеш својство <code class="docutils literal notranslate"><span class="pre">Image</span></code>, својство
+<code class="docutils literal notranslate"><span class="pre">SizeMode</span></code> и својство <code class="docutils literal notranslate"><span class="pre">ClientSize</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pcbOdgovor&quot;</span><span class="p">;</span>
+<span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="m">160</span><span class="p">);</span>
+<span class="n">Bitmap</span><span class="w"> </span><span class="n">slika</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="s">&quot;C_Sharp_Logo_2023.svg.png&quot;</span><span class="p">);</span>
+<span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slika</span><span class="p">;</span>
+<span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">SizeMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PictureBoxSizeMode</span><span class="p">.</span><span class="n">StretchImage</span><span class="p">;</span>
+<span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">ClientSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Size</span><span class="p">(</span><span class="m">205</span><span class="p">,</span><span class="w"> </span><span class="m">205</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>Додавање динамички креиране контроле на форму<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Када си креирао инстанце жељених контрола и дефинисао њихова својства, потребно
+је да те контроле додаш на форму користећи методу <code class="docutils literal notranslate"><span class="pre">Controls.Add()</span></code>.</p>
+<p>Додавање динамички креиране лабеле <code class="docutils literal notranslate"><span class="pre">lblOdgovor</span></code> на форму изгледаће овако…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">lblOdgovor</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>…односно, додавање динамички креираног оквира за слику <code class="docutils literal notranslate"><span class="pre">pcbOdgovor</span></code> на форму
+изгледаће овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">pcbOdgovor</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>На крају, креирање инстанце, дефинисање својстава и постављање лабеле на форму
+изгледаће овако…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnTekst_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">btnSlika</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Label</span><span class="w"> </span><span class="n">lblOdgovor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">();</span>
+<span class="w">    </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;lblOdgovor&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="m">140</span><span class="p">,</span><span class="w"> </span><span class="m">160</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Програмски језик C#&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Font</span><span class="p">(</span><span class="s">&quot;Microsoft Sans Serif&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">24</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">AutoSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">lblOdgovor</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…односно, креирање инстанце, дефинисање својстава и постављање оквира за
+слику на форму изгледаће овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnSlika_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">btnTekst</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">    </span><span class="n">PictureBox</span><span class="w"> </span><span class="n">pcbOdgovor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PictureBox</span><span class="p">();</span>
+<span class="w">    </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pcbOdgovor&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="m">160</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">slika</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="s">&quot;C_Sharp_Logo_2023.svg.png&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">SizeMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PictureBoxSizeMode</span><span class="p">.</span><span class="n">StretchImage</span><span class="p">;</span>
+<span class="w">    </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">ClientSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Size</span><span class="p">(</span><span class="m">205</span><span class="p">,</span><span class="w"> </span><span class="m">205</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slika</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">pcbOdgovor</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Кликом на прво дугме, друго дугме постаће онемогућено, креираће се
+инстанца контроле лабела са дефинисаним својствима и на крају, креирана
+контрола биће постављена на форму:</p>
+<p><img alt="Динамичко креирање контрола" src="../_images/dinamicko-02.png" /></p>
+<p>Кликом на друго дугме, прво дугме постаће онемогућено, креираће се
+инстанца контроле оквир за слику са дефинисаним својствима и на крају, креирана
+контрола биће постављена на форму:</p>
+<p><img alt="Динамичко креирање контрола" src="../_images/dinamicko-03.png" /></p>
+</section>
+<section id="id5">
+<h2>Додавање догађаја динамички креираним компонентама<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>Нека је претходни задатак проширен још једним захтевом - када се кликне на
+динамички креирану контролу <code class="docutils literal notranslate"><span class="pre">pcbOdgovor</span></code> треба да се прикаже порука „Слика је
+преузета са сајта wikimedia.org”.</p>
+<p>Питање је како дефинисати догађај клика на динамички креирану контролу, када та
+контрола не постоји током дизајна? Одговор лежи у руковаоцима догађаја. Потребно
+је да мануелно напишеш догађај клика на динамички креирану контролу, на пример
+овако…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">pcbOdgovor_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Слика је преузета са сајта wikimedia.org&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…па контроли <code class="docutils literal notranslate"><span class="pre">pcbOdgovor</span></code> додаш тај догађај помоћу руковаоца догађаја.
+Значи, после креирања контроле <code class="docutils literal notranslate"><span class="pre">pcbOdgovor</span></code>, а пре њеног додавања на форму,
+потребно је да доделиш догађај <code class="docutils literal notranslate"><span class="pre">pcbOdgovor_Click</span></code> контроли <code class="docutils literal notranslate"><span class="pre">pcbOdgovor</span></code> на
+следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHandler</span><span class="p">(</span><span class="n">pcbOdgovor_Click</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Сада се кликом на контролу <code class="docutils literal notranslate"><span class="pre">pcbOdgovor</span></code> иницира догађај <code class="docutils literal notranslate"><span class="pre">pcbOdgovor_Click</span></code>:</p>
+<p><img alt="Динамичко креирање контрола" src="../_images/dinamicko-04.png" /></p>
+</section>
+<section id="id6">
+<h2>Уклањање динамички креираних контрола<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<p>Претходни задатак може се проширити са још једним захтевом. На дну форме
+постави дугме <code class="docutils literal notranslate"><span class="pre">btnReset</span></code> са текстом „Ресетуј” које је иницијално онемогућено.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">btnReset</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Кликом на дугмад <code class="docutils literal notranslate"><span class="pre">btnTekst</span></code> или <code class="docutils literal notranslate"><span class="pre">btnSlika</span></code>, дугме <code class="docutils literal notranslate"><span class="pre">btnReset</span></code> треба да постане
+омогућено. Кликом на <code class="docutils literal notranslate"><span class="pre">btnReset</span></code> треба уклонити динамички креирану контролу са
+форме и поново омогућити дугме <code class="docutils literal notranslate"><span class="pre">btnTekst</span></code> или <code class="docutils literal notranslate"><span class="pre">btnSlika</span></code>.</p>
+<p><img alt="Динамичко креирање контрола" src="../_images/dinamicko-05.png" /></p>
+<p>Динамичке компоненте могу се уклонити на више начина. Први и најједноставнији
+начин није погодан за овај пример. Подразумева коришћење <code class="docutils literal notranslate"><span class="pre">Controls.Remove()</span></code>
+методе када постоји референца на динамички креирану контролу. На пример, у
+догађају <code class="docutils literal notranslate"><span class="pre">btnTekst_Click</span></code> где постоји референца на динамички креирану контролу
+<code class="docutils literal notranslate"><span class="pre">lblOdgovor</span></code>, могла би се додати линија кода…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">lblOdgovor</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>…за уклањање контроле са форме и након тога још једна линија кода…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>…за ослобађање ресурса које је контрола заузела.</p>
+<p>Други начин, који јесте погодан за овај пример, подразумева уклањање контроле
+на основу њеног имена. Додај дугме са текстом <code class="docutils literal notranslate"><span class="pre">btnReset</span></code> на дну форме, како је
+тражено у задатку и креирај догађај <code class="docutils literal notranslate"><span class="pre">btnReset_Click</span></code>.</p>
+<p>Ако је корисник био кликнуо на дугме <code class="docutils literal notranslate"><span class="pre">btnSlika</span></code> и на форми се налази динамички
+креирана контрола <code class="docutils literal notranslate"><span class="pre">pcbOdgovor</span></code>…</p>
+<p><img alt="Динамичко креирање контрола" src="../_images/dinamicko-06.png" /></p>
+<p>…ову контролу можеш пронаћи и уклонити на следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">Control</span><span class="w"> </span><span class="n">kontrolaZaBrisanje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="s">&quot;pcbOdgovor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">).</span><span class="n">FirstOrDefault</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kontrolaZaBrisanje</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">kontrolaZaBrisanje</span><span class="p">);</span>
+<span class="w">    </span><span class="n">kontrolaZaBrisanje</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ако је корисник био кликнуо на дугме <code class="docutils literal notranslate"><span class="pre">btnTekst</span></code> и на форми се налази динамички
+креирана контрола <code class="docutils literal notranslate"><span class="pre">lblOdgovor</span></code>…</p>
+<p><img alt="Динамичко креирање контрола" src="../_images/dinamicko-07.png" /></p>
+<p>…ову контролу можеш пронаћи и уклонити као и претходну:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">Control</span><span class="w"> </span><span class="n">kontrolaZaBrisanje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="s">&quot;lblOdgovor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">).</span><span class="n">FirstOrDefault</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kontrolaZaBrisanje</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">kontrolaZaBrisanje</span><span class="p">);</span>
+<span class="w">    </span><span class="n">kontrolaZaBrisanje</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>На крају, када си обрисао динамички креирану контролу, омогући дугмад
+<code class="docutils literal notranslate"><span class="pre">btnTekst</span></code> и <code class="docutils literal notranslate"><span class="pre">btnSlika</span></code>, а онемогући дугме <code class="docutils literal notranslate"><span class="pre">btnReset</span></code>.</p>
+</section>
+<section id="id7">
+<h2>Комплетно решење задатка<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
+<p>Комплетно решење овог задатка, у којем си на форму додавао динамички креиране
+контроле са жељеним својствима и догађајима и омогућио уклањање динамички
+креираних контрола изгледа овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Windows.Forms</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">DinamickoKreiranjeKontrola</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Form1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Form</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">Form1</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">btnReset</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnTekst_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">btnSlika</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">btnReset</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Label</span><span class="w"> </span><span class="n">lblOdgovor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Label</span><span class="p">();</span>
+<span class="w">            </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;lblOdgovor&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="m">140</span><span class="p">,</span><span class="w"> </span><span class="m">160</span><span class="p">);</span>
+<span class="w">            </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Програмски језик C#&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">Font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Font</span><span class="p">(</span><span class="s">&quot;Microsoft Sans Serif&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">24</span><span class="p">);</span>
+<span class="w">            </span><span class="n">lblOdgovor</span><span class="p">.</span><span class="n">AutoSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">lblOdgovor</span><span class="p">);</span>
+<span class="w">            </span><span class="n">btnTekst</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnSlika_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">btnTekst</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">btnReset</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">PictureBox</span><span class="w"> </span><span class="n">pcbOdgovor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PictureBox</span><span class="p">();</span>
+<span class="w">            </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pcbOdgovor&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="m">200</span><span class="p">,</span><span class="w"> </span><span class="m">160</span><span class="p">);</span>
+<span class="w">            </span><span class="n">Bitmap</span><span class="w"> </span><span class="n">slika</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Bitmap</span><span class="p">(</span><span class="s">&quot;C_Sharp_Logo_2023.svg.png&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">SizeMode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PictureBoxSizeMode</span><span class="p">.</span><span class="n">StretchImage</span><span class="p">;</span>
+<span class="w">            </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">ClientSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Size</span><span class="p">(</span><span class="m">205</span><span class="p">,</span><span class="w"> </span><span class="m">205</span><span class="p">);</span>
+<span class="w">            </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">slika</span><span class="p">;</span>
+<span class="w">            </span><span class="n">pcbOdgovor</span><span class="p">.</span><span class="n">Click</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">EventHandler</span><span class="p">(</span><span class="n">pcbOdgovor_Click</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">pcbOdgovor</span><span class="p">);</span>
+<span class="w">            </span><span class="n">btnSlika</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">pcbOdgovor_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&quot;Слика је преузета са сајта wikimedia.org&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnReset_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Control</span><span class="w"> </span><span class="n">kontrolaZaBrisanje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="s">&quot;pcbOdgovor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">).</span><span class="n">FirstOrDefault</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kontrolaZaBrisanje</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">kontrolaZaBrisanje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Find</span><span class="p">(</span><span class="s">&quot;lblOdgovor&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">).</span><span class="n">FirstOrDefault</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">kontrolaZaBrisanje</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Controls</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">kontrolaZaBrisanje</span><span class="p">);</span>
+<span class="w">                </span><span class="n">kontrolaZaBrisanje</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">btnTekst</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">btnSlika</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">btnReset</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

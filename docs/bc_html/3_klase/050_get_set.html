@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Гетери и сетери &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Квиз" href="051_enkapsulacija_kviz.html" />
+    <link rel="prev" title="Енкапсулација података" href="040_enkapsulacija.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Гетери и сетери<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Методе <code class="docutils literal notranslate"><span class="pre">get</span></code> и <code class="docutils literal notranslate"><span class="pre">set</span></code> у програмском језику C# углавном се користе за приступ и
+измену приватних или заштићених поља у класи. Ове методе омогућавају
+контролисано читање и писање вредности, што помаже у имплементацији принципа
+енкапсулације. Дефинисана метода <code class="docutils literal notranslate"><span class="pre">get</span></code> популарно се назива гетер, док се
+дефинисана метода <code class="docutils literal notranslate"><span class="pre">set</span></code>популарно назива сетер.</p>
+<p>На почетку овог поглавља научио си да су својства класе заправо методе којима
+се приступа као да су поља класе. Унутар својстава обично се дефинишу <code class="docutils literal notranslate"><span class="pre">get</span></code>
+и/или <code class="docutils literal notranslate"><span class="pre">set</span></code> методе. Значи, својство је члан класе који може имати <code class="docutils literal notranslate"><span class="pre">get</span></code> и/или
+<code class="docutils literal notranslate"><span class="pre">set</span></code> методе.</p>
+<p>Једноставан пример употребе метода <code class="docutils literal notranslate"><span class="pre">get</span></code> и <code class="docutils literal notranslate"><span class="pre">set</span></code> унутар једног својства може да
+буде:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">NekaKlasa</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vrednost</span><span class="p">;</span><span class="w">          </span><span class="c1">// Приватно поље</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Vrednost</span><span class="w">            </span><span class="c1">// Својство</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">vrednost</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="c1">// Метода за добијање вредности</span>
+<span class="w">        </span><span class="k">set</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">vrednost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// Метода за постављање вредности</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">get</span></code> метода дефинише како се вредност поља чита. Када се позове својство,
+извршава се <code class="docutils literal notranslate"><span class="pre">get</span></code> метода. <code class="docutils literal notranslate"><span class="pre">set</span></code> метода дефинише како се вредност поља поставља.
+Приликом постављања нове вредности својству, извршава се <code class="docutils literal notranslate"><span class="pre">set</span></code> метода.</p>
+<p>Можеш користити само методу <code class="docutils literal notranslate"><span class="pre">get</span></code> ако желиш само читање (без измене), односно,
+можеш користити само методу <code class="docutils literal notranslate"><span class="pre">set</span></code> својство, ако желите само записивање (без
+читања). Унутар <code class="docutils literal notranslate"><span class="pre">get</span></code> и <code class="docutils literal notranslate"><span class="pre">set</span></code> метода можеш користити модификаторе приступа
+<code class="docutils literal notranslate"><span class="pre">private</span></code> или <code class="docutils literal notranslate"><span class="pre">protected</span></code> како би ограничио приступ другим деловима програма.</p>
+<p>Нека је задатак да се у класи <code class="docutils literal notranslate"><span class="pre">Ucenik</span></code> у пољу <code class="docutils literal notranslate"><span class="pre">godine</span></code> постави број година
+ученика средње школе, који може бити у опсегу од 14 до 19 година. Сваки број
+мањи од 14 или већи од 19 није прихватљив.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Ucenik</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">godine</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Godine</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">godine</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="k">set</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">20</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">godine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">ArgumentOutOfRangeException</span><span class="p">(</span><span class="s">&quot;Недозвољени број година.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Ucenik</span><span class="w"> </span><span class="n">u1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ucenik</span><span class="p">();</span>
+<span class="w">        </span><span class="n">u1</span><span class="p">.</span><span class="n">Godine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">17</span><span class="p">;</span><span class="w">                </span><span class="c1">// Позива се set метод</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">u1</span><span class="p">.</span><span class="n">Godine</span><span class="p">);</span><span class="w">  </span><span class="c1">// Позива се get метод</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У овом примеру демонстриран је пример добре праксе енкапсулације и валидације
+унетог податка.</p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

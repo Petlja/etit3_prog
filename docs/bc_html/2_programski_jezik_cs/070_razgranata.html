@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Разгранате структуре &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Цикличне структуре" href="080_ciklicna.html" />
+    <link rel="prev" title="Битски оператори" href="061_bitski_operatori.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Разгранате структуре<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Слично као и у програмском језику C, у програмском језику C# уочићеш линијске,
+разгранате и цикличне програмске структуре. Синтакса наредби које се користе у
+разгранатим структурама је иста, али се вредности управљачких израза разликују.</p>
+<section id="id2">
+<h2>Наредба гранања<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Наредбу гранања <code class="docutils literal notranslate"><span class="pre">if</span></code> можеш да користиш без <code class="docutils literal notranslate"><span class="pre">else</span></code> дела:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">izraz</span><span class="p">)</span>
+<span class="w">    </span><span class="n">naredba</span>
+</pre></div>
+</div>
+<p>У програмском језику C# <code class="docutils literal notranslate"><span class="pre">izraz</span></code> представља Буловски лочики израз који може да
+има вредност <code class="docutils literal notranslate"><span class="pre">true</span></code> или <code class="docutils literal notranslate"><span class="pre">false</span></code>, а не број различит од нуле или нула као у
+програмском језику C! Ако је вредност израза <code class="docutils literal notranslate"><span class="pre">true</span></code> извршава се <code class="docutils literal notranslate"><span class="pre">naredba</span></code> која
+може бити појединачна наредба или блок наредби између витичастих заграда. У
+следећем примеру…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>у конзоли ће се исписати <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>, јер вредност Буловског израза <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">2</span></code>
+износи <code class="docutils literal notranslate"><span class="pre">true</span></code>, док се у следећем…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>неће исписати ништа јер вредност Буловског израза <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> износи <code class="docutils literal notranslate"><span class="pre">false</span></code>. У
+датим примерима извршава се само једна наредба у оквиру <code class="docutils literal notranslate"><span class="pre">if</span></code> блока па се
+витичасте заграде могу изоставити, мада се то ређе ради међу C# програмерима.</p>
+<p>Наредбу гранања <code class="docutils literal notranslate"><span class="pre">if</span></code> може да користиш и са <code class="docutils literal notranslate"><span class="pre">else</span></code> делом…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">izraz</span><span class="p">)</span>
+<span class="w">    </span><span class="n">naredba_1</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">naredba_2</span>
+</pre></div>
+</div>
+<p>…где <code class="docutils literal notranslate"><span class="pre">izraz</span></code> опет представља Буловски лочики израз који може да има вредност
+<code class="docutils literal notranslate"><span class="pre">true</span></code> или <code class="docutils literal notranslate"><span class="pre">false</span></code>. Ако је вредност израза <code class="docutils literal notranslate"><span class="pre">true</span></code> извршава се <code class="docutils literal notranslate"><span class="pre">naredba_1</span></code>, а
+ако је <code class="docutils literal notranslate"><span class="pre">false</span></code> извршава се <code class="docutils literal notranslate"><span class="pre">naredba_2</span></code>. <code class="docutils literal notranslate"><span class="pre">naredba_1</span></code> и <code class="docutils literal notranslate"><span class="pre">naredba_2</span></code> могу бити
+појединачне наредбе или блокови наредби између витичастих заграда. У следећем
+примеру…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;World, Hello!&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…у конзоли ће се исписати <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code> јер вредност Буловског израза
+<code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> износи <code class="docutils literal notranslate"><span class="pre">true</span></code>, док ће се у следећем…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;World, Hello!&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…исписати <code class="docutils literal notranslate"><span class="pre">World,</span> <span class="pre">Hello!</span></code>, јер вредност Буловског израза <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> износи
+<code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Исто као и у програмском језику C, <code class="docutils literal notranslate"><span class="pre">if</span></code> или <code class="docutils literal notranslate"><span class="pre">if-else</span></code> структура може у себи
+садржати једну или више угнежђених <code class="docutils literal notranslate"><span class="pre">if</span></code> или <code class="docutils literal notranslate"><span class="pre">if-else</span></code> структура. Иако увлачење,
+односно назубљивање кода (енгл. <em>indentation</em>) има само естетску улогу, добра
+пракса је да увек треба да увлачиш блок наредби <code class="docutils literal notranslate"><span class="pre">if</span></code> и <code class="docutils literal notranslate"><span class="pre">else</span></code> грана са истим
+размаком за увлачење (обично четири празнине или један табулатор). Дозвољено је
+да користиш и <code class="docutils literal notranslate"><span class="pre">else-if</span></code> запис, ако ће то побољшати читљивост кода.</p>
+</section>
+<section id="id3">
+<h2>Тернарни условни оператор<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Општи облик наредбе са тернарним условним оператором изгледа овако:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>izraz_1 ? izraz_2 : izraz_3;
+</pre></div>
+</div>
+<p>Ако вредност <code class="docutils literal notranslate"><span class="pre">izraz_1</span></code> изности <code class="docutils literal notranslate"><span class="pre">true</span></code> извршиће се <code class="docutils literal notranslate"><span class="pre">izraz_2</span></code>, односно, ако
+изности <code class="docutils literal notranslate"><span class="pre">false</span></code> извршиће се <code class="docutils literal notranslate"><span class="pre">izraz_3</span></code>. У следећем примеру…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;World, Hello!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>…у конзоли ће се иписати „Hello, World!” јер израз <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> има вредност
+<code class="docutils literal notranslate"><span class="pre">true</span></code>, док ће се у следећем…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;World, Hello!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>исписати <code class="docutils literal notranslate"><span class="pre">World,</span> <span class="pre">Hello!</span></code> јер израз <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> има вредност <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</section>
+<section id="id4">
+<h2>Наредба вишеструког гранања<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Слично као у програмском језику C, наредба вишеструког гранања <code class="docutils literal notranslate"><span class="pre">switch-case</span></code> у
+програмском језику C# доприноси читљивости програма у којем се појављује
+вишеструко гранање. Ограничење које је постојало у програмском језику C, да
+израз у загради наредбе <code class="docutils literal notranslate"><span class="pre">switch</span></code> мора бити целобројног типа, у програмском
+језику C# не постоји. Општи облик наредбе вишеструког гранања може се
+представити овако…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="p">(</span><span class="n">izraz</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">konstanta_1</span><span class="p">:</span>
+<span class="w">        </span><span class="n">naredba_1</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">konstanta_2</span><span class="p">:</span>
+<span class="w">        </span><span class="n">naredba_2</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<span class="w">        </span><span class="n">naredba_n</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…где <code class="docutils literal notranslate"><span class="pre">naredbа_1</span></code>, <code class="docutils literal notranslate"><span class="pre">naredbа_2</span></code> … <code class="docutils literal notranslate"><span class="pre">naredba_n</span></code> могу бити или појединачне наредбе
+или блокови наредби. Не могу постојати две <code class="docutils literal notranslate"><span class="pre">case</span></code> гране са истом константом.
+Прво се израчунава вредност <code class="docutils literal notranslate"><span class="pre">izraz</span></code> и проналази се грана чија је вредност
+константе једнака тој вредности. Уколико се пронађе таква грана извршава се
+блок наредби почевши од те гране па до краја <code class="docutils literal notranslate"><span class="pre">switch</span></code> наредбе. Ако се вредност
+израза не поклапа ни са једном константом, онда се извршава блок наредби у
+<code class="docutils literal notranslate"><span class="pre">default</span></code> грани уколико постоји. Најчешће је потребно да се изврши само једна
+грана и тада се користи наредба <code class="docutils literal notranslate"><span class="pre">break</span></code>. Ако се наредба <code class="docutils literal notranslate"><span class="pre">break</span></code> наведе на крају
+блока наредби у грани, прескаче се извршавање свих осталих грана до краја
+<code class="docutils literal notranslate"><span class="pre">switch</span></code> наредбе.</p>
+<p>У следећем примеру…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">izraz</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">4.5</span><span class="p">:</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Jednako&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">4.4</span><span class="p">:</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="m">4.6</span><span class="p">:</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Blizu&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Pogresno&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…испитује се једнакост реалне вредности <code class="docutils literal notranslate"><span class="pre">izraz</span></code> са константама у <code class="docutils literal notranslate"><span class="pre">case</span></code>
+гранама. Ако је вредност једнака са <code class="docutils literal notranslate"><span class="pre">4.5</span></code> у конзоли ће се исписати <code class="docutils literal notranslate"><span class="pre">Jednako</span></code>,
+ако је једнака са <code class="docutils literal notranslate"><span class="pre">4.4</span></code> или <code class="docutils literal notranslate"><span class="pre">4.6</span></code> у конзоли ће се исписати <code class="docutils literal notranslate"><span class="pre">Blizu</span></code>, а за све
+остале реалне вредности исписаће се <code class="docutils literal notranslate"><span class="pre">Pogresno</span></code>.</p>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

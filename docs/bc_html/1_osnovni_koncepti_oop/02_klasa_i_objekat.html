@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Класа и објекат &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Чланови класе" href="03_clanovi_klase.html" />
+    <link rel="prev" title="Увод" href="01_uvod.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Класа и објекат<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Објектно-оријентисано програмирање (ООП) је парадигма програмирања која користи
+објекте као основу за пројектовање рачунарског софтвера. Решавање проблема
+ООП парадигмом је врло слично људском начину размишљања и решавању реалних
+проблема. Било који систем из реалног света може се посматрати као скуп
+објеката који међусобно комуницирају.</p>
+<section id="id2">
+<h2>Шта је класа, а шта објекат?<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p><strong>Класа</strong> представља групу објеката који имају заједничке карактеристике и
+функционалности - каже се да је класа апстрактна представа скупа објеката који
+имају заједничке карактеристике и функционалности. <strong>Објекат</strong> представља
+инстанцу класе, односно конкретан примерак класе. То значи да класу требаш
+схватити као скицу, нацрт или шаблон на основу које се инстанцирају објекти.</p>
+</section>
+<section id="id3">
+<h2>Поређење класа са осталим типовима података<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Најједноставније би било поређење одређеног типа података са декларацијом и
+иницијализацијом променљиве тог типа. На пример, тип <code class="docutils literal notranslate"><span class="pre">double</span></code> омогућује ти да
+декларишеш и иницијализујеш неку реалну променљиву, односно он представља
+шаблон за чување променљивих реалног типа. Када декларишеш и иницијализујеш
+неку конкретну променљиву типа <code class="docutils literal notranslate"><span class="pre">double</span></code>…</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159265359</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>…креирао си инстанцу тог типа, односно један примерак дефинисан шаблоном
+<code class="docutils literal notranslate"><span class="pre">double</span></code>, који носи назив <code class="docutils literal notranslate"><span class="pre">pi</span></code> и који у статичкој меморији рачунара (на стеку)
+заузима 8 бајтова где се чува њему додељена реална вредност <span class="math notranslate nohighlight">\(3.14159265359\)</span>.</p>
+<p>Слично, у програмском језику C могао си да декларишеш структуру <code class="docutils literal notranslate"><span class="pre">trougao</span></code> чији
+су елементи реалне променљиве које представљају странице троугла, на пример:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">trougao</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Ова структура сама по себи не садржи никакве податке о неком одређеном троуглу,
+већ представља шаблон за дефинисање било ког троугла на основу дужине његових
+страница. Ако декларишеш и иницијализујеш неку променљиву која је типа
+структуре <code class="docutils literal notranslate"><span class="pre">trougao</span></code>, тек онда си дефинисао конкретан троугао. На пример, ако за
+горе дефинисану структуру <code class="docutils literal notranslate"><span class="pre">trougao</span></code> декларишеш и иницијализујеш променљиву
+<code class="docutils literal notranslate"><span class="pre">t1</span></code>…</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">trougao</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">3.0</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>…онда си дефинисао конкретан троугао <code class="docutils literal notranslate"><span class="pre">t1</span></code> чије су странице <span class="math notranslate nohighlight">\(a=3.0\)</span>, <span class="math notranslate nohighlight">\(b=4.0\)</span> и
+<span class="math notranslate nohighlight">\(c=5.0\)</span>. То значи и да си за <code class="docutils literal notranslate"><span class="pre">t1</span></code> алоцирао простор у статичкој меморији (на
+стеку) и у њега уписао вредности страница троугла.</p>
+</section>
+<section id="id4">
+<h2>Мане структурираног програмирања<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>Ако се прича о троугловима, вероватно би у свом програму требао да имаш и
+функционалност за израчунавање обима троугла, његове површине, његових углова и
+сл. То би у програмском језику C реализовао помоћу функција. На пример,
+функција која рачуна обим троугла изгледала би овако…</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">obim</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…а њен позив и испис вредности у главном програму овако:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Obim trougla t1 je: %lf&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">obim</span><span class="p">(</span><span class="n">t1</span><span class="p">.</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">c</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>Када би добио задатак да дати програм прошириш и на правоугаонике, дефинисао би
+структуру правоугаоник, написао функције за израчунавање обима правоугаоника,
+површине правоугаоника и др. Потом би креирао променљиву типа структуре
+правоугаоник, позивао функције итд. Већ за овако једноставан задатак у коду би
+имао две функције за рачунање обима - једну за троугао и другу за правоугаоник,
+па би морао да им промениш имена у дефиницијама и у позивима.</p>
+<p>Замисли да треба да прошириш програм за више геометријских облика. На истом
+месту појавиле би се функције којима се рачуна обим троугла, правоугаоника,
+круга и др., иако ове функције међусобно немају никакве везе. Много времена би
+изгубио на осмишљавању имена променљивих и функција, а што програм више расте,
+било би ти теже да пратиш где се шта налази, како се шта зове итд. Још би теже
+било да вршиш измене и допуне таквог програмског кода.</p>
+</section>
+<section id="id5">
+<h2>Предности објектно-оријентисаног програмирања<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<p>Применом парадигме објектно-оријентисаног програмирања, овакви проблеми
+нестају. Логично је да се све ствари везане за троугао налазе на једном месту,
+у једном шаблону, односно у једној класи. За пример изнад, класу <code class="docutils literal notranslate"><span class="pre">Trougao</span></code>
+можеш дефинисати на следећи начин…</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>klasa Trougao {
+    promenljiva a;
+    promenljiva b;
+    promenljiva c;
+    funkcija Obim() { vrati a + b + c; }
+}
+</pre></div>
+</div>
+<p>…па потом, у главном програму, инстанцирати један објекат класе <code class="docutils literal notranslate"><span class="pre">Trougao</span></code>,
+позвати његову методу за израчунавање обима и исписати резултат:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Trougao t1 = novi Trougao() { a = 3.0, b = 4.0, c = 5.0 };
+Ispiši(t1.Obim());
+</pre></div>
+</div>
+<p>Сада се комплетан кôд који се тиче троугла налази на једном месту - и
+карактеристике и функционалност. Када би добио задатак да дати програм прошириш
+и на правоугаонике, креирао би класу <code class="docutils literal notranslate"><span class="pre">pravougaonik</span></code> у оквиру које би се налазио
+комплетан кôд који се тиче правоугаоника итд. Све измене и допуне програма
+могао би једноставно да вршиш једноставно, јер је увек јасно где се шта налази.</p>
+<p>За разлику од променљивих и структура у програмском језику C, у већини ООП
+језика за инстанциране објекте алоцира се динамичка меморија (на хипу).</p>
+
+    <div class="note-wrapper infonote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
+        <div class="course-content">
+            
+<p>У контексту објектно-оријентисаног програмирања:</p>
+<ul class="simple">
+<li><p><strong>класа</strong> представља шаблон за групу објеката који имају заједничке
+карактеристике и функционалности.</p></li>
+<li><p><strong>објекат</strong> представља инстанцу класе, односно конкретан примерак класе
+који поседује карактеристике и функционалности дефинисане у класи.</p></li>
+</ul>
+<p>Објекат који се инстанцира из класе чува се у динамичкој меморији (на хипу).</p>
+
+    </div></div>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

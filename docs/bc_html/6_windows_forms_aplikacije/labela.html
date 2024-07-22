@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Лабела &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Дугме" href="dugme.html" />
+    <link rel="prev" title="Догађаји тастатуре" href="dogadjaji_tastature.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Лабела<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Контрола <strong>лабела</strong> (енгл. <em>label</em>), у литератури на српском језику често
+названа и <strong>ознака</strong>, дефинисана је у класи <code class="docutils literal notranslate"><span class="pre">Label</span></code> у именском простору
+<code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code>, односно склопу <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms.dll</span></code>. Класа
+<code class="docutils literal notranslate"><span class="pre">Label</span></code> наслеђује класу <code class="docutils literal notranslate"><span class="pre">Control</span></code>, па због тога лабеле имају основна својства,
+догађаје и методе као и остале контроле у <em>Windows Forms App</em> пројектима.</p>
+<p>Детаљан опис својстава, догађаја и метода класе <code class="docutils literal notranslate"><span class="pre">Label</span></code> налази се у званичној
+<a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.label?view=netframework-4.8">документацији</a>.
+Има их много и нема потребе наводити их све на овом месту. Својствима лабеле
+можеш детаљно дефинисати изглед лабеле и положај лабеле на форми. Лабеле
+учествују у редоследу картица (енгл. <em>TAB order</em>) у којем добијају свој индекс
+(<code class="docutils literal notranslate"><span class="pre">TabIndex</span></code>), али не примају фокус (<code class="docutils literal notranslate"><span class="pre">TabStop</span></code>). Неке од основних својстава које
+ћеш често користити су:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Text</span></code>. Одређује текст у контроли.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TextAlign</span></code>. Одређује поравнање текста унутар контроле.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Font</span></code>. Одређује својства фонта текста.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ForeColor</span></code> и <code class="docutils literal notranslate"><span class="pre">BackColor</span></code>. Одређује боју текста и боју позадине текста.</p></li>
+</ul>
+<p>Иако се контрола лабела чешће користи за приказ статичног текста, корисни су
+догађаји клика мишем <code class="docutils literal notranslate"><span class="pre">Click</span></code> и остали догађаји миша, што ће бити демонстрирано
+у задатку који следи.</p>
+<p>Ти ћеш обично користити лабеле за приказ текста кориснику на форми или за
+приказ описног текста за неку другу контролу. На пример, у следећој
+апликацији…</p>
+<p><img alt="Пример употребе контроле лабела" src="../_images/labela-primer-upotrebe1.png" /></p>
+<p>…лабелама су описани садржаји оквира за текст (<em>Name</em>, <em>Code Name</em>,
+<em>Max TDP</em>, <em>Package</em>…), садржај комбинованог оквира за текст (<em>Selection</em>) и
+у дну апликације, у лабели је приказан текст о тренутној верзији апликације
+(<em>Ver. 2.02.0.x64</em>).</p>
+<p>У истој апликацији, на овој картици…</p>
+<p><img alt="Пример употребе контроле лабела" src="../_images/labela-primer-upotrebe2.png" /></p>
+<p>…у лабелама су приказане информације о верзији и аутору апликације, потом су
+лабелама реализовани хиперлинкови (<code class="docutils literal notranslate"><span class="pre">www.cpuid.com</span></code>, <code class="docutils literal notranslate"><span class="pre">CPUID</span> <span class="pre">Software...</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CPU-Z</span> <span class="pre">Validator</span></code>) и на крају су у лабелама приказане информације о оперативном
+систему корисника.</p>
+<p>Контролу лабела можеш поставити, односно приказати на форми на два начина:</p>
+<ul class="simple">
+<li><p>помоћу дизајнера у току израде апликације (енгл. <em>Design-Time</em>) или</p></li>
+<li><p>мануелно програмским кодом у току извршавања апликације (енгл. <em>Run-Time</em>).</p></li>
+</ul>
+<p>Како је ово прва контрола о којој учиш, креираћеш једноставну GUI апликацију
+у којој ћеш користити само лабела контроле и једну форму. Нека је задатак да
+се креира Windows Forms Apps (.NET Framework) пројекат са једном формом
+димензија 320×240. На форму треба да поставиш:</p>
+<ul class="simple">
+<li><p>лабелу са текстом <strong>Контрола Label</strong>, задебљаним (<code class="docutils literal notranslate"><span class="pre">Bold</span></code>) фонтом <code class="docutils literal notranslate"><span class="pre">Arial</span></code>
+величине <code class="docutils literal notranslate"><span class="pre">20</span></code>,</p></li>
+<li><p>лабелу са текстом <strong>Данашњи датум:</strong>, где треба дописати и данашњи датум,</p></li>
+<li><p>лабелу са текстом <strong>Аутор: Име Презиме</strong>, где Име Презиме треба да замениш
+својим именом и презименом,</p></li>
+<li><p>лабелу са текстом <strong><code class="docutils literal notranslate"><span class="pre">www.petlja.org</span></code></strong> који се понаша као хиперлинк - исписан
+је плавом бојом, ако се преко њега пређе мишем текст постаје љубичаст и мења се
+показивач миша из стрелице у руку, а ако се на њега кликне, испод се појављује
+пета лабела,</p>
+<ul>
+<li><p>текст пете лабеле <strong>Поздрав из Петље!</strong> треба да буде исписан задебљаним
+(<code class="docutils literal notranslate"><span class="pre">Bold</span></code>) фонтом <code class="docutils literal notranslate"><span class="pre">Arial</span></code>, величине <code class="docutils literal notranslate"><span class="pre">20</span></code>, зелене боје.</p></li>
+</ul>
+</li>
+</ul>
+<p>Када постављаш лабеле помоћу дизајнера, подразумевана имена лабела <code class="docutils literal notranslate"><span class="pre">label1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">label2</span></code>, <code class="docutils literal notranslate"><span class="pre">label3</span></code> итд., треба да промениш у нека смислена имена, на пример,
+<code class="docutils literal notranslate"><span class="pre">lblNaslov</span></code>, <code class="docutils literal notranslate"><span class="pre">lblDatum</span></code>, <code class="docutils literal notranslate"><span class="pre">lblAutor</span></code> итд. Променом подразумеваних имена лабела
+сваком ће бити јасно о којој је лабели реч. Ако не промениш подразумевана
+имена, након одређеног времена ни ти се нећеш сећати које име припада којој
+лабели, нарочито ако их ниси постављао редом.</p>
+<p>Постави све лабеле осим последње, онако како је тражено у задатку. Својства
+прве лабеле можеш најбрже променити у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору:</p>
+<ul class="simple">
+<li><p>својство <code class="docutils literal notranslate"><span class="pre">Text</span></code> постави на <code class="docutils literal notranslate"><span class="pre">Контрола</span> <span class="pre">Label</span></code>,</p></li>
+<li><p>својство <code class="docutils literal notranslate"><span class="pre">Font</span></code>, <code class="docutils literal notranslate"><span class="pre">Name</span></code> постави на <code class="docutils literal notranslate"><span class="pre">Arial</span></code>,</p></li>
+<li><p>својство <code class="docutils literal notranslate"><span class="pre">Font</span></code>, <code class="docutils literal notranslate"><span class="pre">Size</span></code> постави на <code class="docutils literal notranslate"><span class="pre">20</span></code> и</p></li>
+<li><p>својство <code class="docutils literal notranslate"><span class="pre">Font</span></code>, <code class="docutils literal notranslate"><span class="pre">Bold</span></code> постави на <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+<p>Форма са постављене четири лабеле сада треба да изгледа овако:</p>
+<p><img alt="Пројекат са контролама лабела" src="../_images/labela-01.png" /></p>
+<p>Текст у другој лабели треба да прошириш са данашњим датумом. Како датум треба
+да буде видљив приликом приказа форме, исто као и боја четврте лабеле, кликни
+на форму па дефиниши догађај <code class="docutils literal notranslate"><span class="pre">Load</span></code> на следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">lblDatum</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Данашњи датум: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;dd.MM.yyyy.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">lblSajt</span><span class="p">.</span><span class="n">ForeColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="n">Blue</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Сада ће се приликом приказа форме приказати и данашњи датум, а боја текста
+четврте лабеле биће плава:</p>
+<p><img alt="Пројекат са контролама лабела" src="../_images/labela-02.png" /></p>
+<p>Следеће, треба да промениш боју текста четврте лабеле и показивач миша када се
+преко ње пређе мишем. Значи, када се показивач миша нађе изнад четврте лабеле,
+боја четврте лабеле треба да постане љубичаста и показивач миша добије облик
+руке (<code class="docutils literal notranslate"><span class="pre">Hand</span></code>), односно, када се показивач миша склони са четврте лабеле, њена
+боја треба да се врати на плаву, а показивач миша добије подразумевани облик.
+Да би имплементирао ову функционалност потребно је да дефинишеш догађај
+преласка миша преко четврте лабеле <code class="docutils literal notranslate"><span class="pre">MouseHover</span></code>…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">lblSajt_MouseHover</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">lblSajt</span><span class="p">.</span><span class="n">ForeColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="n">Purple</span><span class="p">;</span>
+<span class="w">    </span><span class="n">lblSajt</span><span class="p">.</span><span class="n">Cursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cursors</span><span class="p">.</span><span class="n">Hand</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>…и догађај склањања показивача миша са четврте лабеле <code class="docutils literal notranslate"><span class="pre">MouseLeave</span></code>:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">lblSajt_MouseLeave</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">lblSajt</span><span class="p">.</span><span class="n">ForeColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="n">Blue</span><span class="p">;</span>
+<span class="w">    </span><span class="n">lblSajt</span><span class="p">.</span><span class="n">Cursor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Cursors</span><span class="p">.</span><span class="n">Default</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Сада, када пређеш мишем преко четврте лабела, текст лабеле постаће љубичаст, а
+показивач миша претвориће се из подразумеване стрелице у руку, односно, када
+склониш миша са четвте лабеле, текст лабеле ће опет постати плав, а показивач
+миша вратиће се на подразумевани:</p>
+<p><img alt="Пројекат са контролама лабела" src="../_images/labela-03.png" /></p>
+<p>На крају, треба да дефинишеш догађај клика миша на четврту лабелу. Када се
+кликне мишем на четврту лабелу, потребно је да се појави пета лабела са текстом
+<code class="docutils literal notranslate"><span class="pre">Поздрав</span> <span class="pre">из</span> <span class="pre">Петље!</span></code> која има својства дефинисана у задатку.</p>
+<p>Креирај пету лабелу у дизајнеру са свим траженим својствима и сакриј је тј.
+својство <code class="docutils literal notranslate"><span class="pre">Visible</span></code> пете лабеле постави на <code class="docutils literal notranslate"><span class="pre">False</span></code>. Дефиниши догађај <code class="docutils literal notranslate"><span class="pre">Click</span></code> на
+четврту лабелу у којем ћеш својство <code class="docutils literal notranslate"><span class="pre">Visible</span></code> поставити на <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">lblSajt_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">lblPozdrav</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">True</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Сада, када кликнеш на четврту лабелу, приказаће се пета лабела, онако како је
+тражено у тексту задатка:</p>
+<p><img alt="Пројекат са контролама лабела" src="../_images/labela-04.png" /></p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

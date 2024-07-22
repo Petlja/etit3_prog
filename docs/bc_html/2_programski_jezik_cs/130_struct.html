@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Структуре &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Пренос параметара метода по вредности и референци" href="150_vrednost_referenca.html" />
+    <link rel="prev" title="Енумерације" href="120_nabrojivi.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Структуре<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>У програмском језику C структурама си дефинисао скуп података сложеног
+типа тј. скуп података који се састоји од одређеног броја елемената који могу
+бити различитих типова. Структурним типом или типом структуре у програмском
+језику C# дефинише се вредносни тип који може да обухвати и <strong>податке</strong> и
+њихову сродну <strong>функционалност</strong>! За дефинисање структура у програмском
+језику C# такође се користи кључнa реч <code class="docutils literal notranslate"><span class="pre">struct</span></code>.</p>
+<p>На пример, тачку у координатном систему која има координате <code class="docutils literal notranslate"><span class="pre">X</span></code> и <code class="docutils literal notranslate"><span class="pre">Y</span></code> можеш
+дефинисати структурним типом на следећи начин:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Tacka</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Y</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">Tacka</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Prikazi</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Koordinata X: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;\r\nKoordinata Y: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Y</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>У овом примеру, <code class="docutils literal notranslate"><span class="pre">Tacka</span></code> је структура са два својства <code class="docutils literal notranslate"><span class="pre">X</span></code> и <code class="docutils literal notranslate"><span class="pre">Y</span></code>, једним
+конструктором и једном методом <code class="docutils literal notranslate"><span class="pre">Display</span></code>. Инстанцирање структуре и коришћење
+њених својстава и метода може да изгледа овако:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Tacka</span><span class="w"> </span><span class="n">t1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Tacka</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">);</span>
+<span class="w">        </span><span class="n">t1</span><span class="p">.</span><span class="n">Prikazi</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Структурни типови имају <strong>семантику вредности</strong>. То значи да променљива
+структурног типа садржи инстанцу тог типа, односно директне вредности својих
+података, а не референце на те податке. Вредности променљивих се копирају
+приликом додељивања, прослеђивања аргумената методи и враћања резултата методе.
+За променљиве структурног типа, копира се инстанца тог типа.</p>
+<p>Структурни тип треба да користиш када радиш са „малим” сложеним типовима који
+су фокусирани на податке са мало или нимало понашања. Сам <em>.NET</em> користи
+структурне типове за представљање бројева (целобројних и реалних), буловских
+вредности, уникод карактера итд. Ако је фокус на понашању, а не на подацима,
+онда су класе бољи избор од структура. Класни тип има <strong>семантику референци</strong>.
+То значи да променљива класног типа садржи референцу на инстанцу тог типа, а не
+саму инстанцу. Класама ће бити посвећено цело следеће поглавље.</p>
+<p>Структурни типови обично се складиште на стеку (енгл. <em>stack</em>), док се
+референтни типови складиште на хипу (енгл. <em>heap</em>). Ово може довести до различитих перформанси и управљања меморијом.</p>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

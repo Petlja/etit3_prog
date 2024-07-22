@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Енумерације &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
+    <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
+    <link rel="stylesheet" type="text/css" href="../_static/fill-in-the-blank.css?v=18d67449" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=de1d9f27"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/notes.js?v=f5c030f5"></script>
+    <script src="../_static/multiple-choice.js?v=5417ff0d"></script>
+    <script src="../_static/fill-in-the-blank.js?v=9c804142"></script>
+    <script src="../_static/../_platform/petljaRTBundle.js?v=1b63c3ef"></script>
+    <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="next" title="Структуре" href="130_struct.html" />
+    <link rel="prev" title="Листе" href="110_liste.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Енумерације<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>Набројиви тип (енгл. <em>enumeration type</em>, <em>enum type</em>) је тип дефинисан скупом
+именованих константи основног интегралног нумеричког типа. Слично као у
+програмском језику C, за дефинисање набројивог типа користићеш кључну реч
+<code class="docutils literal notranslate"><span class="pre">enum</span></code> и имена чланова:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">GodisnjeDoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Prolece</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Leto</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Jesen</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Zima</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Подразумевана нумеричке вредности константи су типа <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code> за <code class="docutils literal notranslate"><span class="pre">Prolece</span></code>,
+<code class="docutils literal notranslate"><span class="pre">1</span></code> за <code class="docutils literal notranslate"><span class="pre">Leto</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code> за <code class="docutils literal notranslate"><span class="pre">Jesen</span></code> и <code class="docutils literal notranslate"><span class="pre">3</span></code> за <code class="docutils literal notranslate"><span class="pre">Zima</span></code>. Тип и вредности можеш и сам да
+наведеш, ако не желиш да то буду подразумеване вредности типа <code class="docutils literal notranslate"><span class="pre">int</span></code>. На пример:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">GodisnjeDoba</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kt">ushort</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Prolece</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Leto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Jesen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Zima</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">40</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Иницијализацију може бити и делимична. У следећем примеру…</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">Nastava</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="p">,</span><span class="w"> </span><span class="n">okt</span><span class="p">,</span><span class="w"> </span><span class="n">nov</span><span class="p">,</span><span class="w"> </span><span class="n">dec</span><span class="p">,</span><span class="w"> </span><span class="n">jan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">feb</span><span class="p">,</span><span class="w"> </span><span class="n">mar</span><span class="p">,</span><span class="w"> </span><span class="n">apr</span><span class="p">,</span><span class="w"> </span><span class="n">maj</span><span class="p">,</span><span class="w"> </span><span class="n">jun</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>…елемент <code class="docutils literal notranslate"><span class="pre">sep</span></code> иницијализован је са <code class="docutils literal notranslate"><span class="pre">9</span></code>, потом је елементу <code class="docutils literal notranslate"><span class="pre">okt</span></code> додељено <code class="docutils literal notranslate"><span class="pre">10</span></code>,
+елементу <code class="docutils literal notranslate"><span class="pre">nov</span></code> <code class="docutils literal notranslate"><span class="pre">11</span></code>, елементу <code class="docutils literal notranslate"><span class="pre">dec</span></code> <code class="docutils literal notranslate"><span class="pre">12</span></code>, па је елемент <code class="docutils literal notranslate"><span class="pre">jan</span></code> иницијализован
+са <code class="docutils literal notranslate"><span class="pre">1</span></code>, елементу <code class="docutils literal notranslate"><span class="pre">feb</span></code> додељено је <code class="docutils literal notranslate"><span class="pre">2</span></code>, елементу <code class="docutils literal notranslate"><span class="pre">mar</span></code> <code class="docutils literal notranslate"><span class="pre">3</span></code> итд.</p>
+<p>Дозвољено је и да различити елементи набројивог типа имају исту вредност. У
+следећем примеру:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">StanjeServera</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ukljucen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">onlajn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">iskljucen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">oflajn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">greska</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>…јединицама су дефинисана стања сервера <code class="docutils literal notranslate"><span class="pre">ukljucen</span></code> и <code class="docutils literal notranslate"><span class="pre">onlajn</span></code>, а нулама стања
+<code class="docutils literal notranslate"><span class="pre">iskljucen</span></code>, <code class="docutils literal notranslate"><span class="pre">oflajn</span></code> и <code class="docutils literal notranslate"><span class="pre">greska</span></code>.</p>
+<section id="id2">
+<h2>Конверзије набројивих типова<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>За било који дефинисан набројив тип могућа је експлицитна конверзија у његов
+основни интегрални нумерички тип. На пример:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">GodisnjeDoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Prolece</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Leto</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Jesen</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Zima</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">GodisnjeDoba</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GodisnjeDoba</span><span class="p">.</span><span class="n">Zima</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">g</span><span class="p">);</span><span class="w">         </span><span class="c1">// Zima</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">g</span><span class="p">);</span><span class="w">    </span><span class="c1">// 3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Операције над вредностима набројивог типа<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Над вредностима набројивог типа можеш да користиш следеће операторе:</p>
+<ul class="simple">
+<li><p>операторе једнакости и поређења <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,</p></li>
+<li><p>бинарне операторе <code class="docutils literal notranslate"><span class="pre">+</span></code> и <code class="docutils literal notranslate"><span class="pre">-</span></code>,</p></li>
+<li><p>енумерацијске логичке операторе <code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>,</p></li>
+<li><p>битски оператор за израчунавање комплемента <code class="docutils literal notranslate"><span class="pre">~</span></code>,</p></li>
+<li><p>операторе за инкремент <code class="docutils literal notranslate"><span class="pre">++</span></code> и декремент <code class="docutils literal notranslate"><span class="pre">--</span></code> и</p></li>
+<li><p>оператор <code class="docutils literal notranslate"><span class="pre">sizeof</span></code>.</p></li>
+</ul>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">GodisnjeDoba</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Prolece</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Leto</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Jesen</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Zima</span>
+<span class="p">}</span>
+
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">GodisnjeDoba</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GodisnjeDoba</span><span class="p">.</span><span class="n">Prolece</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">   </span><span class="c1">// Prolece</span>
+<span class="w">    </span><span class="n">a</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">);</span><span class="w">   </span><span class="c1">// Leto</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">GodisnjeDoba</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w">   </span><span class="c1">// Zima</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">b</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;Vece&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Nije vece&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">// Vece</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

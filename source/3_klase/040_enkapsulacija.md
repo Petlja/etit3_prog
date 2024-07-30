@@ -8,7 +8,7 @@
 
 У програмском језику C# енкапсулација се реализује коришћењем
 **модификатора приступа** (енгл. *Access Modifiers*). Модификаторима приступа
-можеш да контролишеш када се члан класе може користити и то:
+можеш да контролишеш када се члан класе може користити, и то:
 
 * у оквиру фајла,
 * у оквиру класе,
@@ -95,12 +95,12 @@ class Program
         bool isplata1 = PetarPetrovic.odliv_sredstava(150000.0);
         if (isplata1)
         {
-            Console.WriteLine("Uspesna ispata. Trenutno stanje: " + PetarPetrovic.prikazi_balans());
+            Console.WriteLine("Uspesna isplata. Trenutno stanje: " + PetarPetrovic.prikazi_balans());
             Console.WriteLine();
         }
         else
         {
-            Console.WriteLine("Neuspesna ispata. Trenutno stanje: " + PetarPetrovic.prikazi_balans());
+            Console.WriteLine("Neuspesna isplata. Trenutno stanje: " + PetarPetrovic.prikazi_balans());
             Console.WriteLine();
         }
 
@@ -108,12 +108,12 @@ class Program
         bool isplata2 = PetarPetrovic.odliv_sredstava(100000.0);
         if (isplata2)
         {
-            Console.WriteLine("Uspesna ispata. Trenutno stanje: " + PetarPetrovic.prikazi_balans());
+            Console.WriteLine("Uspesna isplata. Trenutno stanje: " + PetarPetrovic.prikazi_balans());
             Console.WriteLine();
         }
         else
         {
-            Console.WriteLine("Neuspesna ispata. Trenutno stanje: " + PetarPetrovic.prikazi_balans());
+            Console.WriteLine("Neuspesna isplata. Trenutno stanje: " + PetarPetrovic.prikazi_balans());
             Console.WriteLine();
         }
     }
@@ -135,12 +135,12 @@ Uspesna uplata. Trenutno stanje: 120000
 Потом се десио неуспели покушај исплате већег износа од износа на рачуну...
 
 ```text
-Neuspesna ispata. Trenutno stanje: 120000
+Neuspesna isplata. Trenutno stanje: 120000
 ```
 
 ...и успешна исплата $100.000,00$ динара са рачуна.
 
-Да се у класи `Program` десио покушај директнe измене вредности поља `balans`,
+Да се у класи `Program` десио покушај директне измене вредности поља `balans`,
 на пример...
 
 ```cs
@@ -166,5 +166,5 @@ Error CS0122 'BankovniRacun.balans' is inaccessible due to its protection level
 података, чиме се осигурава њихова валидност.
 * **Смањивање зависности**: Енкапсулацијом се може смањити зависност између
 различитих делова кода, чинећи систем лакшим за одржавање и промене.
-* **Апстракција**: Енкапсулација помаже у скривању сложености импленетације од
+* **Апстракција**: Енкапсулација помаже у скривању сложености имплементације од
 корисника, пружајући му једноставан интерфејс за интеракцију са класом.

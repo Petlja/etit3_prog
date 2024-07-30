@@ -56,7 +56,7 @@ public class Brojanje
 }
 ```
 
-дефинисана су три члана, нестатичко поље `x`, статичко поље `brojac` и метода
+...дефинисана су три члана: нестатичко поље `x`, статичко поље `brojac` и метода
 `Povecaj()`. Прва грешка направљена је у статичком пољу `brojac` где је
 референцирано статичко поље `x`:
 
@@ -64,7 +64,7 @@ public class Brojanje
 CS0236: A field initializer cannot reference the non-static field, method, or property 'Brojanje.x'
 ```
 
-Друга грешка направљена је у телу методе `Povecaj()` где се опет рефенцира
+Друга грешка направљена је у телу методе `Povecaj()`, где се опет рефенцира
 статичко поље `x`:
 
 ```text
@@ -103,7 +103,7 @@ Console.WriteLine(x.Povecaj());
 CS0176: Member 'Brojanje.brojac' cannot be accessed with an instance reference; qualify it with a type name instead
 ```
 
-...и друга приликом покушаја приступа статичкој методи `Povecaj()`
+...и друга приликом покушаја приступа статичкој методи `Povecaj()`:
 
 ```text
 CS0176: Member 'Brojanje.Povecaj()' cannot be accessed with an instance reference; qualify it with a type name instead
@@ -111,7 +111,7 @@ CS0176: Member 'Brojanje.Povecaj()' cannot be accessed with an instance referenc
 
 ## Статичке класе
 
-Поред чланова класе и саме класе могу бити статичке ако приликом декларације
+Поред чланова класе, и саме класе могу бити статичке ако приликом декларације
 класе наведеш кључну реч `static`. Статичке класе не могу бити инстанциране и
 могу садржати само статичке чланове. Тако класу `Brojanje` из претходног
 примера можеш слободно декларисати као статичку класу, јер садржи само два
@@ -144,7 +144,7 @@ Console.WriteLine(Brojanje.brojac);    // 6
 Brojanje x = new Brojanje();
 ```
 
-компајлер ће одмах јавити грешке:
+...компајлер ће одмах јавити грешке:
 
 ```text
 CS0723: Cannot declare a variable of static type 'Brojanje'

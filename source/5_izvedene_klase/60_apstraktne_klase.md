@@ -18,7 +18,7 @@ abstract class Osoba
 ## Апстрактни чланови апстрактних класа
 
 У апстрактним класама декларишу се апстрактни методи (то је уједно и једино
-место где се могу декларисати). Да би неку методу прогласио апстрактном,
+место где се могу декларисати) - komentar: objasniti sta to znaci da je metod apstraktan. Да би неку методу прогласио апстрактном,
 потребно је да наведеш кључну реч `abstract` пре него што наведеш њен тип, па
 затим, не имплементираш њено тело већ наведеш `;`. На пример:
 
@@ -70,6 +70,8 @@ class Program
     }
 }
 ```
+Komentar: objasniti sta bi se desilo da u baznoj klasi nije deklarisan metod Ime(), a da postoji u svakoj od izvedenih klasa
+
 
 У овом примеру, из апстрактне класе `Osoba` изведене су класе `Nastavnik` и
 `Ucenik`. Пошто је у класи `Osoba` дефинисана јавна апстрактна метода `Ime()`,

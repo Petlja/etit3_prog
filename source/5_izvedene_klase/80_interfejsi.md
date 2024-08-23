@@ -196,7 +196,7 @@ class Program
 па двотачка, па базна класа `Osoba`, па запета, па базни интерфејс `IOsoba`.
 Објекат `n` класе `Nastavnik` може да користи јавну методу `Ime()` која је
 наслеђена из класе `Osoba`, а имплементирана на основу дефиниције у интерфејсу
-`IOsoba`.
+`IOsoba` (komentar: da li je neophodno navoditi ovde oba ili bi bilo dovoljno staviti samo klasu iz koje je navedena?).
 
 ## Наслеђивање међу интерфејсима
 

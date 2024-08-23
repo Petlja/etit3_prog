@@ -48,7 +48,7 @@ public class Ocena : Ucenik
 Већ је напоменуто да, у програмском језику C#, све класе наслеђују, директно
 или индиректно, класу `System.Object`, која је базна класа свих *.NET* типова.
 `System.Object` пружа неколико заједничких чланова који су доступни свим
-типовима који га наслеђују:
+типовима који га наслеђују (komentar: mislim da bi ova prica trebalo da ide dosta ranije, jer se ranije pominju funkcije Equals, GetHashCode, ToString i sl):
 
 * `Equals()`: Ова метода се користи за поређење објекта са другим
 објектом. Основна имплементација проверава да ли две референце упућују на исти

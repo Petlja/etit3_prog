@@ -40,6 +40,10 @@ public class Kompleksni
 }
 ```
 
+Komentar: ovde se u klasi Kompleksni javlja kod { get; set; } a cini mi se da
+nije objasnjeno sta se ovim postize -- naime, bilo je price o definisanju funkcija
+get i set, ali ne i o tome sta se postize kada se nakon clanice klase navede ovaj fragment koda
+
 Класа `Kompleksni` треба да има два поља која представљају реални и имагинарни
 део комплексног броја и конструктор којим се та поља иницијализују. Посебна
 статичка метода у класи `Kompleksni` којом се преоптерећује оператор `+` треба
@@ -86,6 +90,8 @@ public static Kompleksni operator -(Kompleksni k1, Kompleksni k2)
 | `x < y`, `x > y`                            | Морају се преоптеретити заједно |
 | `x <= y`, `x >= y`                          | Морају се преоптеретити заједно |
 
+Komentar: sta su operatori true i false?
+
 Логично је да неке операторе треба преоптеретити у пару. На пример, ако класа
 `Kompleksni` треба да обезбеди функционалност упоређивања једнакости
 комплексних бројева, онда треба да преоптеретиш операторе `==` и `!=`, на
@@ -104,7 +110,9 @@ public static bool operator !=(Kompleksni k1, Kompleksni k2)
 ```
 
 Пошто си преоптеретио операторе `==` и `!=`, требало би да преоптеретиш и методе
-`Equals()` и `GetHashCode()`:
+`Equals()` и `GetHashCode()` (komentar: mislim da do sada nije bilo reci o metodi
+GetHashCode niti o tome sta ona radi; dodatno, nema ovde objasnjenja zasto je
+potrebno preopteretiti ove metode):
 
 ```cs
 public override bool Equals(object obj)

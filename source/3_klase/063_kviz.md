@@ -1,5 +1,7 @@
 # Квиз
 
+Komentar: Mozda da u kvizu nakon preopterecanja metoda i operatora bude neko pitanje vezano za taj deo?
+
 ## Питање 1
 
 ```{mchoice}

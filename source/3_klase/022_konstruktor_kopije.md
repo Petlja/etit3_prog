@@ -78,7 +78,8 @@ class Program
 и на објекат `о1` и на објекат `о2`.
 
 Ако се у класи налазе референце на друге објекте, потребно је да направиш
-дубоку копију (енгл. *deep copy*). На пример, ако класа `Osoba` садржи и поље
+дубоку копију (енгл. *deep copy*). Komentar: bilo bi dobro malo detaljnije objasniti sta znaci
+duboka kopija, a ne samo kada je potrebno da se koristi. На пример, ако класа `Osoba` садржи и поље
 `Adresa` типа објекта `Adresa`:
 
 ```cs

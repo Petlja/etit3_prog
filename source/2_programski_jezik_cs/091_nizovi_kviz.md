@@ -68,6 +68,7 @@ k = Array.BinarySearch(brojevi, 37);
 На основу дате декларације одреди шта је резултат позива. Означи очекивани
 одговор.
 ```
+Komentar: mislim da trece pitanje nije najpogodnije jer nigde pre nije bilo reci o metodi BinarySearch -- da li samo pretrazuje ili i sortira niz
 
 ## Питање 4
 
@@ -165,3 +166,4 @@ public static int TraziBroj(int[] niz, int broj, int levi, int desni)
 У програмском језику C# дефинисана је метода са аргументом низовног типа.
 Одреди шта се тачно преноси том методом.
 ```
+Komentar: nisam sigurna ni da za ovo pitanje postoji odgovor u prethodnom materijalu

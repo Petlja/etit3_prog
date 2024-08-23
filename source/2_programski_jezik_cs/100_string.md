@@ -84,6 +84,8 @@ DateTime trenutno = DateTime.Now;
 string datumVreme = trenutno.ToString("dd-MM-yyyy HH:mm:ss");
 ```
 
+Komentar: prokomentarisati sta vraca svojstvo Now
+
 Стринг литерали могу садржати прелазне секвенце као што су `\n` (нова линија),
 `\t` (таб), итд. Списак свих прелазних секвенци дат је у
 [прилогу](../7_dodaci/prelazne_sekvence.md). Вербатим стринг литерали (почињу
@@ -105,3 +107,5 @@ bool poredi = string.Equals("Hello", "HELLO"); // False
 bool poredi = string.Equals("hello", "HELLO", StringComparison.OrdinalIgnoreCase); // True
 int poredi = string.Compare("Hello", "HELLO"); // -1
 ```
+
+Komentar: bilo bi dobro da se ipak eksplicitno napise sta svaka od ove tri metode radi, a ne samo da se ilustruje na primeru.

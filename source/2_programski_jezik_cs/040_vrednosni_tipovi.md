@@ -26,7 +26,7 @@
 (енгл. *nullable*).
 
 Вредносни типови који могу да имају вредност `null` могу да представљају било
-који вредносни тип записан као `T?`, где је `T` вредносни тип. На пример:
+који вредносни тип записан као `T?`, где је `T` вредносни тип. (komentar: prethodna recenica je konfuzna, malo je jasnije formulisati) На пример:
 
 ```cs
 int x = 10;
@@ -97,7 +97,7 @@ Console.WriteLine(false ? "Da" : "Ne"); // Ne
 
 У програмском језику C# нема модификатора целобројног типа. Означене и
 неозначене вредности у различитим опсезима представљају се типовима из следеће
-табеле:
+табеле (komentar: mozda ne koristiti zapetu u zapisu velikih brojeva jer deluje kao da je razdvojen veci broj razlicitih brojeva):
 
 | Тип      | $[bit]$   | Опсег                                                        |
 |----------|-----------|--------------------------------------------------------------|

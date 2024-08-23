@@ -115,6 +115,8 @@ int[,] arr3 = new int[,] { { 5, 1 }, { 9, 7 }, { 0, 3 }, { 6, 8 }, { 4, 2} };
 int[,] arr4 = { { 5, 1 }, { 9, 7 }, { 0, 3 }, { 6, 8 }, { 4, 2} };
 ```
 
+Komentar: mozda napomenuti da je za vecinu primena dovoljno koristiti dvodimenzionalne nizove, te da zato nema potrebe prikazati kako bi se npr. deklarisao trodimenzioni niz.
+
 ## Назубљени низови
 
 Назубљени низови су низови чији су елементи други низови различитих величина.
@@ -150,3 +152,4 @@ int[][,] arr3 =
     new int[,] { {11,22}, {99,88}, {0,9} }
 ];
 ```
+Komentar: bilo bi dobro da se i ovaj poslednji primer/kod odnosi na isti primer nazubljenog niza, kao i prethodna dva

@@ -170,7 +170,7 @@ namespace OkvirZaSliku
 примеру изнад то је урађено у догађају `FormClosing`. Други начин да ослободиш
 ове ресурсе је, да уместо дефинисања `FormClosing` догађаја, у другом делу
 парцијалне класе `Form1`, у фајлу `Form1.Designer.cs`, пронађеш и модификујеш
-методу `Dispose()` на следећи начин:
+методу `Dispose()` на следећи начин (komentar: malo pojasniti sta se tu u stvari radi):
 
 ```cs
 /// <summary>
@@ -193,3 +193,4 @@ protected override void Dispose(bool disposing)
     base.Dispose(disposing);
 }
 ```
+Komentar: u poslednjem kodu ima komentara na engleskom jeziku. Pojasniti sta znaci znak pitanja nakon imena promenljive.

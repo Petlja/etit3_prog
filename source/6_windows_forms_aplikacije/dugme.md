@@ -72,6 +72,8 @@ private void btnDa_Click(object sender, EventArgs e)
 }
 ```
 
+Komentar: bilo bi dobro u prethodnom tekstu reci kako ce se zvati dugmici i labele koje dodajemo, da bude jasno na sta se ovde u kodu odnosi.
+
 Сада ће апликација изгледати овако након клика на прво дугме:
 
 ![Контрола дугме](./images/button-02.png)

@@ -28,6 +28,7 @@ private void dugme_Click(object sender, EventArgs e)
     nekaKontrola.Refresh();
 }
 ```
+Komentar: tekst koji se ispisuje je nekada latinicom, a nekad cirilicom
 
 Ако креираш сопствене прилагођене контроле, онда можеш да дефинишеш и своје
 методе које пружају специфичну функционалност за ту контролу:

@@ -1,5 +1,7 @@
 # Приоритет оператора
 
+Komentar: razmisliti o tome da vrednosti u drugoj koloni tabele budu na srpskom jeziku
+
 | Оператор                                                                                                                                                             | Категорија                                 |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
 | `x.y`, `f(x)`, `a[i]`, `x?.y`, `x?[y]`, `x++`, `x--`, `x!`, `new`, `typeof`, `checked`, `unchecked`, `default`, `nameof`, `delegate`, `sizeof`, `stackalloc`, `x->y` | Primary                                    |

@@ -3,6 +3,9 @@
 На форму постави један оквир за текст, једно дугме и једну лабелу. Креирај
 игру "ПОГОДИ БРОЈ" за погађање насумично генерисаног броја у интервалу од 1 до 100.
 
+Komentar: ne bi bilo lose objasniti klasu Random koja se koristi u resenju, sa metodom Next
+
+
 ![Задатак - Погађање замишљеног броја](./images/zadatak_pogodi_broj.png)
 
 ## Могуће решење задатка

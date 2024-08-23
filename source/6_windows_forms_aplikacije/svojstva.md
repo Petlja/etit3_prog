@@ -37,7 +37,7 @@ public class NekaKontrola : Control
 *Accessibility*, *Apperance*, *Behavior*... зато што је притиснута икона
 `Categorized` на врху `Properties` прозора. Ако ти је лакше да својства тражиш
 по абецедном распореду, кликни на икону `Alphabetical` која се налази поред
-иконе `Categorized`. Корисно је и да знаш да се својства која си мењао
+иконе `Categorized`. (Komentar: prethodne dve recenice vec postoje u prethodnoj lekciji) Корисно је и да знаш да се својства која си мењао
 приказују задебљаним фонтом.
 
 ![Својства форме](./images/form-properties.png)
@@ -60,6 +60,8 @@ public class MojaKontrola : Control
     }
 }
 ```
+
+Komentar: nije objasnjeno sta radi metoda Invalidate().
 
 Својства се могу повезати са подацима како би аутоматски рефлектовала промене
 у подацима. На пример, својство `Text` неке форме може да буде повезано са

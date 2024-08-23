@@ -27,6 +27,10 @@
 Ајшо, лепото и чежњо, за љубав срца мога, дођи у Хаџиће на кафу.
 Љубазни фењерџија чађавог лица хоће да ми покаже штос.
 ```
+Komentar: Ne bi bilo lose da objasniti klasu Stopwatch koja se koristi u resenju
+
+Komentar: U funkciji Rezultat promenljive imenovati na srpskom, kao u ostatku koda
+
 
 ## Могуће решење задатка
 

@@ -18,6 +18,8 @@
 
 ![Икс-Окс](./images/iksoks3.png)
 
+Komentar: U tekstu zadatka treba da pise svuda igrac O, a ne igrac Y
+
 ## Могуће решење задатка
 
 ```cs

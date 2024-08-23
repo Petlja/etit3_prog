@@ -89,7 +89,7 @@ private void btnDodaj_Click(object sender, EventArgs e)
 
 Једна од основних функција приликом рада са било каквим листама је свакако
 претрага листе. У оквиру за листу можеш да користиш методу `FindString()`
-како би пронашао стринг или субстринг на листи и означио резултат:
+како би пронашао стринг или подстринг на листи и означио резултат:
 
 ```cs
 private void btnPretrazi_Click(object sender, EventArgs e)
@@ -168,7 +168,7 @@ private void btnObrisi_Click(object sender, EventArgs e)
 
 ![Оквир за листу](./images/listbox-08.png)
 
-Слично, полазника можеш обрисати методом `Remove()` на основу његовог имена:
+Слично, полазника можеш обрисати методом `Remove()` на основу његовог имена (komentar: da li se brise stavka koja je identicna datom stringu ili ona u kojoj se javlja string mozda kao podstring?):
 
 ```cs
 private void btnObrisi_Click(object sender, EventArgs e)

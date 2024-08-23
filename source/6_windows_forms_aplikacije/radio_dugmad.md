@@ -109,3 +109,5 @@ private void btnOdgovori_Click(object sender, EventArgs e)
 директно дефинише индекс радио-дугмета у групи, за имплементацију таквог решења
 могао би да користиш листу или низ `RadioButton` контрола заједно са
 променљивом у којој се чува индекс тачног одговора.
+
+Komentar: Cini mi se da nije objasnjeno kako se grupise vise dugmadi zajedno, tj. ako bi na formi imali dve nezavisne grupe radio-dugmeta, kako bi se grupisale opcije prve, a kako druge grupe

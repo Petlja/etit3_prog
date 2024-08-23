@@ -33,6 +33,9 @@ True
 
 ![Задатак - Квиз са вишеструким избором](./images/zadatak_mcq.png)
 
+Komentar: na formi tekst na dugmetu treba da bude ОДГОВОРИ, a ne ОДГОВОР
+
+
 ## Могуће решење задатка
 
 ```cs

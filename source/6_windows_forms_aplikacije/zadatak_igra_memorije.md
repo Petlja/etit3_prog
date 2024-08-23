@@ -121,6 +121,10 @@ namespace ZadatakIgraMemorije
 }
 ```
 
+Komentar: ne bi bilo lose objasniti logiku koja se koristi u resenju.
+
+Uopsteni komentari: Bilo bi dobro da postoje komentari u ovom i svim drugim netrivijalnim kodovima; takodje, ne bi bilo lose da su u nekom od resenja zadataka obradjeni i izuzeci; Dodatno, mozda razmisliti da se doda neki ovako kompletno uradjen zadatak i za deo materijala koji prethodi formama
+
 ## Додатни задатак
 
 1. Осмисли и имплементирај систем за иницијално и поновно покретање игре.

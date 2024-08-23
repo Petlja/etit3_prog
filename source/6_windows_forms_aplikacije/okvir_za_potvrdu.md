@@ -1,5 +1,7 @@
 # Оквир за потврду
 
+Komentar: Uh, i prevod okvir za potvrdu i polje za povrdru termina checkbox mi zvuci neadekvatno... Mozda polje za stikliranje/visestruku selekciju ili tako nesto
+
 Контрола **оквир за потврду** (енгл. *CheckBox*) дефинисана је у класи
 `CheckBox` у именском простору `System.Windows.Forms`, односно склопу
 `System.Windows.Forms.dll`. Класа `CheckBox` наслеђује класу `ButtonBase`, која

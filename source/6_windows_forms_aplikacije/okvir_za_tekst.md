@@ -1,5 +1,7 @@
 # Оквир за текст
 
+Komentar: Termin Textbox je preveden kao okvir za tekst; mi smo ga zvali polje za unos teksta -- razmisliti da li je posotjeci termin najadekvatniji, slicno i za: okvir za sliku
+
 Контрола **оквир за текст** (енгл. *TextBox*) дефинисана је у класи `TextBox` у
 именском простору `System.Windows.Forms`, односно склопу
 `System.Windows.Forms.dll`. Класа `TextBox` наслеђује класу `TextBoxBase`, која
@@ -96,7 +98,7 @@ private void btnUnesi_Click(object sender, EventArgs e)
 малим словима. Променом својства `CharacterCasing` са `Normal` на `Upper`,
 односно на `Lower` можеш дефинисати да се сви карактери уносе или приказују
 само великим или само малим словима:
-[//]: # (Овде фали слика?)
+[//]: # (Овде фали слика?) Komentar: ovde nedostaje neka slika?
 Ако је задатак да забраниш кориснику да може да копира текст из апликације, на
 пример генерисани текст из трећег оквира за текст, онда тај задатак можеш
 једноставно решити постављањем својства `ShortcutsEnabled` на `False`. Ако

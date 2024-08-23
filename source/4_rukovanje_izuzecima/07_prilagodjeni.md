@@ -55,6 +55,7 @@ class Program
     }
 }
 ```
+Komentar: u kodu se koristi base(), ali nema objasnjenja sta to radi
 
 Када корисник не унесе број година ученика или унесе празнину, извршавање
 програма у конзоли изгледаће овако:

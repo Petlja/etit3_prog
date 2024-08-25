@@ -39,7 +39,7 @@
 int a = 1;
 double b = 1.5;
 
-// Postfiksni inrekement operatori
+// Postfiksni inkrement operatori
 Console.WriteLine(a++);    // 1
 Console.WriteLine(b++);    // 1.5
 Console.WriteLine(a);      // 2
@@ -51,7 +51,7 @@ Console.WriteLine(++b);    // 3.5
 Console.WriteLine(a);      // 3
 Console.WriteLine(b);      // 3.5
 
-// Postfiksni derekement operatori
+// Postfiksni dekrement operatori
 Console.WriteLine(a--);    // 3
 Console.WriteLine(b--);    // 3.5
 Console.WriteLine(a);      // 2
@@ -160,7 +160,7 @@ Console.WriteLine(c >= d);    // True (U+0061 >= U+0041)
 бинарни.
 
 Унарни оператор **логичке негације** `!` резултује вредношћу `true` када његов
-операнд има вредност `false`, односно, вредношћу `false` када његов операнд има
+операнд има вредност `false`, односно вредношћу `false` када његов операнд има
 вредност `true`. На пример:
 
 ```cs
@@ -243,18 +243,16 @@ Console.WriteLine(r8);                // Procenjuje se. False
 
 ### Оператори сложене логичке доделе
 
-Бинарни логички оператори `&`, `|` и `^` у комбинацијом са оператором доделе
+Бинарни логички оператори `&`, `|` и `^` у комбинацији са оператором доделе
 чине операторе сложене доделе - израз `x op= y` еквивалентан је изразу
 `x = x op y`. На пример:
-
-На пример:
 
 ```cs
 bool a = true;
 a &= true;
 Console.WriteLine(a);    // True
 a |= false;
-Console.WriteLine(a);    // Труе
+Console.WriteLine(a);    // True
 a ^= true;
 Console.WriteLine(a);    // False
 ```

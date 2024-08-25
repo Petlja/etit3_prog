@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Изузеци &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -77,10 +76,10 @@
 <td><p>основна класа за изузетке аргумената</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ArgumentOutOfRangeException</span></code></p></td>
-<td><p>аргумент методе је null</p></td>
+<td><p>аргумент методе је ван задатог опсега</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ArgumentNullException</span></code></p></td>
-<td><p>аргумент методе је ван задатог опсега</p></td>
+<td><p>аргумент методе је null</p></td>
 </tr>
 </tbody>
 </table>
@@ -98,7 +97,7 @@
 <em>одмотати</em>, након чега ће се пронаћи и извршити метода за хватање баш тог
 одређеног типа изузетка. Ако се она пак не пронађе нигде у стеку позива,
 прекинуће се процес и приказати одговарајућа порука.</p>
-<p>Основна облик обраде изузетака изгледа овако:</p>
+<p>Основни облик обраде изузетака изгледа овако:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">try</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// Kôd koji može baciti izuzetak</span>

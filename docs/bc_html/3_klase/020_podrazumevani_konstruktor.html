@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Подразумевани конструктор &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -49,11 +48,11 @@
 <p>У претходним лекцијама научио си да су конструктори специјалне методе које се
 користе приликом инстанцирања објекта. Имају исто име као и класа у којој су
 дефинисани и могу бити различитих облика.</p>
-<p>Практично, у статичкој меморији чува се референца на објекат, а сам објекат
+<p>Практично, у статичкој меморији чува се референца на објекат, а сâм објекат
 чува се у динамичкој меморији, на хипу. Да би се објекат сачувао на хипу, за
 њега се мора алоцирати одговарајући простор.</p>
 <p>Први облик конструктора о којем ћеш учити је подразумевани конструктор. Њега
-креира компајлер уколико класа нема дефинисане конструкторе. Његов задатак је
+креира компајлер, уколико класа нема дефинисане конструкторе. Његов задатак је
 да приликом инстанцирања објекта алоцира одговарајући простор за објекат на
 хипу и обезбеди иницијализацију поља на подразумеване вредности.</p>
 <p>Нека класа <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code> има четири поља и нека је у класи <code class="docutils literal notranslate"><span class="pre">Program</span></code> креиран
@@ -78,7 +77,7 @@
 <p>Извршавањем овог програма на хипу је креиран објекат <code class="docutils literal notranslate"><span class="pre">z</span></code> као инстанца класе
 <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code>, чије поље <code class="docutils literal notranslate"><span class="pre">ime</span></code> има вредност <code class="docutils literal notranslate"><span class="pre">null</span></code>, поље <code class="docutils literal notranslate"><span class="pre">prijavljen</span></code> логичку
 вредност <code class="docutils literal notranslate"><span class="pre">false</span></code>, поље <code class="docutils literal notranslate"><span class="pre">staz</span></code> целобројну вредност <code class="docutils literal notranslate"><span class="pre">0</span></code> и поље <code class="docutils literal notranslate"><span class="pre">zarada</span></code> реалну
-вредност <code class="docutils literal notranslate"><span class="pre">0</span></code>. Ове вредности су аутоматске додељене пољима јер су то
+вредност <code class="docutils literal notranslate"><span class="pre">0</span></code>. Ове вредности су аутоматски додељене пољима, јер су то
 подразумеване вредности типова коришћених за декларацију поља. Компајлер ће
 због тога избацити следећа упозорења:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>CS0649: Field &#39;Zaposleni.ime&#39; is never assigned to, and will always have its default value null
@@ -105,7 +104,7 @@ CS0649: Field &#39;Zaposleni.zarada&#39; is never assigned to, and will always h
 <p>Подразумевани конструктор који се аутоматски генерише од стране компајлера
 не садржи параметре, нити неку експлицитну логику, али је неопходан да би се
 омогућило инстанцирање објекта.</p>
-<p>Подразумевани конструктор можеш дефинисати експлицитно, чак иако је исти као и
+<p>Подразумевани конструктор можеш дефинисати експлицитно, чак и ако је исти као и
 подразумевани конструктор којег би генерисао компајлер. У овом случају то и
 нема пуно смисла, али помоћу експлицитно дефинисаног подразумеваног
 конструктора можеш да имплементираш додатну логику за иницијализацију објекта и
@@ -135,7 +134,7 @@ CS0649: Field &#39;Zaposleni.zarada&#39; is never assigned to, and will always h
 </pre></div>
 </div>
 <p>Овако дефинисан конструктор поставио је иницијалне вредности свих поља, па
-компајлер неће јављати никаква упозорења. Иако је поље стаж постављено на <code class="docutils literal notranslate"><span class="pre">0</span></code>
+компајлер неће јављати никаква упозорења. Иако је поље стаж постављено на <code class="docutils literal notranslate"><span class="pre">0</span></code>,
 што представља подразумевану вредност за тип <code class="docutils literal notranslate"><span class="pre">int</span></code>, та вредност је експлицитно
 дефинисана и не узрокује појаву упозорења. Осим избегавања упозорења од стране
 компајлера, могу да постоје бројни разлози за имплементацију додатне логике за
@@ -154,7 +153,7 @@ CS0649: Field &#39;Zaposleni.zarada&#39; is never assigned to, and will always h
 минималне.</p></li>
 </ul>
 <p>Да ли ћеш користити могућност експлицитног дефинисања подразумеваног
-коструктора за имплементацију додатне логике за иницијализацију објекта и
+конструктора за имплементацију додатне логике за иницијализацију објекта и
 вредности поља или не, зависи од ситуације. Овим приступом можеш да осигураш да
 су сви објекти класе правилно иницијализовани и да имају подразумеване
 вредности које су смислене за конкретну ситуацију. То може бити добра пракса из
@@ -164,7 +163,7 @@ CS0649: Field &#39;Zaposleni.zarada&#39; is never assigned to, and will always h
 које нису подразумеване вредности типова, што може бити корисно ако твоја класа
 захтева специфичне иницијалне вредности.</p></li>
 <li><p><strong>Лакше одржавање</strong>. Иницијализациона логика је централизована у
-конструктору, што олакшава одржавање кода. Ако треба да измените
+конструктору, што олакшава одржавање кода. Ако треба да измениш
 иницијализацију, довољно је да то урадиш на једном месту.</p></li>
 <li><p><strong>Јасноћа кода</strong>. Експлицитни конструктор може учинити кôд јаснијим јер
 омогућава да видиш на једном месту како се објекти иницијализују.</p></li>
@@ -180,7 +179,7 @@ CS0649: Field &#39;Zaposleni.zarada&#39; is never assigned to, and will always h
 <h2>Статички конструктор<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Класа може да има дефинисан статички конструктор који се обично користи за
 иницијализацију статичких чланова или извршавање кода који треба да се
-изврши само једном приликом учитавања класе. У следећем примеру…</p>
+изврши само једном, приликом учитавања класе. У следећем примеру…</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Brojanje</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">brojac</span><span class="p">;</span>
@@ -200,7 +199,7 @@ CS0649: Field &#39;Zaposleni.zarada&#39; is never assigned to, and will always h
 <p>…у класи <code class="docutils literal notranslate"><span class="pre">Brojanje</span></code> дефинисано је статичко поље <code class="docutils literal notranslate"><span class="pre">brojac</span></code>, статички
 конструктор којим је иницијализована вредност статичког поља и метода
 <code class="docutils literal notranslate"><span class="pre">Povecaj()</span></code>. Приликом инстанцирања објекта класе <code class="docutils literal notranslate"><span class="pre">Brojanje</span></code>,
-констуктором се иницијализује вредност поља бројач на <code class="docutils literal notranslate"><span class="pre">0</span></code>, а позивом методе
+конструктором се иницијализује вредност поља бројач на <code class="docutils literal notranslate"><span class="pre">0</span></code>, а позивом методе
 <code class="docutils literal notranslate"><span class="pre">Povecaj()</span></code>, та вредност се увећава за <code class="docutils literal notranslate"><span class="pre">1</span></code>:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">Brojanje</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Brojanje</span><span class="p">();</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">Povecaj</span><span class="p">());</span><span class="w">    </span><span class="c1">// 1</span>

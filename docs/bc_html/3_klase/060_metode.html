@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Методе &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -46,7 +45,7 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Методе<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
-<p>У овој лекцији биће сумирано све што си до сада требао да научиш о методама
+<p>У овој лекцији биће сумирано све што је до сада требало да научиш о методама,
 заједно са неколико нових аспеката коришћења метода.</p>
 <p>Методе се дефинишу унутар класе и имају повратни тип, име и листу параметара.
 На пример:</p>
@@ -59,17 +58,17 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Често се у литератури о објектно-оријентисаном програмирању уместо појма метода
-користи појам функција. Функција јесте метода, али је метода шири појам који
+<p>Често се у литератури о објектно-оријентисаном програмирању уместо појма „метода”
+користи појам „функција”. Функција јесте метода, али је метода шири појам који
 може да обухвати и конструкторе, деструкторе и сл. Функција је појам који се
 преноси из литературе о програмским језицима ранијих генерација - у овом курсу
-користиће се појам метода. Из примерa изнад можеш да закључиш да је метода члан
+користиће се појам „метода”. Из примерa изнад можеш да закључиш да је метода члан
 класе који извршава одређене акције или обавља неки задатак.</p>
 <p>За именовање метода, по конвенцији, користи се <em>PascalCase</em> стил, мада то није
 правило.</p>
 <p>Сваки C# програм има макар једну класу, на пример класу <code class="docutils literal notranslate"><span class="pre">Program</span></code> са методом
 <code class="docutils literal notranslate"><span class="pre">Main()</span></code> која представља улазну тачку програма. Редослед писања метода у класи
-није битан. На пример, све је једно да ли неку методу у класи <code class="docutils literal notranslate"><span class="pre">Program</span></code> напишеш
+није битан. На пример, свеједно је да ли неку методу у класи <code class="docutils literal notranslate"><span class="pre">Program</span></code> напишеш
 пре или после методе <code class="docutils literal notranslate"><span class="pre">Main()</span></code>. Редослед може бити само ствар интерног договора
 у организацији.</p>
 <p>Методе се позивају преко инстанце класе. На пример:</p>
@@ -82,7 +81,7 @@
 морају имати параметре ако им се не прослеђују вредности. Могу имати различите
 модификаторе приступа којима се одређују њихова доступност, као што је
 објашњено у лекцији <a class="reference internal" href="040_enkapsulacija.html"><span class="std std-doc">Енкапсулација</span></a>.</p>
-<p>Ако методе треба да припадају самој класи, а не њеним објектима онда се
+<p>Ако методе треба да припадају самој класи, а не њеним објектима, онда се
 декларишу помоћу кључне речи <code class="docutils literal notranslate"><span class="pre">static</span></code>, а позивају без креирања инстанце класе.
 На пример:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
@@ -130,10 +129,10 @@
 </div>
 <p>Једна класа може да има више метода са истим именом али различитим параметрима,
 што је објашњено у лекцији
-<a class="reference internal" href="../2_programski_jezik_cs/160_preopterecenje.html"><span class="std std-doc">преоптерећене метода</span></a>.</p>
+<a class="reference internal" href="../2_programski_jezik_cs/160_preopterecenje.html"><span class="std std-doc">Преоптерећење метода</span></a>.</p>
 <p>Променљиве декларисане унутар једне методе су „локалне” променљиве доступне
 само у опсегу те методе - не могу се користити у некој другој методи. Значи,
-променљиве декларисане у оквиру једне методе потпуно се независне од
+променљиве декларисане у оквиру једне методе потпуно су независне од
 променљивих декларисаних у другој методи, чак и када су у обе методе коришћени
 исти идентификатори. Меморија која чува локалну променљиву алоцира се сваки пут
 када се позове метода и ослобађа након извршавања методе.</p>

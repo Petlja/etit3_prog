@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Рад са текстуалним фајловима &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -46,7 +45,7 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Рад са текстуалним фајловима<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
-<p>Oсновне операције за рад са текстуалним фајловима могу се реализовати помоћу
+<p>Основне операције за рад са текстуалним фајловима могу се реализовати помоћу
 метода из класе <code class="docutils literal notranslate"><span class="pre">File</span></code> из именског простора <code class="docutils literal notranslate"><span class="pre">System.IO</span></code>.</p>
 <p>Метода <code class="docutils literal notranslate"><span class="pre">WriteAllText</span></code> креира нови фајл, уписује задати текст у фајл и затвара
 фајл. Ако фајл већ постоји, онда ће се његов садржај обрисати, а уписаће се
@@ -106,7 +105,7 @@
 </div>
 <p>Интересантне методе из класе <code class="docutils literal notranslate"><span class="pre">File</span></code> су и метода <code class="docutils literal notranslate"><span class="pre">AppendAllText</span></code> која додаје
 текст у фајл и затвара фајл и метода <code class="docutils literal notranslate"><span class="pre">AppendAllLines</span></code> која додаје низ стрингова
-у фајл и затвара фајл. Ако фајл не постоји биће креиран.</p>
+у фајл и затвара фајл. Ако фајл не постоји, биће креиран.</p>
 <p>Нека је сада задатак да се у фајл <code class="docutils literal notranslate"><span class="pre">C:\Imenik\Podaci.txt</span></code> дода и твоја адреса
 становања, па у конзоли испишу све уписане линије:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>

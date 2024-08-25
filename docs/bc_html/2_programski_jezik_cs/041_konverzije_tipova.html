@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Конверзије типова &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -46,7 +45,9 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Конверзије типова<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
-<p>У програмском језику C# могуће је вршити конверзије између било која два
+<p>О <a class="reference external" href="https://petlja.org/sr-Latn-RS/kurs/11231/4/8010">експлицитним и имплицитним конверзијама типова</a>
+у програмском језику C учио си у првом разреду.
+У програмском језику C# могуће је вршити конверзије између било која два
 нумеричка типа - имплицитно или експлицитно. Експлицитне конверзије врше се
 каст изразима (енгл. <em>Cast Expression</em>) облика <code class="docutils literal notranslate"><span class="pre">(T)E</span></code>, где је <code class="docutils literal notranslate"><span class="pre">E</span></code> израз, а <code class="docutils literal notranslate"><span class="pre">T</span></code>
 жељени тип. На пример:</p>
@@ -172,16 +173,54 @@
 <p>Експлицитне конверзије могу да доведу до губитка података или грешака
 „преливања”, ако тип који се конвертује (изворни тип) није у опсегу типа у који
 се конвертује (одредишни тип). Ако је изворни тип већи од одредишног, онда се
-изворна вредност скраћује одбацивањем њених додатних најважнијих битова. Ако је
-изворни тип мањи од одредишног, онда се изворна вредност проширује или знаком
-или нулама, тако да одговара величини одредишног типа. Ако је изворни тип исте
-величине као и одредишни, онда се изворна вредност третира као одредишна
-вредност.</p>
+изворна вредност скраћује одбацивањем битова. На пример:</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">internal</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">veca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">300</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">byte</span><span class="w"> </span><span class="n">manja</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="n">veca</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Originalna vrednost: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">veca</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Konvertovana vrednost: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">manja</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Извршавањем овог програма у конзоли ће се исписати:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Originalna vrednost: 300
+Konvertovana vrednost: 44
+</pre></div>
+</div>
+<p>Ако је изворни тип мањи од одредишног, онда се изворна вредност проширује или
+знаком или нулама, тако да одговара величини одредишног типа.</p>
+<div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+
+<span class="k">internal</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">sbyte</span><span class="w"> </span><span class="n">manja</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">30</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">veca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">byte</span><span class="p">)</span><span class="n">manja</span><span class="p">;</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Originalna vrednost: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">manja</span><span class="p">);</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Konvertovana vrednost: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">veca</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Извршавањем овог програма у конзоли ће се исписати:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Originalna vrednost: -30
+Konvertovana vrednost: 226
+</pre></div>
+</div>
+<p>Ако је изворни тип исте величине као и одредишни, онда се изворна вредност
+третира као одредишна вредност.</p>
 <p>Ако се тип <code class="docutils literal notranslate"><span class="pre">decimal</span></code> конвертује у неки целобројни тип, изворна вредност се
-заокружује. Ако је заокружена изворна вредност ван опсега одредишне вредности
-долази до грешке преливања. Ако се типови <code class="docutils literal notranslate"><span class="pre">float</span></code> или <code class="docutils literal notranslate"><span class="pre">double</span></code> конвертују у
+заокружује. Ако је заокружена изворна вредност ван опсега одредишне вредности,
+долази до грешке „преливања”. Ако се типови <code class="docutils literal notranslate"><span class="pre">float</span></code> или <code class="docutils literal notranslate"><span class="pre">double</span></code> конвертују у
 неки целобројни тип, изворна вредност се такође заокружује. Ако је заокружена
-изворна вредност ван опсега одредишне вредности, долази до грешке преливања или
+изворна вредност ван опсега одредишне вредности, долази до грешке „”преливања” или
 је резултат неодређена вредност типа одредишта.</p>
 <p>Ако се тип <code class="docutils literal notranslate"><span class="pre">double</span></code> конвертује у тип <code class="docutils literal notranslate"><span class="pre">float</span></code>, изворна вредност се заокружује на
 најближу одредишну вредност. Ако је изворна вредност премала или превелика да
@@ -189,7 +228,7 @@
 <code class="docutils literal notranslate"><span class="pre">double</span></code> конвертују у тип <code class="docutils literal notranslate"><span class="pre">decimal</span></code>, изворна вредност се конвертује у одредишну
 и заокружује на најближи број до двадесетосме децимале. Ако је изворна вредност
 премала, онда је резултат нула, односно, ако је изворна вредност превелика
-долази до грешке преливања. На крају, ако се тип <code class="docutils literal notranslate"><span class="pre">decimal</span></code> конвертује у типове
+долази до грешке „преливања”. На крају, ако се тип <code class="docutils literal notranslate"><span class="pre">decimal</span></code> конвертује у типове
 <code class="docutils literal notranslate"><span class="pre">float</span></code> или <code class="docutils literal notranslate"><span class="pre">double</span></code>, изворна вредност се заокружује на најближу одредишну
 вредност.</p>
 </section>

@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Оквир за потврду &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -26,14 +26,13 @@
     <script src="../_static/../_platform/content.js?v=68d29ad7"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="next" title="Радио дугмe" href="radio_dugmad.html" />
+    <link rel="next" title="Радио-дугмe" href="radio_dugmad.html" />
     <link rel="prev" title="Оквир за групу" href="okvir_za_grupu.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -61,9 +60,9 @@
 корисник треба да штиклира оквир за потврду како би наставио даље. Ако се ова
 контрола користи у групама у неком контејнеру, онда се може имплементирати
 вишеструки избор, где корисник изабира једну или више понуђених опција.</p>
-<p>Контрола поља за потврду је слична контроли радио дугме по томе што се користи
+<p>Контрола поља за потврду је слична контроли радио-дугме по томе што се користи
 за означавање избора који је направио корисник. Разликује се по томе што се
-код радио дугмади може изабрати само по једно радио дугме у групи, док се код
+код радио-дугмади може изабрати само по једно радио-дугме у групи, док се код
 поља за потврду може изабрати било који број поља за потврду у групи.</p>
 <p>Ова контрола има два важна својства, <code class="docutils literal notranslate"><span class="pre">Checked</span></code> и <code class="docutils literal notranslate"><span class="pre">CheckState</span></code>. Својство
 <code class="docutils literal notranslate"><span class="pre">Checked</span></code> враћа тачно или нетачно. Својство <code class="docutils literal notranslate"><span class="pre">CheckState</span></code> враћа или <code class="docutils literal notranslate"><span class="pre">Checked</span></code>
@@ -72,7 +71,7 @@
 указује да опција није доступна.</p>
 <p>Нека је задатак да креираш једноставну GUI апликацију за демонстрацију рада са
 контролом <code class="docutils literal notranslate"><span class="pre">CheckBox</span></code>. При врху форме треба да се налази оквир за потврду са
-текстом: „слажем се са условима коришћења апликације”. Испод, треба да се
+текстом: „Слажем се са условима коришћења апликације”. Испод треба да се
 налази оквир за групу са текстом „Штиклирај објектно-оријентисане језике” и
 четири оквира за потврду са текстом:</p>
 <ul class="simple">
@@ -82,7 +81,7 @@
 <li><p>C#</p></li>
 </ul>
 <p>Испод оквира за групу треба да се налази дугме са текстом „ОДГОВОРИ”. Кликом
-на дугме, ако корисник није штиклирао први оквир за потврду, онда треба да
+на дугме, ако корисник није штиклирао први оквир за потврду, треба да
 добије одговарајућу поруку о томе, а ако јесте, онда треба да се провери да ли
 су штиклирани тачни одговори.</p>
 <p>Креирај нови <em>Windows Forms App (.NET Framework)</em> пројекат са формом димензија
@@ -103,17 +102,17 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>На овај начин си имплементирао први захтев, да корисник не може да одговара на
+<p>На овај начин си имплементирао први захтев - да корисник не може да одговара на
 питања, док се прво не сложи са условима коришћења апликације, о чему добија
 одговарајућу поруку:</p>
 <p><img alt="Оквир за потврду" src="../_images/okvirzapotvrdu-2.png" /></p>
-<p>Како да провериш да ли је корисник све тачно штиклирао, може да зависи
-од постављених правила. На пример, на твом твом матурском испиту, на тесту за
+<p>Како да провериш да ли је корисник све тачно штиклирао? То може да зависи
+од постављених правила. На пример, на твом матурском испиту, на тесту за
 проверу стручно-теоријских знања важило би правило:</p>
 <ul class="simple">
-<li><p>за три тачна и ни један нетачан одговор добио би маскималних 3 бода,</p></li>
-<li><p>за два тачна и ни један нетачан одговор добио би 2 бода,</p></li>
-<li><p>за један тачан и ни један нетачан одговор добио би 1 бод и</p></li>
+<li><p>за три тачна и ниједан нетачан одговор добио би максималних 3 бода,</p></li>
+<li><p>за два тачна и ниједан нетачан одговор добио би 2 бода,</p></li>
+<li><p>за један тачан и ниједан нетачан одговор добио би 1 бод и</p></li>
 <li><p>за све остало добио би 0 бодова.</p></li>
 </ul>
 <p>Ово правило могао би да имплементираш овако:</p>

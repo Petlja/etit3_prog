@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Полиморфизам &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -33,9 +33,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -50,15 +49,15 @@
 <h1>Полиморфизам<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <p>Уз наслеђивање и енкапсулацију, полиморфизам (грч. <em>πολύ</em> - много, <em>μορφή</em> -
 облик) представља један од три стуба ООП. Уопштено, полиморфизам дозвољава
-креирања јединственог интерфејса ка различитим ентитетима. Конкретно, у
-објектно оријентисаном програмирању полиморфизам се манифестује у различитим
+креирање јединственог интерфејса ка различитим ентитетима. Конкретно, у
+објектно-оријентисаном програмирању полиморфизам се манифестује у различитим
 облицима. На пример, полиморфизам омогућује да се:</p>
 <ul class="simple">
 <li><p>преоптерећују методе у истој класи, где одабир методе врши компајлер на
 основу потписа методе, односно на основу прослеђених аргумената
 (<strong>статички полиморфизам</strong>),</p></li>
 <li><p>преоптерећују оператори, где се дефинишу нова понашања за постојеће операторе
-за рад са кориснички дефинисаним типовима (<strong>статички полиморфизам</strong>),</p></li>
+за рад са кориснички дефинисаним типовима (такође <strong>статички полиморфизам</strong>),</p></li>
 <li><p>преовладавају методе у изведеним класама, које су дефинисане у базној класи,
 где се одабир методе врши динамички у време извршавања програма на основу типа
 објекта (<strong>динамички полиморфизам</strong>).</p></li>
@@ -73,9 +72,9 @@
 (<span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> и <span class="math notranslate nohighlight">\(c\)</span>) и другу која прихвата два аргумента (<span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span>). Одабир
 позване методе врши се на основу потписа методе, односно на основу прослеђених
 аргумената.</p>
-<p>Постоји пуно примера где можеш користити преоптерећене операторе, рецимо ако
+<p>Постоји пуно примера где можеш користити преоптерећене операторе. Рецимо, ако
 треба да сабираш комплексне бројеве, можеш да преоптеретиш оператор за сабирање
-<code class="docutils literal notranslate"><span class="pre">+</span></code>. Уместо да враћа збир два броја, на пример <span class="math notranslate nohighlight">\(br_1+br_2\)</span> преоптерећени
+<code class="docutils literal notranslate"><span class="pre">+</span></code>. Уместо да враћа збир два броја, на пример <span class="math notranslate nohighlight">\(br_1+br_2\)</span>, преоптерећени
 оператор за сабирање који сабира комплексне бројеве враћао би збир реалних и
 збир имагинарних делова два комплексна броја
 <span class="math notranslate nohighlight">\(br_{re_1}+br_{re_2},br_{im_1}+br_{im_2}\)</span>.</p>
@@ -84,11 +83,11 @@
 <h2>Динамички полиморфизам<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>Надјачавање метода односи се на могућност надјачавања или преовладавања метода
 базне класе у изведеним класама. Тиме се омогућава да се у изведеним класама
-дефинишу специфичне имплементацију метода дефинисаних у базним класама. Метода
+дефинишу специфичне имплементације метода дефинисаних у базним класама. Метода
 базне класе која треба да се надјача дефинише се као виртуелна метода, а метода
 изведене класе која надјачава виртуелну методу базне класе дефинише се као
 надјачана метода.</p>
-<p>Динамички полиморфизам се може применити у много ситуација. На пример, систем
+<p>Динамички полиморфизам може се применити у много ситуација. На пример, систем
 за процесирање плаћања може да подржава различите методе плаћања. Тако
 виртуелна метода <code class="docutils literal notranslate"><span class="pre">naplati()</span></code> у базној класи, може да буде надјачана у изведеним
 класама, како би се имплементирало готовинско плаћање, плаћање картицом,

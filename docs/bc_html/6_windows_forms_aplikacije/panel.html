@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Панел &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -55,15 +54,15 @@
 званичној <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.panel?view=netframework-4.8">документацији</a>.
 Има их много и нема потребе наводити их све на овом месту.</p>
 <p>Контрола <code class="docutils literal notranslate"><span class="pre">Panel</span></code> користи се за груписања других контрола, тј. служи као
-контејнер за друге контроле. Обично се групише више контрола које имају неки
+контејнер за друге контроле. Обично се групише више контрола које имају неку
 заједничку функционалност. На пример, на обрасцу за слање пакета поштом, на
 једном панелу може бити адреса пошиљаоца, на другом адреса примаоца и на трећем
 подаци о типу и цени услуге. Тако груписани подаци могу визуелно да помогну
 кориснику да се лакше снађе и лакше попуни образац.</p>
 <p>Ако контроле унутар панела превазилазе његове димензије, можеш омогућити
-својство <code class="docutils literal notranslate"><span class="pre">AutoScroll</span></code> како би се појавиле вертикалне и/или хоризонтале скрол
+својство <code class="docutils literal notranslate"><span class="pre">AutoScroll</span></code> како би се појавиле вертикалне и/или хоризонталне скрол
 траке. По овом својству се контрола <code class="docutils literal notranslate"><span class="pre">Panel</span></code> разликује од оквира за групу. Оквир
-за групу јесте сличан контроли <code class="docutils literal notranslate"><span class="pre">Panel</span></code>, међутим, само контрола <code class="docutils literal notranslate"><span class="pre">Panel</span></code> може да
+за групу јесте сличан контроли <code class="docutils literal notranslate"><span class="pre">Panel</span></code>, међутим само контрола <code class="docutils literal notranslate"><span class="pre">Panel</span></code> може да
 има скрол траке, а само оквир за групу има натпис.</p>
 <section id="id2">
 <h2>Задатак<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
@@ -89,12 +88,12 @@
 </li>
 </ul>
 <p>…а образац треба да буде „брендиран” логотипом твоје школе, на пример:</p>
-<p><img alt="Логотим школе" src="../_images/logo-skole.png" /></p>
-<p>Кликом на логотип школе треба да се отвори прегледач у којем је приказан веб
+<p><img alt="Логотип школе" src="../_images/logo-skole.png" /></p>
+<p>Кликом на логотип школе треба да се отвори прегледач у којем је приказан веб-
 сајт школе.</p>
 <p>Елегантно решење овог задатка подразумева коришћење контрола за груписање, на
 пример контроле панел. У првом панелу биле би груписане контроле за унос личних
-података ученика, а у другом, контроле за унос података о успеху на такмичењу.
+података ученика, а у другом контроле за унос података о успеху на такмичењу.
 На пример:</p>
 <p><img alt="Панел" src="../_images/panel-3.png" /></p>
 <p>Превуци први панел на форму и покрени апликацију. Панел којег си поставио јесте
@@ -103,15 +102,15 @@
 <code class="docutils literal notranslate"><span class="pre">FixedSigle</span></code> или <code class="docutils literal notranslate"><span class="pre">Fixed3D</span></code>. Након тога можеш да поставиш лабеле и оквире за
 текст. Исто понови и са другим панелом.</p>
 <p>У трећем панелу потребно је приказати логотип школе. Постави трећи панел и
-одабери својство <code class="docutils literal notranslate"><span class="pre">Bacground</span> <span class="pre">Image</span></code>. Кликни на радио дугме <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">resources</span></code>,
-кликни на дугме <code class="docutils literal notranslate"><span class="pre">Import</span></code> па одабери слику са логотипом твоје школе…</p>
+одабери својство <code class="docutils literal notranslate"><span class="pre">Bacground</span> <span class="pre">Image</span></code>. Кликни на радио-дугме <code class="docutils literal notranslate"><span class="pre">Local</span> <span class="pre">resources</span></code>,
+кликни на дугме <code class="docutils literal notranslate"><span class="pre">Import</span></code>, па одабери слику са логотипом твоје школе…</p>
 <p><img alt="Панел" src="../_images/panel-1.png" /></p>
-<p>и на крају кликни на дугме <code class="docutils literal notranslate"><span class="pre">OK</span></code>:</p>
+<p>…и на крају кликни на дугме <code class="docutils literal notranslate"><span class="pre">OK</span></code>:</p>
 <p><img alt="Панел" src="../_images/panel-2.png" /></p>
 <p>Постави и својство <code class="docutils literal notranslate"><span class="pre">BorderStyle</span></code> трећег панела ако желиш да се приказују оквири
 око панела.</p>
 <p>Последњи захтев, да се кликом на логотип школе отвори прегледач у којем је
-приказан веб сајт школе, можеш реализовати дефинисањем догађаја <code class="docutils literal notranslate"><span class="pre">Click</span></code> на
+приказан веб-сајт школе, можеш реализовати дефинисањем догађаја <code class="docutils literal notranslate"><span class="pre">Click</span></code> на
 трећи панел, на пример:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">panel3_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>

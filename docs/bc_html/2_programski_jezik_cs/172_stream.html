@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Рад са токовима &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -53,7 +52,7 @@
 <section id="id2">
 <h2>Упис карактера у ток<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Класа <code class="docutils literal notranslate"><span class="pre">StreamWriter</span></code> омогућава упис карактера, одређеног кодног стандарда, у
-ток, обично у текстуални фајл, где је подразумевани кодни стандард <code class="docutils literal notranslate"><span class="pre">UTF8</span></code>.</p>
+ток, обично у текстуални фајл, где је подразумевани кодни стандард <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code>.</p>
 <p>Нека је задатак да у нови фајл <code class="docutils literal notranslate"><span class="pre">imenik.txt</span></code> упишеш, у првој линији своје име и
 презиме, у другој своју адресу електронске поште и у трећој свој број телефона:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
@@ -95,7 +94,7 @@
 <section id="id3">
 <h2>Читање карактера из тока<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
 <p>Класа <code class="docutils literal notranslate"><span class="pre">StreamReader</span></code> омогућава читање карактера, одређеног кодног стандарда, из
-тока, обично из текстуалног фајла, где је подразумевани кодни стандард <code class="docutils literal notranslate"><span class="pre">UTF8</span></code>.</p>
+тока, обично из текстуалног фајла, где је подразумевани кодни стандард <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code>.</p>
 <p>Нека је задатак да у конзоли испишеш садржај целог фајла <code class="docutils literal notranslate"><span class="pre">imenik.txt</span></code> којег си
 креирао у претходном примеру:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
@@ -137,7 +136,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>У претходним примерима, <code class="docutils literal notranslate"><span class="pre">using</span></code> израз користи се за креирање објеката који ће
+<p>У претходним примерима, <code class="docutils literal notranslate"><span class="pre">using</span></code> израз се користи за креирање објекта који ће
 бити аутоматски ослобођен након што се заврши блок кода. Ово је важно, јер
 осигурава да се ресурси као што су фајлови правилно затварају, чак и ако дође
 до изузетка.</p>

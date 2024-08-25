@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Стрингови &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -83,7 +82,7 @@ UNICODE, што значи да могу представљати текст у 
 <span class="kt">string</span><span class="w"> </span><span class="n">promenjen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="sc">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;J&#39;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Нови стринг &quot;Jello&quot;</span>
 </pre></div>
 </div>
-<p>Конкатенацију стриногва можеш вршити коришћењем оператора <code class="docutils literal notranslate"><span class="pre">+</span></code> или метода као
+<p>Конкатенацију стрингова можеш вршити коришћењем оператора <code class="docutils literal notranslate"><span class="pre">+</span></code> или метода као
 што је <code class="docutils literal notranslate"><span class="pre">String.Concat</span></code>.</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">str1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
 <span class="kt">string</span><span class="w"> </span><span class="n">str2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;World&quot;</span><span class="p">;</span>
@@ -91,7 +90,7 @@ UNICODE, што значи да могу представљати текст у 
 </pre></div>
 </div>
 <p>Као што је већ написано, објекат типа стринг има много уграђених метода и
-својстава за манипулација са текстом. Све методе и својства наведене су у
+својстава за манипулацију са текстом. Све методе и својства наведене су у
 званичној <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8">документацији</a>.
 Примери употребе неких метода за рад са стринговима:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
@@ -107,11 +106,16 @@ UNICODE, што значи да могу представљати текст у 
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">formatiran</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">&quot;Ime: {0}, Godine: {1}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">godine</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">ToString()</span></code> методе многих типова подржавају форматирање. На пример:</p>
+<p><code class="docutils literal notranslate"><span class="pre">ToString()</span></code> методе многих типова подржавају форматирање. У следећем примеру…</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">DateTime</span><span class="w"> </span><span class="n">trenutno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">;</span>
 <span class="kt">string</span><span class="w"> </span><span class="n">datumVreme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trenutno</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&quot;dd-MM-yyyy HH:mm:ss&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>…<code class="docutils literal notranslate"><span class="pre">DateTime</span></code> је структура која се користи за рад са датумима и временом.
+<code class="docutils literal notranslate"><span class="pre">DateTime.Now</span></code> враћа тренутни датум и време на локалном систему у тренутку
+извршавања овог кода. Променљива <code class="docutils literal notranslate"><span class="pre">trenutno</span></code> чува вредност тренутног датума
+и времена у типу <code class="docutils literal notranslate"><span class="pre">DateTime</span></code>, а метода <code class="docutils literal notranslate"><span class="pre">ToString()</span></code> се користи за конвертовање
+вредности структуре <code class="docutils literal notranslate"><span class="pre">DateTime</span></code> у стринг.</p>
 <p>Стринг литерали могу садржати прелазне секвенце као што су <code class="docutils literal notranslate"><span class="pre">\n</span></code> (нова линија),
 <code class="docutils literal notranslate"><span class="pre">\t</span></code> (таб), итд. Списак свих прелазних секвенци дат је у
 <a class="reference internal" href="../7_dodaci/prelazne_sekvence.html"><span class="std std-doc">прилогу</span></a>. Вербатим стринг литерали (почињу
@@ -123,13 +127,26 @@ UNICODE, што значи да могу представљати текст у 
 <span class="s">treca&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Поређење стрингова можеш врштити методама као што су <code class="docutils literal notranslate"><span class="pre">Equals</span></code>, <code class="docutils literal notranslate"><span class="pre">Compare</span></code> и
+<p>Поређење стрингова можеш вршити методама као што су <code class="docutils literal notranslate"><span class="pre">Equals</span></code>, <code class="docutils literal notranslate"><span class="pre">Compare</span></code> и
 <code class="docutils literal notranslate"><span class="pre">CompareOrdinal</span></code>. На пример:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">poredi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HELLO&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// False</span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">poredi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HELLO&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">StringComparison</span><span class="p">.</span><span class="n">OrdinalIgnoreCase</span><span class="p">);</span><span class="w"> </span><span class="c1">// True</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">poredi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Compare</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;HELLO&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// -1</span>
 </pre></div>
 </div>
+<p>У првој линији пореде се два стринга, где је поређење „осетљиво” на велика и
+мала слова (case-sensitive). У другој линији укључен је параметар
+<code class="docutils literal notranslate"><span class="pre">StringComparison.OrdinalIgnoreCase</span></code> који указује на поређење које није
+осетљиво на велика и мала слова. У трећој линији упоређују се две стринг
+вредности и враћа целобројна вредност која означава резултат поређења (где је
+поређење осетљиво на велика и мала слова):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> ако су стрингови једнаки,</p></li>
+<li><p>негативан број (обично <code class="docutils literal notranslate"><span class="pre">-1</span></code>) ако је први стринг мањи од другог (према бинарном поретку) и</p></li>
+<li><p>позитиван број (обично 1) ако је први стринг већи од другог.</p></li>
+</ul>
+<p>Пошто се <code class="docutils literal notranslate"><span class="pre">Hello</span></code> и <code class="docutils literal notranslate"><span class="pre">HELLO</span></code> разликују у великим и малим словима, <code class="docutils literal notranslate"><span class="pre">Hello</span></code> се
+сматра мањим у бинарном поретку од <code class="docutils literal notranslate"><span class="pre">HELLO</span></code>, па <code class="docutils literal notranslate"><span class="pre">Compare</span></code> враћа <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
 </section>
 
 

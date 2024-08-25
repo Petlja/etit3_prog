@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Цикличне структуре &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -46,7 +45,7 @@
             
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Цикличне структуре<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
-<p>У програмском језику C#, поред наредби <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> и <code class="docutils literal notranslate"><span class="pre">do-while</span></code> често се
+<p>У програмском језику C#, поред наредби <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> и <code class="docutils literal notranslate"><span class="pre">do-while</span></code>, често се
 користи и наредба <code class="docutils literal notranslate"><span class="pre">foreach</span></code> која не постоји у програмском језику C.</p>
 <section id="id2">
 <h2>Наредба бројачког циклуса<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
@@ -59,11 +58,11 @@
 <p><code class="docutils literal notranslate"><span class="pre">izraz1</span></code> извршава се само једном по уласку у петљу. Користи се за
 иницијализацију или доделу почетних вредности. Ако их има више, почетне
 вредности се међусобно одвајају оператором <code class="docutils literal notranslate"><span class="pre">,</span></code>. <code class="docutils literal notranslate"><span class="pre">izraz2</span></code> представља управљачки
-израз тј. услов изласка из петље, а његова тачност проверава се у свакој
-итерацији петље. <code class="docutils literal notranslate"><span class="pre">izraz3</span></code> извршава се у свакој итерацији петље и служи за
+израз, тј. услов изласка из петље, а његова тачност проверава се у свакој
+итерацији петље. Дотле се <code class="docutils literal notranslate"><span class="pre">izraz3</span></code> извршава у свакој итерацији петље и служи за
 ажурирање вредности бројача. Вредност бројача утиче на тачност управљачког
 израза, а операција ажурирања бројача најчешће је инкрементација. <code class="docutils literal notranslate"><span class="pre">naredba</span></code>
-представља тело петље које чини или једна наредба или блок наредби сачињен од
+представља тело петље, које чини или једна наредба или блок наредби сачињен од
 појединачних наредби записаних између витичастих заграда. У следећем примеру…</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
@@ -71,10 +70,10 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>…променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> иницијализована је вредношћу <code class="docutils literal notranslate"><span class="pre">0</span></code>. Пошто је <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> у конзоли
-се исписује <code class="docutils literal notranslate"><span class="pre">0</span></code>. Ажурира се вредност <code class="docutils literal notranslate"><span class="pre">i</span></code> на <code class="docutils literal notranslate"><span class="pre">1</span></code>. Пошто је <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> у конзоли се
-исписује <code class="docutils literal notranslate"><span class="pre">1</span></code>. Ажурира се вредност <code class="docutils literal notranslate"><span class="pre">i</span></code> на <code class="docutils literal notranslate"><span class="pre">2</span></code>. Пошто је <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> у конзоли се
-исписује <code class="docutils literal notranslate"><span class="pre">2</span></code>. Ажурира се вредност <code class="docutils literal notranslate"><span class="pre">i</span></code> на <code class="docutils literal notranslate"><span class="pre">3</span></code>. Пошто није <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> прекида се
+<p>…променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> иницијализована је вредношћу <code class="docutils literal notranslate"><span class="pre">0</span></code>. Пошто је <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>, у конзоли
+се исписује <code class="docutils literal notranslate"><span class="pre">0</span></code>. Ажурира се вредност <code class="docutils literal notranslate"><span class="pre">i</span></code> на <code class="docutils literal notranslate"><span class="pre">1</span></code>. Пошто је <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>, у конзоли се
+исписује <code class="docutils literal notranslate"><span class="pre">1</span></code>. Ажурира се вредност <code class="docutils literal notranslate"><span class="pre">i</span></code> на <code class="docutils literal notranslate"><span class="pre">2</span></code>. Пошто је <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>, у конзоли се
+исписује <code class="docutils literal notranslate"><span class="pre">2</span></code>. Ажурира се вредност <code class="docutils literal notranslate"><span class="pre">i</span></code> на <code class="docutils literal notranslate"><span class="pre">3</span></code>. Пошто није <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">&lt;</span> <span class="pre">3</span></code>, прекида се
 извршавање петље. Подсети се и да је променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> у примеру изнад „видљива”
 само у петљи јер је декларисана у оквиру израза за иницијализацију.</p>
 <p>Петље је могуће угнежђавати исто као и у програмском језику C.</p>
@@ -87,7 +86,7 @@
     naredba
 </pre></div>
 </div>
-<p>У изразу обично се наводи тип и идентификатор, док колекција може да представља
+<p>Обично се у изразу наводе тип и идентификатор, док колекција може да представља
 низ, стринг или другу колекцију података која може бити набројива. Наредба
 представља тело петље које чини или једна наредба или блок наредби сачињен од
 појединачних наредби записаних између витичастих заграда. У следећем примеру…</p>
@@ -119,11 +118,11 @@ n једнако броју елемената низа. У свакој ите�
     naredba
 </pre></div>
 </div>
-<p>Управљачки израз, односно услов за излазак из петље, налази се у заглављу петље
-па се због тога ова петља назива петља са предусловом. Тело петље може бити
+<p>Управљачки израз, односно услов за излазак из петље, налази се у заглављу петље,
+па се због тога ова петља назива „петља са предусловом”. Тело петље може бити
 једна наредба или блок наредби које чине наредбе записане између витичастих
 заграда. Прво се проверава тачност управљачког израза, па ако је он тачан,
-извршава се тело петље и ток програма враћа се на проверу тачности управљачког
+извршава се тело петље и ток програма се враћа на проверу тачности управљачког
 израза. Поступак се понавља све док је управљачки израз тачан. Ако је
 управљачки израз нетачан, излази се из петље. У следећем примеру…</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
@@ -136,7 +135,7 @@ n једнако броју елемената низа. У свакој ите�
 </div>
 <p>…у петљу се улази након декларације и иницијализације целобројне променљиве
 <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>. Израз <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> у заглављу петље је тачан, па се прелази на извршавање
-тела петље - у конзоли исписује се тренутна вредност променљиве <code class="docutils literal notranslate"><span class="pre">i</span></code>
+тела петље - у конзоли се исписује тренутна вредност променљиве <code class="docutils literal notranslate"><span class="pre">i</span></code>
 која износи <code class="docutils literal notranslate"><span class="pre">0</span></code>, променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> се инкрементира и добија вредност <code class="docutils literal notranslate"><span class="pre">1</span></code>.
 Управљачки израз <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> је и даље тачан, па се у конзоли исписује
 <code class="docutils literal notranslate"><span class="pre">1</span></code>, променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> се инкрементира и добија вредност <code class="docutils literal notranslate"><span class="pre">2</span></code> и тако редом. Да у
@@ -161,7 +160,7 @@ while (izraz)
 тачност управљачког израза. То значи да ће се тело петље извршити макар једном,
 без обзира на тачност управљачког израза. Ако управљачки израз јесте тачан,
 поново се извршава тело петље. Поступак се понавља све док је управљачки израз
-тачан. Ако је управљачки израз нетачан, излази се из петље. То значи да у се
+тачан. Ако је управљачки израз нетачан, излази се из петље. То значи да се у
 оквиру блока наредби мора обезбедити механизам за промену вредности које утичу
 на вредност управљачког израза, како се не би креирала бесконачна петља. У
 следећем примеру…</p>
@@ -174,8 +173,8 @@ while (izraz)
 </pre></div>
 </div>
 <p>…у петљу се улази након декларације и иницијализације целобројне променљиве
-<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>. Одмах се извршава тело петље и у конзоли исписује се
-вредност променљиве <code class="docutils literal notranslate"><span class="pre">i</span></code> која износи <code class="docutils literal notranslate"><span class="pre">0</span></code>, па се променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> икрементира и
+<code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code>. Одмах се извршава тело петље и у конзоли се исписује
+вредност променљиве <code class="docutils literal notranslate"><span class="pre">i</span></code> која износи <code class="docutils literal notranslate"><span class="pre">0</span></code>, па се променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> инкрементира и
 добија вредност <code class="docutils literal notranslate"><span class="pre">1</span></code>. Управљачки израз <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> је и даље тачан, па се у конзоли
 исписује <code class="docutils literal notranslate"><span class="pre">1</span></code>, променљива <code class="docutils literal notranslate"><span class="pre">i</span></code> се инкрементира и добија вредност
 <code class="docutils literal notranslate"><span class="pre">2</span></code> и тако редом. Поступак се понавља све док је израз <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">3</span></code> тачан. Да у телу

@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Оквир за листу &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -27,13 +27,12 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="next" title="Комбиновани оквир" href="kombinovani_okvir.html" />
-    <link rel="prev" title="Радио дугмe" href="radio_dugmad.html" />
+    <link rel="prev" title="Радио-дугмe" href="radio_dugmad.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -58,16 +57,16 @@
 изабере једну или више ставки са листе. Оквир за листу може се користити за
 приказ више колона, а колоне могу садржати и слике или друге контроле.</p>
 <p>Својства, догађаје и методе контроле оквир за листу која ћеш често користи
-су…</p>
+су:</p>
 <ul class="simple">
 <li><p>својство <code class="docutils literal notranslate"><span class="pre">Items</span></code> које представља колекцију ставки које ће бити приказане у
 контроли,</p></li>
 <li><p>својства <code class="docutils literal notranslate"><span class="pre">SelectedIndex</span></code> и <code class="docutils literal notranslate"><span class="pre">SelectedItem</span></code> која омогућавају да се прикаже или
 постави тренутно одабрана ставка у контроли и</p></li>
 <li><p>својство <code class="docutils literal notranslate"><span class="pre">SelectedItems</span></code> које представља колекцију свих тренутно изабраних
-ставки,</p></li>
+ставки.</p></li>
 </ul>
-<p>…догађај <code class="docutils literal notranslate"><span class="pre">SelectedIndexChanged</span></code> који се покреће када се промени
+<p>Догађај <code class="docutils literal notranslate"><span class="pre">SelectedIndexChanged</span></code> који се покреће када се промени
 означена ставка и методе:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Add()</span></code> за додавање нове ставке у листу,</p></li>
@@ -94,7 +93,7 @@
 <p>Имена ће се одмах појавити на листи.</p>
 <p><img alt="Оквир за листу" src="../_images/listbox-02a.png" /></p>
 <p>Додавање нових ставки на листу у току извршавања програма прилично је
-једноставно. Кликом на дугме <code class="docutils literal notranslate"><span class="pre">btnDodaj</span></code> потребно је унето име из оквира за
+једноставно. Кликом на дугме <code class="docutils literal notranslate"><span class="pre">btnDodaj</span></code> потребно је име унето из оквира за
 текст додати на листу методом <code class="docutils literal notranslate"><span class="pre">Add()</span></code>:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnDodaj_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
@@ -111,16 +110,16 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Ако je корисник кликнуо <code class="docutils literal notranslate"><span class="pre">btnDodaj</span></code>, а није унео име полазника добиће поруку…</p>
+<p>Ако je корисник кликнуо <code class="docutils literal notranslate"><span class="pre">btnDodaj</span></code>, а није унео име полазника, добиће поруку…</p>
 <p><img alt="Оквир за листу" src="../_images/listbox-03.png" /></p>
 <p>…а ако јесте, име ће бити додато на листу:</p>
 <p><img alt="Оквир за листу" src="../_images/listbox-04.png" /></p>
 </section>
 <section id="id4">
 <h2>Претрага листе<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
-<p>Једна од основних функција прилико рада са било каквим листама је свакако
+<p>Једна од основних функција приликом рада са било каквим листама је свакако
 претрага листе. У оквиру за листу можеш да користиш методу <code class="docutils literal notranslate"><span class="pre">FindString()</span></code>
-као би пронашао стринг или субстринг на листи и означио резултат:</p>
+како би пронашао стринг или субстринг на листи и означио резултат:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnPretrazi_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">polaznik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">txtPolaznik</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
@@ -146,12 +145,12 @@
 </pre></div>
 </div>
 <p>У догађају <code class="docutils literal notranslate"><span class="pre">btnPretrazi_Click</span></code> прво се проверава да ли је корисник унео стринг
-за претрагу. Ако није добија поруку о томе, а ако јесте тражи се име полазника
-које одговара задатом стрингу. Ако не постоји полазник на листи које одговара
+за претрагу. Ако није, добија поруку о томе, а ако јесте тражи се име полазника
+које одговара задатом стрингу. Ако не постоји полазник на листи који одговара
 задатом стрингу, вратиће се <code class="docutils literal notranslate"><span class="pre">-1</span></code>, а ако постоји, вратиће се његов индекс и
 означити полазник на листи. На пример, ако се унесе стринг <code class="docutils literal notranslate"><span class="pre">Јован</span></code>:</p>
 <p><img alt="Оквир за листу" src="../_images/listbox-05.png" /></p>
-<p>Оваква имплементација метода <code class="docutils literal notranslate"><span class="pre">FindString()</span></code> није савршена. Ако се, у примеру
+<p>Оваква имплементација метода <code class="docutils literal notranslate"><span class="pre">FindString()</span></code> није савршена. Ако се у примеру
 изнад унесе стринг <code class="docutils literal notranslate"><span class="pre">Ми</span></code>, вратиће се само један индекс, односно индекс првог
 имена на листи које почиње са <code class="docutils literal notranslate"><span class="pre">Ми</span></code> (индекс <code class="docutils literal notranslate"><span class="pre">3</span></code> - обележиће се <code class="docutils literal notranslate"><span class="pre">Мира</span> <span class="pre">Мирић</span></code>),
 иако се на листи налази више имена које почињу са <code class="docutils literal notranslate"><span class="pre">Ми</span></code> (нпр. индекс <code class="docutils literal notranslate"><span class="pre">6</span></code> -
@@ -163,9 +162,9 @@
 једно дугме са текстом „Обриши”. Када се означи одређени полазник на листи и
 кликне дугме за брисање, означеног полазника треба уклонити са листе. Постоји
 више начина за уклањање ставки са листе: методом <code class="docutils literal notranslate"><span class="pre">Remove()</span></code>, методом
-<code class="docutils literal notranslate"><span class="pre">RemoveAt()</span></code> или методом <code class="docutils literal notranslate"><span class="pre">Clear()</span></code> ако желиш да уклониш све ставке са листе.</p>
+<code class="docutils literal notranslate"><span class="pre">RemoveAt()</span></code> или методом <code class="docutils literal notranslate"><span class="pre">Clear()</span></code>, ако желиш да уклониш све ставке са листе.</p>
 <p>Додај дугме <code class="docutils literal notranslate"><span class="pre">btnObrisi</span></code> и дефиниши догађај клика на дугме. Најједноставнији
-начин за уклањање ставски са листе у овом случају је методом <code class="docutils literal notranslate"><span class="pre">RemoveAt()</span></code>:</p>
+начин за уклањање ставки са листе у овом случају је методом <code class="docutils literal notranslate"><span class="pre">RemoveAt()</span></code>:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnObrisi_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lsbPolaznici</span><span class="p">.</span><span class="n">SelectedIndex</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
@@ -183,7 +182,7 @@
 <p><img alt="Оквир за листу" src="../_images/listbox-06.png" /></p>
 <p>…обрисаће се означени полазник на основу његовог индекса:</p>
 <p><img alt="Оквир за листу" src="../_images/listbox-07.png" /></p>
-<p>Ако корисник није означио полазника и кликнуо на дугме <code class="docutils literal notranslate"><span class="pre">btnObrisi</span></code> добиће
+<p>Ако корисник није означио полазника а кликнуо је на дугме <code class="docutils literal notranslate"><span class="pre">btnObrisi</span></code>, добиће
 поруку о томе:</p>
 <p><img alt="Оквир за листу" src="../_images/listbox-08.png" /></p>
 <p>Слично, полазника можеш обрисати методом <code class="docutils literal notranslate"><span class="pre">Remove()</span></code> на основу његовог имена:</p>

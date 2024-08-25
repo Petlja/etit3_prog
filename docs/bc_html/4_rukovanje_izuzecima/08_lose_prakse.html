@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Добре и лоше праксе коришћења изузетака &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -72,13 +71,13 @@
 оператори једнакости не смеју да бацају изузетке.</p>
 <p><strong>Води рачуна о ресурсима и меморији.</strong> Када радиш са ресурсима као што су
 фајлови, мрежне везе или базе података, увери се да су они правилно затворени у
-<code class="docutils literal notranslate"><span class="pre">finally</span></code> блоку. <code class="docutils literal notranslate"><span class="pre">finally</span></code> блок се у пракси управо и користи за ослобађање
+<code class="docutils literal notranslate"><span class="pre">finally</span></code> блоку. У пракси се <code class="docutils literal notranslate"><span class="pre">finally</span></code> блок управо и користи за ослобађање
 ресурса или извршавање кода који мора бити извршен без обзира на то да ли је
 изузетак бачен или не.</p>
 <p><strong>Користи логовање изузетака.</strong> Поред исписа грешке у конзоли или у прозору за
 поруке, добра пракса је да грешку забележиш и у одређеном <code class="docutils literal notranslate"><span class="pre">.log</span></code> фајлу. Постоје
 готова решења за .NET попут log4net, NLog и Serilog, које можеш да користиш за
-логовање изузетака. <code class="docutils literal notranslate"><span class="pre">.log</span></code> фајл можеш накнадно да прочиташ, па не мораш да се
+логовање изузетака. Можеш накнадно да прочиташ<code class="docutils literal notranslate"><span class="pre">.log</span></code> фајл, па не мораш да се
 ослањаш на информације о грешци које ти је дао корисник апликације.</p>
 </section>
 

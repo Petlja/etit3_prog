@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Радио дугмe &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <title>Радио-дугмe &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -45,21 +44,21 @@
           <div class="body" role="main">
             
   <section class="tex2jax_ignore mathjax_ignore" id="e">
-<h1>Радио дугмe<a class="headerlink" href="#e" title="Permalink to this heading">¶</a></h1>
-<p>Контрола <strong>радио дугме</strong> (енгл. <em>RadioButton</em>) дефинисана је у класи
+<h1>Радио-дугмe<a class="headerlink" href="#e" title="Permalink to this heading">¶</a></h1>
+<p>Контрола <strong>радио-дугме</strong> (енгл. <em>RadioButton</em>) дефинисана је у класи
 <code class="docutils literal notranslate"><span class="pre">RadioButton</span></code> у именском простору <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code>, односно склопу
 <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms.dll</span></code>. Класа <code class="docutils literal notranslate"><span class="pre">RadioButton</span></code> наслеђује класу <code class="docutils literal notranslate"><span class="pre">ButtonBase</span></code>
-која наслеђује класу <code class="docutils literal notranslate"><span class="pre">Control</span></code>, па због тога радио дугмад имају основна
+која наслеђује класу <code class="docutils literal notranslate"><span class="pre">Control</span></code>, па због тога радио-дугмад имају основна
 својства, догађаје и методе као и остале контроле у <em>Windows Forms App</em>
 пројектима.</p>
 <p>Детаљан опис својстава, догађаја и метода класе <code class="docutils literal notranslate"><span class="pre">RadioButton</span></code> налази се у
 званичној <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.radiobutton?view=netframework-4.8">документацији</a>.
 Има их много и нема потребе наводити их све на овом месту.</p>
 <p>Ова контрола омогућава одабир једне опције из групе опција када је упарена са
-другим радио дугмадима. Упаривање се врши у контролама попуп <code class="docutils literal notranslate"><span class="pre">GroupBox</span></code> или
+другим радио-дугмадима. Упаривање се врши у контролама попут <code class="docutils literal notranslate"><span class="pre">GroupBox</span></code> или
 <code class="docutils literal notranslate"><span class="pre">Panel</span></code> контроле.</p>
-<p>Чест пример употребе групе радио дугмади је у тестовима знања, где постоји само
-један тачан одговор или у обрасцима где се може одабрати само једна опција.</p>
+<p>Чест пример употребе групе радио-дугмади је у тестовима знања, где постоји само
+један тачан одговор, или у обрасцима где се може одабрати само једна опција.</p>
 <section id="id1">
 <h2>Задатак<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>Нека је задатак да креираш једноставну GUI апликацију Квиз у којој се приказује
@@ -67,11 +66,11 @@
 проверава се тачност одабраног одговора и о томе обавештава корисник.</p>
 <p>Креирај нови <em>Windows Forms App (.NET Framework)</em> пројекат са формом димензија
 320×240, постави контроле као на слици…</p>
-<p><img alt="Радио дугмe" src="../_images/radio-01.png" /></p>
+<p><img alt="Радио-дугмe" src="../_images/radio-01.png" /></p>
 <p>…и покрени апликацију:</p>
-<p><img alt="Радио дугмe" src="../_images/radio-02.png" /></p>
-<p>Десила се једна иритантна ситуација за многе програмере. Унапред је одабрано
-прво радио дугме, односно радио дугме чије својство <code class="docutils literal notranslate"><span class="pre">TabIndex</span></code> има вредност
+<p><img alt="Радио-дугмe" src="../_images/radio-02.png" /></p>
+<p>Десила се једна ситуација која је иритантна за многе програмере. Унапред је одабрано
+прво радио-дугме, односно радио-дугме чије својство <code class="docutils literal notranslate"><span class="pre">TabIndex</span></code> има вредност
 <code class="docutils literal notranslate"><span class="pre">0</span></code>. Чак ни покушај поништавања одабира приликом учитавања форме неће помоћи…</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
@@ -82,24 +81,24 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>…и прво радио дугме остаће и даље одабрано:</p>
-<p><img alt="Радио дугмe" src="../_images/radio-02.png" /></p>
+<p>…и прво радио-дугме остаће и даље одабрано:</p>
+<p><img alt="Радио-дугмe" src="../_images/radio-02.png" /></p>
 <p>Зашто се ово дешава? Према смерницама за израду <em>Windows</em> апликација компаније
-<em>Microsoft</em>, када постоји група радио дугмади, увек треба да постоји унапред
+<em>Microsoft</em>, када постоји група радио-дугмади, увек треба да постоји унапред
 одабрано дугме. У овом случају, то би могло да буде дугме са текстом „Не знам
 тачан одговор”. На теби је да процениш да ли желиш да поштујеш дату смерницу
 или да прибегнеш трику и заобиђеш је.</p>
 <p>Један начин је да <code class="docutils literal notranslate"><span class="pre">TabIndex</span></code> са вредношћу <code class="docutils literal notranslate"><span class="pre">0</span></code> доделиш другој контроли на форми
 чије је својство <code class="docutils literal notranslate"><span class="pre">TabStop</span></code> постављено на <code class="docutils literal notranslate"><span class="pre">True</span></code>. У овом случају то може да буде
-дугме. Ако поставиш својство дугмета <code class="docutils literal notranslate"><span class="pre">TabIndex</span></code> на <code class="docutils literal notranslate"><span class="pre">0</span></code>, ни једно радио дугме
+дугме. Ако поставиш својство дугмета <code class="docutils literal notranslate"><span class="pre">TabIndex</span></code> на <code class="docutils literal notranslate"><span class="pre">0</span></code>, ни једно радио-дугме
 неће бити унапред одабрано:</p>
-<p><img alt="Радио дугмe" src="../_images/radio-03.png" /></p>
-<p>Други начин је да за сва четири радио дугмета својство <code class="docutils literal notranslate"><span class="pre">TabStop</span></code> поставиш на
-<code class="docutils literal notranslate"><span class="pre">False</span></code>. Овим губиш функционалност тастера <code class="docutils literal notranslate"><span class="pre">TAB</span></code> над радио дугмадима, што се
+<p><img alt="Радио-дугмe" src="../_images/radio-03.png" /></p>
+<p>Други начин је да за сва четири радио-дугмета својство <code class="docutils literal notranslate"><span class="pre">TabStop</span></code> поставиш на
+<code class="docutils literal notranslate"><span class="pre">False</span></code>. Овим губиш функционалност тастера <code class="docutils literal notranslate"><span class="pre">TAB</span></code> над радио-дугмадима, што се
 свакако не препоручује.</p>
 <p>Без обзира да ли желиш да поштујеш дату смерницу или не, треба да имплементираш
 функционалност квиза. У овом случају треба да провериш да ли је својство трећег
-радио дугмета <code class="docutils literal notranslate"><span class="pre">Checked</span></code> постављено на <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+радио-дугмета <code class="docutils literal notranslate"><span class="pre">Checked</span></code> постављено на <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">btnOdgovori_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rbtOdgovor3</span><span class="p">.</span><span class="n">Checked</span><span class="p">)</span>
@@ -121,13 +120,13 @@
 <p><img alt="Радио дугмe" src="../_images/radio-04.png" /></p>
 <p>…ако је одабрао нетачан одговор добиће поруку…</p>
 <p><img alt="Радио дугмe" src="../_images/radio-05.png" /></p>
-<p>…и ако није одабрао ни један одговор добиће порук:</p>
+<p>…и ако није одабрао ни један одговор добиће поруку:</p>
 <p><img alt="Радио дугмe" src="../_images/radio-06.png" /></p>
 <p>Овако имплементирано решење је можда довољно добро за ову ситуацију. Међутим,
 у некој конкретној апликацији за квизове, питање, сет одговора и индекс тачног
 одговора учитавали би се из фајла или базе података и динамички смењивали једно
 за другим. Како у <code class="docutils literal notranslate"><span class="pre">RadioButton</span></code> контролама не постоји уграђено својство које
-директно дефинише индекс радио дугмета у групи, за имплементацију таквог решења
+директно дефинише индекс радио-дугмета у групи, за имплементацију таквог решења
 могао би да користиш листу или низ <code class="docutils literal notranslate"><span class="pre">RadioButton</span></code> контрола заједно са
 променљивом у којој се чува индекс тачног одговора.</p>
 </section>

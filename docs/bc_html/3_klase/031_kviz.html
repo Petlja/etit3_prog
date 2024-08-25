@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Квиз &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -48,12 +47,12 @@
 <h1>Квиз<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <section id="id2">
 <h2>Питање 1<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
-<p>У класи <code class="docutils literal notranslate"><span class="pre">Figura</span></code> дат је подразумевани конструктор и конструктор са 4 параметра.</p>
+<p>У класи <code class="docutils literal notranslate"><span class="pre">Figura</span></code> дат је подразумевани конструктор и конструктор са 4 параметра…</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="nf">Figura</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 <span class="k">public</span><span class="w"> </span><span class="nf">Figura</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">boja</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pozX</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pozY</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>и написано је шест наредби помоћу којих су креирани објекти класе <code class="docutils literal notranslate"><span class="pre">Figura</span></code></p>
+<p>…и написано је шест наредби помоћу којих су креирани објекти класе <code class="docutils literal notranslate"><span class="pre">Figura</span></code>:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">Figura</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Figura</span><span class="p">(</span><span class="s">&quot;lovac&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;beli&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">);</span>
 <span class="n">Figura</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Figura</span><span class="p">(</span><span class="s">&quot;beli&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;lovac&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">);</span>
 <span class="n">Figura</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Figura</span><span class="p">();</span>
@@ -132,7 +131,7 @@
     <question><p>Анализирај дати кôд и процени тачност следећих исказа. Штиклирај тачне исказе.</p>
 </question>  <answer><p>this.Fun() у конструктору TestPrimer(double x) може се поједноставити и заменити само са Fun().</p>
 </answer>  <answer><p>this.x у конструктору TestPrimer(double x) може се поједноставити и заменити само са x.</p>
-</answer>  <answer><p>позив конструктора this(23) унутар другог конструктора TestPrimer() је прво шта се извршава и мора се писати одмах после декларације public TestPrimer():this(23).</p>
+</answer>  <answer><p>позив конструктора this(23) унутар другог конструктора TestPrimer() је прво што се извршава и мора се писати одмах после декларације public TestPrimer():this(23).</p>
 </answer>  <answer><p>this(23) у конструктору Test() мора се заменити са прецизнијим изразом this(23.0).</p>
 </answer>  
       </multiple-choice>
@@ -202,7 +201,7 @@
     <question><p>Анализирај кôд датог програма и одреди који су од датих исказа тачни. Штиклирај
 очекиване одговоре.</p>
 </question>  <answer><p>Програм има грешку, јер наредбу Console.WriteLine(a) треба заменити наредбом Console.WriteLine(a.ТoString()).</p>
-</answer>  <answer><p>Приликом извршавања наредбе Console.WriteLine(a), програм позива се метод ТoString() наслеђен из класе Object.</p>
+</answer>  <answer><p>Приликом извршавања наредбе Console.WriteLine(a), програм позива метод ТoString() наслеђен из класе Object.</p>
 </answer>  <answer><p>Приликом извршавања наредбе Console.WriteLine(a), програм позива метод ТoString() из класе Klasa.</p>
 </answer>  <answer><p>Приликом извршавања наредбе Console.WriteLine(obj), програм позива метод ТoString() из класе Object.</p>
 </answer>  
@@ -238,7 +237,7 @@
         <div class="petlja-problem-box-icon-holder"> </div>
         <img src="../_static/qchoice-img.svg" class="petlja-problem-image qchoice-image" />
     <multiple-choice correct-answers="3">
-    <question><p>Анализирај дати кôд и одредити да ли је кôд исправно написан. Означи исказ који
+    <question><p>Анализирај дати кôд и одреди да ли је кôд исправно написан. Означи исказ који
 даје информацију о тачности кода.</p>
 </question>  <answer><p>Програм има грешку, јер се изразом a1.Equals(a2) проверава једнакост објеката а1 и а2 различитог типа од Object.</p>
 </answer>  <answer><p>Програм има грешку, јер се једнакост објеката а1 и а2 типа KlasaА проверава изразом а1 == а2.</p>

@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Бацање изузетака &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -47,14 +46,14 @@
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Бацање изузетака<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <p>Када желиш да сигнализираш да је дошло до грешке или неочекиваног стања, можеш
-користити <code class="docutils literal notranslate"><span class="pre">throw</span></code> за бацање новог изузетка. Најчешћи ће то бити неки од
+користити <code class="docutils literal notranslate"><span class="pre">throw</span></code> за бацање новог изузетка. Најчешће ће то бити неки од
 предефинисаних изузетака као што су <code class="docutils literal notranslate"><span class="pre">ArgumentException</span></code>,
 <code class="docutils literal notranslate"><span class="pre">InvalidOperationException</span></code>, итд.</p>
 <p>На пример, нека је задатак да креираш методу за проверу броја година ученика
 у твом одељењу. Иако је у главном програму већ проверено да унети број година
 није стринг и да не излази ван граница дефинисаних типом, ова метода треба да
 провери да ли је унети број година прихватљив за ученика III разреда. Нека је
-прихватљив број 16, 17, 18 или 19, а не прихватљив број мањи од 16 или већи од
+прихватљив број 16, 17, 18 или 19, а неприхватљив број мањи од 16 или већи од
 19 и нека се метода позива у програму из претходне лекције:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 
@@ -103,7 +102,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Ако корисник унесе не прихватљив број година за ученика III разреда, извршавање
+<p>Ако корисник унесе неприхватљив број година за ученика III разреда, извршавање
 програма у конзоли изгледаће овако:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Koliko imas godina (ceo broj): 10
 Desila se nepredvidjena greska.
@@ -140,7 +139,7 @@ Kraj programa!
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>…и да корисник унесе не прихватљив број година за ученика III разреда:</p>
+<p>…и да корисник унесе неприхватљив број година за ученика III разреда:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Koliko imas godina (ceo broj): 10
 
 Unhandled Exception: System.ArgumentException: Broj mora biti u opsegu od 16 do 19.

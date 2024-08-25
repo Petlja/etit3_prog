@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Комбиновани оквир &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -47,7 +46,7 @@
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Комбиновани оквир<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <p>Контрола <strong>комбиновани оквир</strong> (енгл. <em>ComboBox</em>), у литератури на српском
-језику назива се и <strong>комбинована листа</strong> или <strong>комбиновано поље</strong> што одражава
+језику назива се и <strong>комбинована листа</strong> или <strong>комбиновано поље</strong>, што одражава
 функционалност ове контроле, која комбинује текстуална поља и падајућу листу.
 Контрола <code class="docutils literal notranslate"><span class="pre">ComboBox</span></code> дефинисана је у класи <code class="docutils literal notranslate"><span class="pre">ComboBox</span></code> у именском простору
 <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms</span></code>, односно склопу <code class="docutils literal notranslate"><span class="pre">System.Windows.Forms.dll</span></code>. Класа
@@ -58,21 +57,21 @@
 званичној <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.combobox?view=netframework-4.8">документацији</a>.
 Има их много и нема потребе наводити их све на овом месту.</p>
 <p>Ова контрола омогућује ти да приказујеш и одабираш ставке из падајуће листе.
-У зависности од потребе, ставке можеш да унапред дефинишеш и/или уносиш.</p>
-<p>Својства контроле <code class="docutils literal notranslate"><span class="pre">ComboBox</span></code> која ћеш често користи су:</p>
+У зависности од потребе, ставке можеш унапред да дефинишеш и/или уносиш.</p>
+<p>Својства контроле <code class="docutils literal notranslate"><span class="pre">ComboBox</span></code> која ћеш често користити су:</p>
 <ul class="simple">
-<li><p>ако се комбиновани оквир попуњава колекцијом објеката<code class="docutils literal notranslate"><span class="pre">DisplаyMember</span></code> одређује
+<li><p>ако се комбиновани оквир попуњава колекцијом објеката, <code class="docutils literal notranslate"><span class="pre">DisplаyMember</span></code> одређује
 која својства објекта ће бити приказана кориснику, а <code class="docutils literal notranslate"><span class="pre">ValueMember</span></code> одређује
 вредност која ће бити враћена када се одабере нека ставка,</p></li>
 <li><p>својство <code class="docutils literal notranslate"><span class="pre">Items</span></code> представља колекцију ставки које ће бити приказане у
 контроли,</p></li>
 <li><p>својства <code class="docutils literal notranslate"><span class="pre">SelectedIndex</span></code> и <code class="docutils literal notranslate"><span class="pre">SelectedItem</span></code> омогућавају да се прикаже или
 постави тренутно одабрана ставка у контроли и</p></li>
-<li><p>својство <code class="docutils literal notranslate"><span class="pre">DropDownStyle</span></code> којим се одређује понашање и изглед конртоле, а
+<li><p>својство <code class="docutils literal notranslate"><span class="pre">DropDownStyle</span></code> којим се одређује понашање и изглед контроле, а
 обично се поставља на <code class="docutils literal notranslate"><span class="pre">DropDown</span></code> или <code class="docutils literal notranslate"><span class="pre">DropDownList</span></code>.</p></li>
 </ul>
-<p>Ова и остала својства комбинованог оквира упознаћеш боље у IV разреду када у
-њих комбиноване оквире будеш уписивао податке из базе података.</p>
+<p>Ова и остала својства комбинованог оквира упознаћеш боље у IV разреду, када у
+комбиноване оквире будеш уписивао податке из базе података.</p>
 <section id="id2">
 <h2>Задатак<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Нека је задатак да креираш једноставну GUI апликацију за пријаву ученика на
@@ -89,7 +88,7 @@
 порука са достављеним подацима такмичара и треба да се ресетују сва поља за
 унос теста или одабир ставки. Логично је да прво поље <code class="docutils literal notranslate"><span class="pre">Име</span> <span class="pre">и</span> <span class="pre">презиме</span></code> буде
 оквир за текст. Остала поља могу се имплементирати различитим контролама. Вежбе
-ради, сва остала поља имплементираћеш комбиновим оквирима.</p>
+ради, сва остала поља имплементираћеш комбинованим оквирима.</p>
 <p>Креирај нови <em>Windows Forms App (.NET Framework)</em> пројекат са формом димензија
 400×240, постави контроле као на слици…</p>
 <p><img alt="Комбиновани оквир" src="../_images/combobox-01.png" /></p>
@@ -129,25 +128,25 @@
 </pre></div>
 </div>
 <p>Индекс одељења разликује се од школе до школе. У неким школама индекс одељења
-приказује се цифрама (1, 2, 3…), а у неким словима (A, B, C…), стим да
+приказује се цифрама (1, 2, 3…), а у неким словима (A, B, C…), с тим да
 различите школе имају различит број одељења. Зато, неке вредности индекса
 одељења можеш „понудити” у комбинованом оквиру, али треба да омогућиш и унос
-других вредности које нису понуђене. На пример, понуди вредности <code class="docutils literal notranslate"><span class="pre">1</span></code>,<code class="docutils literal notranslate"><span class="pre">2</span></code> и <code class="docutils literal notranslate"><span class="pre">3</span></code>
-али остави подразумева вредност својства <code class="docutils literal notranslate"><span class="pre">DropDownStyle</span></code> на <code class="docutils literal notranslate"><span class="pre">DropDown</span></code> како би
+других вредности које нису понуђене. На пример, понуди вредности <code class="docutils literal notranslate"><span class="pre">1</span></code>,<code class="docutils literal notranslate"><span class="pre">2</span></code> и <code class="docutils literal notranslate"><span class="pre">3</span></code>,
+али остави подразумевану вредност својства <code class="docutils literal notranslate"><span class="pre">DropDownStyle</span></code> на <code class="docutils literal notranslate"><span class="pre">DropDown</span></code> како би
 омогућио и унос других вредности…</p>
 <p><img alt="Комбиновани оквир" src="../_images/combobox-05.png" /></p>
-<p>…па одабрану или унешену вредност додели пољу <code class="docutils literal notranslate"><span class="pre">odeljenje</span></code>:</p>
+<p>…па одабрану или унету вредност додели пољу <code class="docutils literal notranslate"><span class="pre">odeljenje</span></code>:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">indeksOdeljenja</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmbIndeksOdeljenja</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Исто понови за школску годину са вредностима 2023/24 и 2024/25…</p>
+<p>Исто понови за школску годину са вредностима 2023/24. и 2024/25…</p>
 <p><img alt="Комбиновани оквир" src="../_images/combobox-06.png" /></p>
-<p>…па одабрану или унешену вредност додели пољу <code class="docutils literal notranslate"><span class="pre">skolskaGodina</span></code>:</p>
+<p>…па одабрану или унету вредност додели пољу <code class="docutils literal notranslate"><span class="pre">skolskaGodina</span></code>:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">skolskaGodina</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmbSkolskaGodina</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Такмичење из програмирања постоји само у A и B категорији, па за комбиновани
-оквир за одабир категорије постави својство <code class="docutils literal notranslate"><span class="pre">DropDownStyle</span></code> на <code class="docutils literal notranslate"><span class="pre">DropDownList</span></code>:</p>
+оквир за одабир категорије постави својство <code class="docutils literal notranslate"><span class="pre">DropDownStyle</span></code> на <code class="docutils literal notranslate"><span class="pre">DropDownList</span></code>…</p>
 <p><img alt="Комбиновани оквир" src="../_images/combobox-07.png" /></p>
 <p>…па одабрану вредност додели пољу <code class="docutils literal notranslate"><span class="pre">kategorija</span></code>:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="n">kategorija</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmbKategorija</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>

@@ -19,7 +19,7 @@
 Ниџо, чежњиво гледаш фотељу, а Ђура и Мика хоће позицију себи.
 Људи, јазавац Џеф трчи по шуми глођући неко сухо жбуње.
 Боја ваше хаљине, госпођице Џафић, тражи да за њу кулучим.
-Хаџи Ђера је заћутао и бацио чежњив поглед на шољу с кафом.
+Хаџи-Ђера је заћутао и бацио чежњив поглед на шољу с кафом.
 Џабе се зец по Хомољу шуња, чувар Јожеф лако ће и ту да га нађе.
 Оџачар Филип шаље осмехе туђој жени, а његова кућа без деце.
 Џајић одскочи у аут и избеже ђон халфа Пецеља и његов шамар.
@@ -91,10 +91,10 @@ namespace TestBrzogKucanja
 
         private void Rezultat()
         {
-            double elapsedMinutes = stoperica.Elapsed.TotalMinutes;
-            int wordCount = recenica.Split(' ').Length;
-            double wordsPerMinute = wordCount / elapsedMinutes;
-            label2.Text = $"Резултат: {wordsPerMinute:F2} речи у минути";
+            double istekloMinuta = stoperica.Elapsed.TotalMinutes;
+            int brojReci = recenica.Split(' ').Length;
+            double reciPoMinutu = brojReci / istekloMinuta;
+            label2.Text = $"Резултат: {reciPoMinutu:F2} речи у минути";
         }
     }
 }

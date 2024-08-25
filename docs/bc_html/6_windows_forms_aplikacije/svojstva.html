@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Својства &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -47,8 +46,8 @@
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>Својства<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <p>У <em>Windows Forms App (.NET Framework)</em> пројектима својства (енгл. <em>Properties</em>)
-представљају карактеристике односно атрибуте објеката, као што су форме, разне
-контроле, и други елементи корисничког интерфејса. Својства омогућавају
+представљају карактеристике, односно атрибуте објеката, као што су форме, разне
+контроле и други елементи корисничког интерфејса. Својства омогућавају
 постављање и приступ вредностима које одређују изглед тих објеката.</p>
 <p>Свако својство има гетер и сетер методе које омогућавају читање (<code class="docutils literal notranslate"><span class="pre">get</span></code>) и
 постављање (<code class="docutils literal notranslate"><span class="pre">set</span></code>) вредности својства. На пример, својство <code class="docutils literal notranslate"><span class="pre">Text</span></code> може да буде
@@ -72,18 +71,18 @@
 </div>
 <p>У претходној лекцији мењао си одређена својства форме у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору
 тј. у времену дизајнирања апликације, а дефинисао си и неке догађаје и у тим
-догађајима мењао својства форме у коду тј. у току извршавања програма.</p>
+догађајима мењао својства форме у коду, тј. у току извршавања програма.</p>
 <p>Својства форми контрола у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору организована су по категоријама
-<em>Accessibility</em>, <em>Apperance</em>, <em>Behavior</em>,… зато што је притиснута икона
+<em>Accessibility</em>, <em>Apperance</em>, <em>Behavior</em>… зато што је притиснута икона
 <code class="docutils literal notranslate"><span class="pre">Categorized</span></code> на врху <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозора. Ако ти је лакше да својства тражиш
 по абецедном распореду, кликни на икону <code class="docutils literal notranslate"><span class="pre">Alphabetical</span></code> која се налази поред
 иконе <code class="docutils literal notranslate"><span class="pre">Categorized</span></code>. Корисно је и да знаш да се својства која си мењао
 приказују задебљаним фонтом.</p>
 <p><img alt="Својства форме" src="../_images/form-properties.png" /></p>
-<p>Сва својства наведена у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору можеш мењати и у коду тј. у току
-извршавања програма. Има их много па је препорука да увек користиш доступну
+<p>Сва својства наведена у <code class="docutils literal notranslate"><span class="pre">Properties</span></code> прозору можеш мењати и у коду, тј. у току
+извршавања програма. Има их много, па је препорука да увек користиш доступну
 <a class="reference external" href="https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms?view=netframework-4.8">документацију</a>.</p>
-<p>Постоји могућност да сам дефинишеш својства унутар класе коју креираш:</p>
+<p>Постоји могућност да сâм дефинишеш својства унутар класе коју креираш:</p>
 <div class="highlight-cs notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MojaKontrola</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Control</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">mojTekst</span><span class="p">;</span>
@@ -96,6 +95,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>Метода <code class="docutils literal notranslate"><span class="pre">Invalidate()</span></code>, служи за означавање контроле као „невалидне”, што
+подразумева да је потребно поново исцртати (енгл. <em>redraw</em>) контролу.</p>
 <p>Својства се могу повезати са подацима како би аутоматски рефлектовала промене
 у подацима. На пример, својство <code class="docutils literal notranslate"><span class="pre">Text</span></code> неке форме може да буде повезано са
 пољем <code class="docutils literal notranslate"><span class="pre">ImeKupca</span></code> из табеле <code class="docutils literal notranslate"><span class="pre">Kupci</span></code> у некој бази података, када се подаци из

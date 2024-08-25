@@ -3,11 +3,11 @@
 <html lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Референтни типови података &#8212; Програмирање III за информатичке профиле у електротехничким школама</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=1a86bfbc" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=38a41dd3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css?v=5369589b" />
     <link rel="stylesheet" type="text/css" href="../_static/multiple-choice.css?v=df6f2113" />
@@ -31,9 +31,8 @@
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
-
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
   
@@ -57,9 +56,9 @@
 што значи да не показују ни на један објекат. Покушај приступа објекту
 референтног типа који је <code class="docutils literal notranslate"><span class="pre">null</span></code> изазваће грешку, односно изузетак
 <code class="docutils literal notranslate"><span class="pre">NullReferenceException</span></code>. О изузецима учићеш у поглављу
-<a class="reference internal" href="../4_rukovanje_izuzecima/index.html"><span class="std std-doc">Руковање изузецима</span></a>. Хипом управља општa
-језичкa извршнa платформa <em>CLR</em>, па објекти на хипу који више нису потреби
-биће аутоматски обрисани од стране сакупљача смећа (енгл.
+<a class="reference internal" href="../4_rukovanje_izuzecima/index.html"><span class="std std-doc">Руковање изузецима</span></a>. Хипом управља општа
+језичка извршна платформа <em>CLR</em>, па ће објекти на хипу који више нису потребни
+бити аутоматски обрисани од стране сакупљача смећа (енгл.
 <em>GC, Garbage Collector</em>).</p>
 <p>Референтни тип може бити класа, интерфејс, низ, делегат или динамички тип.</p>
 <pre class="mermaid">
@@ -80,7 +79,7 @@
         <img src="../_static/infonote-img.svg" class="note-image infonote-image" /> 
         <div class="course-content">
             
-<p>Текст испод, који описује референте типове, можеш за сада сматрати
+<p>Текст испод, који описује референтне типове, можеш за сада сматрати
 информативним. О класама ћеш почети да учиш тек од следећег поглавља.</p>
 
     </div></div>
@@ -106,7 +105,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">System.Object</span></code></p></td>
-<td><p>Oсновна класа свих других типова.</p></td>
+<td><p>Основна класа свих других типова.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">System.String</span></code></p></td>
 <td><p>Стринг тип.</p></td>
@@ -128,12 +127,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong><code class="docutils literal notranslate"><span class="pre">object</span></code></strong> тип је основна класа свих осталих типова. Сваки тип директно или
-индиректно потиче од типа класе <code class="docutils literal notranslate"><span class="pre">object</span></code>. Кључна реч <code class="docutils literal notranslate"><span class="pre">object</span></code> је псеудоним за
+<p><strong>Object</strong> тип је основна класа свих осталих типова. Сваки тип директно или
+индиректно потиче од типа класе <code class="docutils literal notranslate"><span class="pre">Object</span></code>. Кључна реч <code class="docutils literal notranslate"><span class="pre">Object</span></code> је псеудоним за
 унапред дефинисану класу <code class="docutils literal notranslate"><span class="pre">System.Object</span></code>.</p>
 <p><strong>Стринг</strong> је тип запечаћене класе који наслеђује директно из класе
 <code class="docutils literal notranslate"><span class="pre">System.Object</span></code>. Инстанце ове класе представљају низове UNICODE карактера.
-Kључнa реч <code class="docutils literal notranslate"><span class="pre">string</span></code> је псеудоним за унапред дефинисану класу <code class="docutils literal notranslate"><span class="pre">System.String</span></code>.
+Кључна реч <code class="docutils literal notranslate"><span class="pre">string</span></code> је псеудоним за унапред дефинисану класу <code class="docutils literal notranslate"><span class="pre">System.String</span></code>.
 Вредности типа стринг се пишу се као стринг литерали.</p>
 <p><strong>Интерфејс</strong> дефинише „уговор” кога класа или структура мора да имплементира.
 Интерфејс може наследити више интерфејса, а класа или структура могу

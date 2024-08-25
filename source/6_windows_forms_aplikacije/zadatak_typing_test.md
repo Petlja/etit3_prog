@@ -91,10 +91,10 @@ namespace TestBrzogKucanja
 
         private void Rezultat()
         {
-            double elapsedMinutes = stoperica.Elapsed.TotalMinutes;
-            int wordCount = recenica.Split(' ').Length;
-            double wordsPerMinute = wordCount / elapsedMinutes;
-            label2.Text = $"Резултат: {wordsPerMinute:F2} речи у минути";
+            double istekloMinuta = stoperica.Elapsed.TotalMinutes;
+            int brojReci = recenica.Split(' ').Length;
+            double reciPoMinutu = brojReci / istekloMinuta;
+            label2.Text = $"Резултат: {reciPoMinutu:F2} речи у минути";
         }
     }
 }

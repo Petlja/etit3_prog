@@ -15,8 +15,8 @@
 | `NullReferenceException`      | референциран је null објекат          |
 | `InvalidOperationException`   | метода није у валидном стању          |
 | `ArgumentException`           | основна класа за изузетке аргумената  |
-| `ArgumentOutOfRangeException` | аргумент методе је null               |
-| `ArgumentNullException`       | аргумент методе је ван задатог опсега |
+| `ArgumentOutOfRangeException` | аргумент методе је ван задатог опсега |
+| `ArgumentNullException`       | аргумент методе је null               |
 
 У оквиру .NET Framework-а доступно је **више стотина класа** које су директно
 или индиректно наслеђене из класе `Exception`. Нећемо их наводити на овој

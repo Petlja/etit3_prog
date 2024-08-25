@@ -24,7 +24,7 @@ nekaKontrola.Items.Remove("nekaStavka");
 ```cs
 private void dugme_Click(object sender, EventArgs e)
 {
-    nekaKontrola.Text = "Dugme je kliknuto!";
+    nekaKontrola.Text = "Дугме је кликнуто!";
     nekaKontrola.Refresh();
 }
 ```

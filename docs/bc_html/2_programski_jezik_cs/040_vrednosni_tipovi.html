@@ -54,17 +54,7 @@
 <p>Вредносни и референтни типови могу бити генерички са једним или више параметара
 типа. Подржан је и показивачки тип (у небезбедном коду) и њега у овом курсу
 нећеш користити.</p>
-<pre class="mermaid">
-    flowchart TD
-        a["C# тип"] --> b["вредносни тип"]
-        a["C# тип"] --> c["референтни тип"]
-        a["C# тип"] --> d["параметар типа"]
-        a["C# тип"] --> e["*показивачки тип"]
-</pre>
-<script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-</script>
+<p><img alt="Вредносни типови" src="../_images/vrednosni-01.png" /></p>
 <p>Вредносни типови могу се поделити на оне који <strong>не могу да имају вредност
 <code class="docutils literal notranslate"><span class="pre">null</span></code></strong> (енгл. <em>non nullable</em>) и оне који <strong>могу да имају вредност <code class="docutils literal notranslate"><span class="pre">null</span></code></strong>
 (енгл. <em>nullable</em>).</p>
@@ -80,21 +70,7 @@
 типови или типови торке (енгл. <em>tuple</em>). <strong>Енумерацијски тип</strong> може бити нека
 енумерација (<code class="docutils literal notranslate"><span class="pre">enum</span></code>).</p>
 <p>Хијерархија простих типова приказана је следећим дијаграмом:</p>
-<pre class="mermaid">
-    flowchart TD
-        a["прости тип"] --> a1["нумерички тип"]
-        a["прости тип"] --> a2["bool"]
-        a1["нумерички тип"] --> a11["интегрални тип"]
-        a1["нумерички тип"] --> a12["тип са покретном тачком"]
-        a1["нумерички тип"] --> a13["decimal"]
-        a11["интегрални тип"] --> a111["sbyte и byte"]
-        a11["интегрални тип"] --> a112["short и ushort"]
-        a11["интегрални тип"] --> a113["int и uint"]
-        a11["интегрални тип"] --> a114["long и ulong"]
-        a11["интегрални тип"] --> a115["char"]
-        a12["тип са покретном тачком"] --> a121["float"]
-        a12["тип са покретном тачком"] --> a122["double"]
-</pre>
+<p><img alt="Вредносни типови" src="../_images/vrednosni-02.png" /></p>
 <p>У овој лекцији фокус ће бити на простим вредносним типовима. Са осталим
 типовима упознаваћеш се у наредној лекцији и касније, током III и IV разреда,
 по потреби.</p>

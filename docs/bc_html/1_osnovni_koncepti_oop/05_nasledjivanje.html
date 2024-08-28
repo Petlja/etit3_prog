@@ -57,46 +57,7 @@
 „родитељска класа”, док се „изведена класа” назива и „наслеђена класа”,
 „поткласа” или „класа потомка”.</p>
 <p>Једноставан пример хијерархије класа за твоју школу могао би да изгледа овако:</p>
-<pre class="mermaid">
-    classDiagram
-    Osoba <|-- Učenik
-    Osoba <|-- Zaposleni
-    Zaposleni <| -- Nastavnik
-    Zaposleni <| -- Osoblje
-    class Osoba{
-        string ime
-        int godRodjenja
-        void prikazImena()
-        void prikazGodine()
-        void prikazOsobe()
-    }
-    class Učenik{
-        string odeljenje
-        void prikazOdeljenja()
-        void prikazUcenika()
-    }
-    class Zaposleni{
-        int staz
-        string strucnaSprema
-        void prikazStaza()
-        void prikazSpreme()
-        void prikazZaposlenog()
-    }
-    class Nastavnik{
-        string predmet
-        void prikazPredmeta()
-        void prikazNastavnika()
-    }
-    class Osoblje{
-        string posao
-        void prikazPosla()
-        void prikazOsoblja()
-    }
-</pre>
-<script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-</script>
+<p><img alt="Наслеђивање" src="../_images/nasledjivanje-01.png" /></p>
 <p>Школу похађају ученици, а у школи раде запослени. Запослени могу бити
 наставници или ненаставно особље. Заједничко за све особе у школи је да имају
 име и годину рођења. За ученике је битно навести у којем су одељењу. За све
@@ -116,78 +77,19 @@
 <p>У различитим програмским језицима постоје различити типови наслеђивања класа:</p>
 <p><strong>једноструко наслеђивање</strong>: изведена класа наслеђује једну базну класу (најчешћи
 облик наслеђивања, једноставан за управљање):</p>
-<pre class="mermaid">
-    classDiagram
-    БазнаКласа <|-- ИзведенаКласа
-class БазнаКласа{
-    атрибутиБазнеКласе
-    методеБазнеКласе()
-}
-class ИзведенаКласа{
-    атрибутиИзведенеКласе
-    методеИзведенеКласе()
-}
-</pre>
+<p><img alt="Наслеђивање" src="../_images/nasledjivanje-02.png" /></p>
 <p><strong>вишеструко наслеђивање</strong>: изведена класа истовремено наслеђује више базних
 класа (сложена структура, потенцијални конфликти, C# не подржава вишеструко
 наслеђивање класа):</p>
-<pre class="mermaid">
-    classDiagram
-    БазнаКласа1 <|-- ИзведенаКласа
-    БазнаКласа2 <|-- ИзведенаКласа
-class БазнаКласа1{
-    атрибутиБазнеКласе1
-    методеБазнеКласе1()
-}
-class БазнаКласа2{
-    атрибутиБазнеКласе2
-    методеБазнеКласе2()
-}
-class ИзведенаКласа{
-    атрибутиИзведенеКласе
-    методеИзведенеКласе()
-}
-</pre>
+<p><img alt="Наслеђивање" src="../_images/nasledjivanje-03.png" /></p>
 <p><strong>вишесложно наслеђивање</strong>: једна изведена класа је наслеђена из друге изведене
 класа (чест облик наслеђивања):</p>
-<pre class="mermaid">
-    classDiagram
-    БазнаКласа <|-- ИзведенаКласа1
-    ИзведенаКласа1 <|-- ИзведенаКласа2
-class БазнаКласа{
-    атрибутиБазнеКласе
-    методеБазнеКласе()
-}
-class ИзведенаКласа1{
-    атрибутиИзведенеКласе1
-    методеИзведенеКласе1()
-}
-class ИзведенаКласа2{
-    атрибутиИзведенеКласе2
-    методеИзведенеКласе2()
-}
-</pre>
+<p><img alt="Наслеђивање" src="../_images/nasledjivanje-04.png" /></p>
 <p>У дијаграму изнад, <code class="docutils literal notranslate"><span class="pre">БазнаКласа</span></code> је базна класа за <code class="docutils literal notranslate"><span class="pre">ИзведенаКласа1</span></code>, а
 <code class="docutils literal notranslate"><span class="pre">ИзведенаКласа1</span></code> је базна класа за <code class="docutils literal notranslate"><span class="pre">ИзведенаКласа2</span></code>.</p>
 <p><strong>хијерархијско наслеђивање</strong>: једна базна класа је базна класа за више
 изведених класа (чест облик наслеђивања):</p>
-<pre class="mermaid">
-    classDiagram
-    БазнаКласа <|-- ИзведенаКласа1
-    БазнаКласа <|-- ИзведенаКласа2
-class БазнаКласа{
-    атрибутиБазнеКласе
-    методеБазнеКласе()
-}
-class ИзведенаКласа1{
-    атрибутиИзведенеКласе1
-    методеИзведенеКласе1()
-}
-class ИзведенаКласа2{
-    атрибутиИзведенеКласе2
-    методеИзведенеКласе2()
-}
-</pre>
+<p><img alt="Наслеђивање" src="../_images/nasledjivanje-05.png" /></p>
 <p>У дијаграму изнад, <code class="docutils literal notranslate"><span class="pre">БазнаКласа</span></code> је базна класа и за <code class="docutils literal notranslate"><span class="pre">ИзведенаКласа1</span></code> и за
 <code class="docutils literal notranslate"><span class="pre">ИзведенаКласа2</span></code>.</p>
 <p><strong>хибридно наслеђивање</strong>: подразумева комбинацију више типова наслеђивања.</p>

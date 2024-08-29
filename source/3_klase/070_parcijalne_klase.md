@@ -34,7 +34,11 @@
 окружења *Visual Studio* кликни десним кликом на пројекат, одабери `Add` и
 кликни на `Class`.
 
-![Креирање класе](/3_klase/images/partial-01.png)
+```{image} images/partial-01.png
+:scale: 100
+:align: center
+```
+
 
 Назови фајл `Pravougli1.cs`.
 
@@ -92,7 +96,11 @@ namespace Trouglovi
 Наставник ће прикључити фајлове `Pravougli1.cs` и `Pravougli2.cs` у свом
 пројекту...
 
-![Класе у пројекту](/3_klase/images/partial-04.png)
+```{image} images/partial-04.png
+:scale: 100
+:align: center
+```
+
 
 ...додати именски простор `Trouglovi` и проверити функционалност вашег кода на
 следећи начин:

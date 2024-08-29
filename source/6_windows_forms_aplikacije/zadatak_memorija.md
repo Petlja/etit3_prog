@@ -31,11 +31,20 @@
 интелигенција
 ```
 
-![Задатак - Игра "Запамти реч"](./images/zadatak_memorija1.png)
+```{image} images/zadatak_memorija1.png
+:scale: 100
+:align: center
+```
 
-![Задатак - Игра "Запамти реч"](./images/zadatak_memorija2.png)
+```{image} images/zadatak_memorija2.png
+:scale: 100
+:align: center
+```
 
-![Задатак - Игра "Запамти реч"](./images/zadatak_memorija3.png)
+```{image} images/zadatak_memorija3.png
+:scale: 100
+:align: center
+```
 
 ## Могуће решење задатка
 

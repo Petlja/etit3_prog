@@ -27,7 +27,11 @@
 Додавање нове класе у пројекат је једноставно и интуитивно. У Solution Explorer
 прозору...
 
-![Solution Explorer](./images/solution_explorer.png)
+```{image} images/solution_explorer.png
+:scale: 100
+:align: center
+```
+
 
 ...кликни десним кликом на назив пројекта (у овом примеру `MojaAplikacija`),
 па одабери `Add`, па `Class`:
@@ -41,4 +45,7 @@
 ...па кликни `Add`. Овим поступком си додао класу `MojaKlasa` у свој пројекат
 у засебном фајлу:
 
-![Solution Explorer](./images/solution_explorer4.png)
+```{image} images/solution_explorer4.png
+:scale: 100
+:align: center
+```

@@ -4,15 +4,24 @@
 треба да се приказује тренутно време. У оквире за текст корисник треба да унесе
 сате и минуте када жели да се пробуди.
 
-![Задатак - Будилник](./images/zadatak_budilnik1.png)
+```{image} images/zadatak_budilnik1.png
+:scale: 100
+:align: center
+```
+
 
 Кликом на дугме, ако је исправно унето време буђења, активира се аларм.
 
-![Задатак - Будилник](./images/zadatak_budilnik2.png)
-
+```{image} images/zadatak_budilnik2.png
+:scale: 100
+:align: center
+```
 У наведено време, аларм се активира приказивањем поруке.
 
-![Задатак - Будилник](./images/zadatak_budilnik3.png)
+```{image} images/zadatak_budilnik3.png
+:scale: 100
+:align: center
+```
 
 ## Могуће решење задатка
 

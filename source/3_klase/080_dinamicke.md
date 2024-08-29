@@ -97,7 +97,11 @@ Framework апликацији коју развијаш. Нека то буде
 Када креираш нову конзолну апликацију, у *Solution Explorer*-у развојног
 окружења, десним кликом на `References` одабери `Add Reference`.
 
-![Додавање Class Library референце](/3_klase/images/dll-05.png)
+```{image} images/dll-05.png
+:scale: 100
+:align: center
+```
+
 
 Затим кликни `Browse`...
 
@@ -109,7 +113,11 @@ Framework апликацији коју развијаш. Нека то буде
 
 У *Solution Explorer*-у појавиће се референца на одабрану библиотеку.
 
-![Референца на Class Library](/3_klase/images/dll-08.png)
+```{image} images/dll-08.png
+:scale: 100
+:align: center
+```
+
 
 Пре него што почнеш да користиш методе из додате библиотеке динамичких веза,
 потребно је да у заглављу додаш одговарајући именски простор:

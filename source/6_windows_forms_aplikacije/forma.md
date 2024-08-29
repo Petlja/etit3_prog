@@ -30,7 +30,11 @@
 на `800` и `600` и на крају
 * боју форме, својство `BackColor`, промени из `Control` у `Blue`.
 
-![Својства форме](./images/form-properties.png)
+```{image} images/form-properties.png
+:scale: 100
+:align: center
+```
+
 
 Својства форме у `Properties` прозору организована су по категоријама:
 *Accessibility*, *Apperance*, *Behavior*,... зато што је притиснута икона

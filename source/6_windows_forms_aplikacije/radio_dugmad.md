@@ -27,11 +27,17 @@
 Креирај нови *Windows Forms App (.NET Framework)* пројекат са формом димензија
 320×240, постави контроле као на слици...
 
-![Радио-дугмe](./images/radio-01.png)
+```{image} images/radio-01.png
+:scale: 100
+:align: center
+```
 
 ...и покрени апликацију:
 
-![Радио-дугмe](./images/radio-02.png)
+```{image} images/radio-02.png
+:scale: 100
+:align: center
+```
 
 Десила се једна ситуација која је иритантна за многе програмере. Унапред је одабрано
 прво радио-дугме, односно радио-дугме чије својство `TabIndex` има вредност
@@ -49,7 +55,10 @@ private void Form1_Load(object sender, EventArgs e)
 
 ...и прво радио-дугме остаће и даље одабрано:
 
-![Радио-дугмe](./images/radio-02.png)
+```{image} images/radio-03.png
+:scale: 100
+:align: center
+```
 
 Зашто се ово дешава? Према смерницама за израду *Windows* апликација компаније
 *Microsoft*, када постоји група радио-дугмади, увек треба да постоји унапред
@@ -62,7 +71,10 @@ private void Form1_Load(object sender, EventArgs e)
 дугме. Ако поставиш својство дугмета `TabIndex` на `0`, ни једно радио-дугме
 неће бити унапред одабрано:
 
-![Радио-дугмe](./images/radio-03.png)
+```{image} images/radio-04.png
+:scale: 100
+:align: center
+```
 
 Други начин је да за сва четири радио-дугмета својство `TabStop` поставиш на
 `False`. Овим губиш функционалност тастера `TAB` над радио-дугмадима, што се
@@ -92,15 +104,24 @@ private void btnOdgovori_Click(object sender, EventArgs e)
 
 Ако је корисник одабрао тачан одговор добиће поруку...
 
-![Радио дугмe](./images/radio-04.png)
+```{image} images/radio-04.png
+:scale: 100
+:align: center
+```
 
 ...ако је одабрао нетачан одговор добиће поруку...
 
-![Радио дугмe](./images/radio-05.png)
+```{image} images/radio-05.png
+:scale: 100
+:align: center
+```
 
 ...и ако није одабрао ни један одговор добиће поруку:
 
-![Радио дугмe](./images/radio-06.png)
+```{image} images/radio-06.png
+:scale: 100
+:align: center
+```
 
 Овако имплементирано решење је можда довољно добро за ову ситуацију. Међутим,
 у некој конкретној апликацији за квизове, питање, сет одговора и индекс тачног

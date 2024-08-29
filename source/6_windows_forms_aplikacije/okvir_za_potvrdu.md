@@ -48,7 +48,10 @@
 Креирај нови *Windows Forms App (.NET Framework)* пројекат са формом димензија
 320×240, постави контроле као на слици...
 
-![Оквир за потврду](./images/okvirzapotvrdu-1.png)
+```{image} images/okvirzapotvrdu-1.png
+:scale: 100
+:align: center
+```
 
 ...и дај им нека смислена имена.
 
@@ -72,7 +75,10 @@ private void btnOdgovor_Click(object sender, EventArgs e)
 питања, док се прво не сложи са условима коришћења апликације, о чему добија
 одговарајућу поруку:
 
-![Оквир за потврду](./images/okvirzapotvrdu-2.png)
+```{image} images/okvirzapotvrdu-2.png
+:scale: 100
+:align: center
+```
 
 Како да провериш да ли је корисник све тачно штиклирао? То може да зависи
 од постављених правила. На пример, на твом матурском испиту, на тесту за

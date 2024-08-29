@@ -14,12 +14,21 @@
 система *Windows* кликнеш на `Start` дугме, па пронађеш и покренеш
 **Visual Studio Installer** и кликнеш на дугме `Modify`:
 
-![Visual Studio Installer](./images/vs-01.png)
+```{image} images/vs-01.png
+:scale: 70
+:align: center
+```
+
+
 
 За наставни предмет Програмирање у III разреду довољно је да одабереш радни
 пакет `.NET Desktop Development`.
 
-![Visual Studio Installer](./images/vs-02.png)
+```{image} images/vs-02.png
+:scale: 70
+:align: center
+```
+
 
 Од наставника веб-програмирања и других стручних предмета добићеш информације о
 осталим неопходним радним пакетима за те предмете. Када си одабрао
@@ -69,20 +78,32 @@
 *Windows*. Покрени развојно окружење Visual Studio и кликни на
 `Create a new project`:
 
-![Креирање новог пројекта](./images/vs-03.png)
+```{image} images/vs-03.png
+:scale: 70
+:align: center
+```
 
 Одабери `Console App (.NET Framework)` и кликни `Next` (да би брже пронашао
 овај тип пројекта у комбинованим оквирима, можеш одабрати `C#`, `Windows` и
 `Console`):
 
-![Креирање новог пројекта](./images/vs-04.png)
+```{image} images/vs-04.png
+:scale: 70
+:align: center
+```
 
 Унеси име пројекта, локацију на којој ћеш сачувати пројекат, име решења које
 може бити исто као и име пројекта (решење је контејнер за један или више
 пројеката), одабери *.NET Framework* верзију и кликни `Create`:
 
-![Креирање новог пројекта](./images/vs-05.png)
+```{image} images/vs-05.png
+:scale: 70
+:align: center
+```
 
 Развојно окружење биће одмах спремно за рад:
 
-![Креирање новог пројекта](./images/vs-06.png)
+```{image} images/vs-06.png
+:scale: 70
+:align: center
+```

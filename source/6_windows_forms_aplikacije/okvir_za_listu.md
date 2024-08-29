@@ -41,7 +41,10 @@
 Креирај нови *Windows Forms App (.NET Framework)* пројекат са формом димензија
 400×240, постави контроле као на слици...
 
-![Оквир за листу](./images/listbox-01.png)
+```{image} images/listbox-01.png
+:scale: 100
+:align: center
+```
 
 ...и дај им нека смислена имена.
 
@@ -51,11 +54,17 @@
 `Items`, поред `[Collection]`, кликни на дугме `...` и унеси имена наставника,
 свако у посебној линији:
 
-![Оквир за листу](./images/listbox-02.png)
+```{image} images/listbox-02.png
+:scale: 100
+:align: center
+```
 
 Имена ће се одмах појавити на листи.
 
-![Оквир за листу](./images/listbox-02a.png)
+```{image} images/listbox-02a.png
+:scale: 100
+:align: center
+```
 
 Додавање нових ставки на листу у току извршавања програма прилично је
 једноставно. Кликом на дугме `btnDodaj` потребно је име унето из оквира за
@@ -79,11 +88,17 @@ private void btnDodaj_Click(object sender, EventArgs e)
 
 Ако je корисник кликнуо `btnDodaj`, а није унео име полазника, добиће поруку...
 
-![Оквир за листу](./images/listbox-03.png)
+```{image} images/listbox-03.png
+:scale: 100
+:align: center
+```
 
 ...а ако јесте, име ће бити додато на листу:
 
-![Оквир за листу](./images/listbox-04.png)
+```{image} images/listbox-04.png
+:scale: 100
+:align: center
+```
 
 ## Претрага листе
 
@@ -122,7 +137,10 @@ private void btnPretrazi_Click(object sender, EventArgs e)
 задатом стрингу, вратиће се `-1`, а ако постоји, вратиће се његов индекс и
 означити полазник на листи. На пример, ако се унесе стринг `Јован`:
 
-![Оквир за листу](./images/listbox-05.png)
+```{image} images/listbox-05.png
+:scale: 100
+:align: center
+```
 
 Оваква имплементација метода `FindString()` није савршена. Ако се у примеру
 изнад унесе стринг `Ми`, вратиће се само један индекс, односно индекс првог
@@ -157,16 +175,25 @@ private void btnObrisi_Click(object sender, EventArgs e)
 
 Ако је корисник означио полазника и кликнуо на дугме `btnObrisi`...
 
-![Оквир за листу](./images/listbox-06.png)
+```{image} images/listbox-06.png
+:scale: 100
+:align: center
+```
 
 ...обрисаће се означени полазник на основу његовог индекса:
 
-![Оквир за листу](./images/listbox-07.png)
+```{image} images/listbox-07.png
+:scale: 100
+:align: center
+```
 
 Ако корисник није означио полазника а кликнуо је на дугме `btnObrisi`, добиће
 поруку о томе:
 
-![Оквир за листу](./images/listbox-08.png)
+```{image} images/listbox-08.png
+:scale: 100
+:align: center
+```
 
 Слично, полазника можеш обрисати методом `Remove()` на основу његовог имена:
 

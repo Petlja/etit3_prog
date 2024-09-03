@@ -10,7 +10,10 @@
 Креирај нови *Windows Forms App (.NET Framework)* пројекат и додај једно дугме
 на форму.
 
-![Кастовање контрола](./images/kastovanje-01.png)
+```{image} images/kastovanje-01.png
+:scale: 100
+:align: center
+```
 
 Кликни на дугме, па у `Properties` прозору креирај догађај `Click`. Како
 изгледају параметри догађаја `Click` за једно дугме?
@@ -58,7 +61,10 @@ Button kliknutoDugme = sender as Button;
 `kliknutoDugme` типа `Button` имати исто својство `Text` као и оригинално дугме
 `button1`:
 
-![Кастовање контрола](./images/kastovanje-02.png)
+```{image} images/kastovanje-02.png
+:scale: 100
+:align: center
+```
 
 Са кастовањем си се сусрео још у првом разреду, где си променљиве једног типа
 експлицитно кастовао у други тип. У програмском језику C# кастовање објекта из
@@ -101,4 +107,7 @@ private void button1_Click(object sender, EventArgs e)
 изузетак нити ће се извршити наредбе у оквиру условне наредбе `if`, јер израз
 `kliknutoDugme != null` није тачан.
 
-![Кастовање контрола](./images/kastovanje-03.png)
+```{image} images/kastovanje-03.png
+:scale: 100
+:align: center
+```

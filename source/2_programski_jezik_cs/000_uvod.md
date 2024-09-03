@@ -21,28 +21,20 @@ C# програми извршавају се у оквиру *.NET*-а. Шта 
 извршавају у оперативном систему? У I и II разреду развијао си апликације у
 програмском језику C које се извршавају у оквиру оперативног система:
 
-<pre class="mermaid">
-    flowchart TD
-        a["апликација"] --> Windows
-        Windows --> c["хардвер"]
-</pre>
-<script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-</script>
+```{image} images/uvod-01.png
+:scale: 70
+:align: center
+```
 
 Како би се превазишао проблем са компатибилношћу - да старији програми не могу
 да функционишу на новијим верзијама оперативног системима и обрнуто - осмишљен
 је још један слој под називом *.NET Framework*. Захваљујући том слоју,
 функционалност апликације више не зависи од оперативног система:
 
-<pre class="mermaid">
-    flowchart TD
-        a["апликација"] --> b[".NET Framework"]
-        b[".NET Framework"] --> Windows
-        Windows --> c["хардвер"]
-</pre>
-
+```{image} images/uvod-02.png
+:scale: 70
+:align: center
+```
 *.NET Framework* је данас саставна компонента *Windows*-а која садржи општу
 језичку извршну платформу (енгл. *The Common Language Runtime, CLR*) и скуп од
 преко 4000 библиотека класа (енгл. *The Base Class Library, BCL*). *CLR*
@@ -63,15 +55,10 @@ C# програми извршавају се у оквиру *.NET*-а. Шта 
 *automatic garbage collection*). Кôд који извршава *CLR* назива се "управљив
 кôд", супротно од компајлираног машинског кôда који се назива "неуправљив кôд".
 
-<pre class="mermaid">
-    flowchart TD
-        a["C# пројекат"] --> b["C# компајлер"]
-        b["C# компајлер"] -- креира --> c["exe или dll склоп"]
-        c["exe или dll склоп"] -- IL --> d[".NET Framework"]
-        d[".NET Framework"] -- користи --> e[".NET библиотеке"]
-        d[".NET Framework"] --> f["Windows"]
-        f["Windows"] --> g["Хардвер"]
-</pre>
+```{image} images/uvod-03.png
+:scale: 70
+:align: center
+```
 
 Интероперабилност језика је једна од главних *.NET* карактеристика. Пошто је
 *IL* кôд произведен од стране компајлера у складу са заједничком спецификацијом

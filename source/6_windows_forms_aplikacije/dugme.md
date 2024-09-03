@@ -29,7 +29,11 @@
 остали догађаји. Пример коришћења дугмета на форми може бити апликација из
 претходне лекције...
 
-![Пример употребе контроле лабела](./images/labela-primer-upotrebe2.png)
+```{image} images/labela-primer-upotrebe2.png
+:scale: 100
+:align: center
+```
+
 
 ...где је у четвртом оквиру за групу постављено шест дугмади, а дугмад су
 постављена и у доњем десном углу апликације.
@@ -52,7 +56,10 @@
 
 Форма са иницијално постављеним контролама може да изгледа, на пример, овако:
 
-![Контрола дугме](./images/button-01.png)
+```{image} images/button-01.png
+:scale: 100
+:align: center
+```
 
 Обрати пажњу да је на слици у фокусу прво дугме, јер је његов `TabIndex`
 постављен на `1`. Притиском на тастер `TAB` на тастатури фокус прелази на друго
@@ -74,8 +81,10 @@ private void btnDa_Click(object sender, EventArgs e)
 
 Сада ће апликација изгледати овако након клика на прво дугме:
 
-![Контрола дугме](./images/button-02.png)
-
+```{image} images/button-02.png
+:scale: 100
+:align: center
+```
 На крају, потребно је да дефинишеш догађај клика на дугме са текстом
 **Затвори**...
 
@@ -107,20 +116,32 @@ private void btnNe_Click(object sender, EventArgs e)
 Кликни на прво дугме, обриши текст из својства `Text`, својство `BackColor`
 постави на `White`, па у својству `Image` кликни на три тачке `...`.
 
-![Контрола дугме](./images/panel-1.png)!
+```{image} images/panel-1.png
+:scale: 100
+:align: center
+```
 
 Одабери `Local Resource`, па кликни на `Import` и одабери слику `da.png` и
 кликни `OK`.
 
-![Контрола дугме](./images/button-03.png)
+```{image} images/button-03.png
+:scale: 100
+:align: center
+```
 
 Сада је дугме потпуно променило изглед:
 
-![Контрола дугме](./images/button-04.png)
+```{image} images/button-04.png
+:scale: 100
+:align: center
+```
 
 Исто уради и за друго дугме:
 
-![Контрола дугме](./images/button-05.png)
+```{image} images/button-05.png
+:scale: 100
+:align: center
+```
 
 Слика на дугмету може бити постављена и путем својства `BackgroundImage`, где
 се касније својством `BackgroundImageLayout` може дефинисати распоред

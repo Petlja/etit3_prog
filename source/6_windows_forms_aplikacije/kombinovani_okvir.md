@@ -52,7 +52,10 @@
 Креирај нови *Windows Forms App (.NET Framework)* пројекат са формом димензија
 400×240, постави контроле као на слици...
 
-![Комбиновани оквир](./images/combobox-01.png)
+```{image} images/combobox-01.png
+:scale: 100
+:align: center
+```
 
 ...и дај им нека смислена имена.
 
@@ -81,12 +84,18 @@ imePrezime = txtImePrezime.Text;
 кликни на дугме `...`. Унеси дозвољене вредности за број година, сваку у
 посебној линији...
 
-![Комбиновани оквир](./images/combobox-02.png)
+```{image} images/combobox-02.png
+:scale: 100
+:align: center
+```
 
 ...и промени својство `DropDownStyle` из `DropDown` у `DropDownList`. Тако ћеш
 омогућити само одабир ставки са листе, а онемогућити унос:
 
-![Комбиновани оквир](./images/combobox-03.png)
+```{image} images/combobox-03.png
+:scale: 100
+:align: center
+```
 
 Одабрану вредност можеш доделити пољу `brojGodina` на следећи начин:
 
@@ -96,7 +105,10 @@ brojGodina = cmbBrojGodina.Text;
 
 Исто понови за разред са вредностима I, II, III или IV...
 
-![Комбиновани оквир](./images/combobox-04.png)
+```{image} images/combobox-04.png
+:scale: 100
+:align: center
+```
 
 ...па одабрану вредност додели пољу `razred`:
 
@@ -112,7 +124,10 @@ razred = cmbRazred.Text;
 али остави подразумевану вредност својства `DropDownStyle` на `DropDown` како би
 омогућио и унос других вредности...
 
-![Комбиновани оквир](./images/combobox-05.png)
+```{image} images/combobox-05.png
+:scale: 100
+:align: center
+```
 
 ...па одабрану или унету вредност додели пољу `odeljenje`:
 
@@ -122,7 +137,10 @@ indeksOdeljenja = cmbIndeksOdeljenja.Text;
 
 Исто понови за школску годину са вредностима 2023/24. и 2024/25...
 
-![Комбиновани оквир](./images/combobox-06.png)
+```{image} images/combobox-06.png
+:scale: 100
+:align: center
+```
 
 ...па одабрану или унету вредност додели пољу `skolskaGodina`:
 
@@ -133,7 +151,10 @@ skolskaGodina = cmbSkolskaGodina.Text;
 Такмичење из програмирања постоји само у A и B категорији, па за комбиновани
 оквир за одабир категорије постави својство `DropDownStyle` на `DropDownList`...
 
-![Комбиновани оквир](./images/combobox-07.png)
+```{image} images/combobox-07.png
+:scale: 100
+:align: center
+```
 
 ...па одабрану вредност додели пољу `kategorija`:
 
@@ -190,15 +211,24 @@ private void resetujSvaPolja()
 
 Ако је корисник попунио сва поља...
 
-![Комбиновани оквир](./images/combobox-08.png)
+```{image} images/combobox-08.png
+:scale: 100
+:align: center
+```
 
 ...кликом на дугме приказаће се следећа порука...
 
-![Комбиновани оквир](./images/combobox-09.png)
+```{image} images/combobox-09.png
+:scale: 100
+:align: center
+```
 
 ...а ако није:
 
-![Комбиновани оквир](./images/combobox-10.png)
+```{image} images/combobox-10.png
+:scale: 100
+:align: center
+```
 
 Наравно, у некој конкретној апликацији ове податке бележио би у фајл или базу
 података.

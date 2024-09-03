@@ -29,7 +29,11 @@
 
 Образац би могао да изгледа овако:
 
-![Оквир за групу](./images/groupbox-1.png)
+```{image} images/groupbox-1.png
+:scale: 100
+:align: center
+```
+
 
 Додај први оквир за групу на форму. Промени својство `Text` у "Подаци
 корисника", како би променио наслов оквира за групу, па поређај потребне
@@ -47,7 +51,10 @@ private void btnEmail_Click(object sender, EventArgs e)
 ...а то ће у клијенту за електронску пошту формирати нову поруку, где је поље
 `To:` попуњено са `podrska@mojdomen.com` и поље `Subject` са `Poruka sa forme`:
 
-![Оквир за групу](./images/groupbox-2.png)
+```{image} images/groupbox-2.png
+:scale: 100
+:align: center
+```
 
 Кликом на друго дугме, корисник се поруком може обавестити о броју телефона
 подршке:
@@ -68,7 +75,10 @@ private void btnTelefon_Click(object sender, EventArgs e)
 }
 ```
 
-![Оквир за групу](./images/groupbox-3.png)
+```{image} images/groupbox-3.png
+:scale: 100
+:align: center
+```
 
 Кликом на треће дугме затвара се форма, а у овом случају и апликација:
 

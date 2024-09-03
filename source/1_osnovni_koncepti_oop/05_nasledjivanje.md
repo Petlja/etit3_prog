@@ -14,46 +14,10 @@
 
 Једноставан пример хијерархије класа за твоју школу могао би да изгледа овако:
 
-<pre class="mermaid">
-    classDiagram
-    Osoba <|-- Učenik
-    Osoba <|-- Zaposleni
-    Zaposleni <| -- Nastavnik
-    Zaposleni <| -- Osoblje
-    class Osoba{
-        string ime
-        int godRodjenja
-        void prikazImena()
-        void prikazGodine()
-        void prikazOsobe()
-    }
-    class Učenik{
-        string odeljenje
-        void prikazOdeljenja()
-        void prikazUcenika()
-    }
-    class Zaposleni{
-        int staz
-        string strucnaSprema
-        void prikazStaza()
-        void prikazSpreme()
-        void prikazZaposlenog()
-    }
-    class Nastavnik{
-        string predmet
-        void prikazPredmeta()
-        void prikazNastavnika()
-    }
-    class Osoblje{
-        string posao
-        void prikazPosla()
-        void prikazOsoblja()
-    }
-</pre>
-<script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-</script>
+```{image} images/nasledjivanje-01.png
+:scale: 70
+:align: center
+```
 
 Школу похађају ученици, а у школи раде запослени. Запослени могу бити
 наставници или ненаставно особље. Заједничко за све особе у школи је да имају
@@ -80,61 +44,29 @@
 **једноструко наслеђивање**: изведена класа наслеђује једну базну класу (најчешћи
 облик наслеђивања, једноставан за управљање):
 
-<pre class="mermaid">
-    classDiagram
-    БазнаКласа <|-- ИзведенаКласа
-class БазнаКласа{
-    атрибутиБазнеКласе
-    методеБазнеКласе()
-}
-class ИзведенаКласа{
-    атрибутиИзведенеКласе
-    методеИзведенеКласе()
-}
-</pre>
+```{image} images/nasledjivanje-02.png
+:scale: 70
+:align: center
+```
+
 
 **вишеструко наслеђивање**: изведена класа истовремено наслеђује више базних
 класа (сложена структура, потенцијални конфликти, C# не подржава вишеструко
 наслеђивање класа):
 
-<pre class="mermaid">
-    classDiagram
-    БазнаКласа1 <|-- ИзведенаКласа
-    БазнаКласа2 <|-- ИзведенаКласа
-class БазнаКласа1{
-    атрибутиБазнеКласе1
-    методеБазнеКласе1()
-}
-class БазнаКласа2{
-    атрибутиБазнеКласе2
-    методеБазнеКласе2()
-}
-class ИзведенаКласа{
-    атрибутиИзведенеКласе
-    методеИзведенеКласе()
-}
-</pre>
+```{image} images/nasledjivanje-03.png
+:scale: 70
+:align: center
+```
+
 
 **вишесложно наслеђивање**: једна изведена класа је наслеђена из друге изведене
 класа (чест облик наслеђивања):
 
-<pre class="mermaid">
-    classDiagram
-    БазнаКласа <|-- ИзведенаКласа1
-    ИзведенаКласа1 <|-- ИзведенаКласа2
-class БазнаКласа{
-    атрибутиБазнеКласе
-    методеБазнеКласе()
-}
-class ИзведенаКласа1{
-    атрибутиИзведенеКласе1
-    методеИзведенеКласе1()
-}
-class ИзведенаКласа2{
-    атрибутиИзведенеКласе2
-    методеИзведенеКласе2()
-}
-</pre>
+```{image} images/nasledjivanje-04.png
+:scale: 70
+:align: center
+```
 
 У дијаграму изнад, `БазнаКласа` је базна класа за `ИзведенаКласа1`, а
 `ИзведенаКласа1` је базна класа за `ИзведенаКласа2`.
@@ -142,23 +74,10 @@ class ИзведенаКласа2{
 **хијерархијско наслеђивање**: једна базна класа је базна класа за више
 изведених класа (чест облик наслеђивања):
 
-<pre class="mermaid">
-    classDiagram
-    БазнаКласа <|-- ИзведенаКласа1
-    БазнаКласа <|-- ИзведенаКласа2
-class БазнаКласа{
-    атрибутиБазнеКласе
-    методеБазнеКласе()
-}
-class ИзведенаКласа1{
-    атрибутиИзведенеКласе1
-    методеИзведенеКласе1()
-}
-class ИзведенаКласа2{
-    атрибутиИзведенеКласе2
-    методеИзведенеКласе2()
-}
-</pre>
+```{image} images/nasledjivanje-05.png
+:scale: 70
+:align: center
+```
 
 У дијаграму изнад, `БазнаКласа` је базна класа и за `ИзведенаКласа1` и за
 `ИзведенаКласа2`.

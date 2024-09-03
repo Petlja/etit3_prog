@@ -5,11 +5,18 @@
 из фајла "tekst.txt". Када корисник у оквиру за текст исправно прекуца дату
 реченицу, у другој лабели треба да се прикаже брзина куцања корисника.
 
-![Задатак - Тест брзине куцања](./images/zadatak_typing_test1.png)
-
-![Задатак - Тест брзине куцања](./images/zadatak_typing_test2.png)
-
-![Задатак - Тест брзине куцања](./images/zadatak_typing_test3.png)
+```{image} images/zadatak_typing_test1.png
+:scale: 100
+:align: center
+```
+```{image} images/zadatak_typing_test2.png
+:scale: 100
+:align: center
+```
+```{image} images/zadatak_typing_test3.png
+:scale: 100
+:align: center
+```
 
 Реченице у фајлу "tekst.txt" треба да буду унете на следећи начин:
 

@@ -60,7 +60,11 @@
 Креирај нови *Windows Forms App (.NET Framework)* пројекат са формом димензија
 320×240, постави контроле као на слици...
 
-![Оквир за слику](./images/okvirzasliku-1.png)
+```{image} images/okvirzasliku-1.png
+:scale: 100
+:align: center
+```
+
 
 ...и дај им нека смислена имена. Својство `BackColor` треба да буде промењено
 на `White`, како би позадина оквира била бела, а својство `SizeMode` на
@@ -80,18 +84,27 @@ private void btnPristupna_Click(object sender, EventArgs e)
 Сада, кликом на прво дугме креира се објекат `pristupnaTacka` типа `Bitmap`, па
 се исти додељује својству `Image` оквира за слику `pcbUredjaj`:
 
-![Оквир за слику](./images/okvirzasliku-2.png)
+```{image} images/okvirzasliku-2.png
+:scale: 100
+:align: center
+```
 
 Исто можеш урадити и за друго и треће дугме, па ако корисник кликне на друго
 дугме, својству `Image` оквира за слику `pcbUredjaj` биће додељена друга
 слика...
 
-![Оквир за слику](./images/okvirzasliku-3.png)
+```{image} images/okvirzasliku-3.png
+:scale: 100
+:align: center
+```
 
 ...односно, ако кликне на треће дугме, својству `Image` оквира за слику
 `pcbUredjaj` биће додељена трећа слика:
 
-![Оквир за слику](./images/okvirzasliku-4.png)
+```{image} images/okvirzasliku-4.png
+:scale: 100
+:align: center
+```
 
 **Шта није у реду са овим решењем?** Ако корисник кликне узастопно десет пута
 на прво дугме, десет пута ће креирати нови објекат у меморији. Ово може да буде

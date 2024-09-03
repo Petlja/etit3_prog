@@ -5,11 +5,17 @@
 пример из фонта `Segoe UI Symbol`. Задатак корисника је кликће на парове
 дугмади...
 
-![Игра меморије - упари слике](./images/emoji1.png)
+```{image} images/emoji1.png
+:scale: 100
+:align: center
+```
 
 ...све док не упари свих 10 парова емоџија, тј. симбола:
 
-![Игра меморије - упари слике](./images/emoji2.png)
+```{image} images/emoji2.png
+:scale: 100
+:align: center
+```
 
 ## Могуће решење задатка
 

@@ -40,7 +40,11 @@ public class NekaKontrola : Control
 иконе `Categorized`. Корисно је и да знаш да се својства која си мењао
 приказују задебљаним фонтом.
 
-![Својства форме](./images/form-properties.png)
+```{image} images/form-properties.png
+:scale: 100
+:align: center
+```
+
 
 Сва својства наведена у `Properties` прозору можеш мењати и у коду, тј. у току
 извршавања програма. Има их много, па је препорука да увек користиш доступну

@@ -4,7 +4,7 @@ Ovaj repozitorijum posvećen je kursu za Programiranje III za informatičke prof
 
 Kurs je na Petljinom portalu dotupan ovde: [https://petlja.org/sr-Latn-RS/kurs/14469/0](https://petlja.org/sr-Latn-RS/kurs/14469/0)
 
-
+Kurs možete integrisati u svoj LMS koristeći SCORM pakete koji se mogu preuzeti sa: https://github.com/Petlja/etit3_prog/releases
 
 ## Konverzija u *HTML*
 
